@@ -1,5 +1,7 @@
-# Meeting Minutes 1
+# Meeting Minutes 1 10/13/21
 
+Meeting start: 11:00 pm \
+Meeting end: 12:25 pm \
 Group name: Group ateteen \
 Group colors: red, green, blue \
 Group video idea: introduce yourself as "chef," everyone needs a spatula, catch on right, throw to left. \
