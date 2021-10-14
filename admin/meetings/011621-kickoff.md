@@ -1,4 +1,4 @@
-# Meeting Minutes 1 10/13/21
+# Meeting Notes 1 (kickoff) 10/13/21
 
 Meeting start: 11:00 pm \
 Meeting end: 12:25 pm \
