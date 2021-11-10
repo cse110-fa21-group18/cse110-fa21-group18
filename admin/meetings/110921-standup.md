@@ -1,7 +1,11 @@
 # Standup meeting 11/09
+
 Time: 11pm-12am
+
 Attendees: Ashritha, Hugs, Audrey, Jay, Melissa, Steven, Wesley
+
 On Zoom
+
 ---  
 
 ## UPCOMING DEADLINE: 
