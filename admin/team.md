@@ -2,6 +2,7 @@
 - [Team AteTeen](#team-ateteen)
   - [Branding](#branding)
   - [Roster](#roster)
+  - [Resources](#resources)
 
 ## Branding
 ![brandLogo](https://github.com/cse110-fa21-group18/cse110-fa21-group18/blob/main/admin/branding/logo.png?raw=true)
@@ -16,3 +17,7 @@ We are Team AteTeen and we are dedicated to bring the best recipes to your kitch
 - [Brandon Park](https://github.com/b4park)
 - [Daniel Lam](https://github.com/chefyes)
 - [Melissa Ignacio](https://github.com/melissaignacio)
+
+## Resources
+- Bootstrap (docs): https://getbootstrap.com/docs/5.1/getting-started/introduction/
+

@@ -1,7 +1,7 @@
 # Starting Tasks 11/11 
 Time: 3:30-4:30pm  
 Location: On Zoom  
-Attendees: Hugs, Audrey, Jay, Daniel, Brandon, Steven
+Attendees: Audrey, Hugs, Steven, Daniel, Brandon, Jay
 
 ---  
 
