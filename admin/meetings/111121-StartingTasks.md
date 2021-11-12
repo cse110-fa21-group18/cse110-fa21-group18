@@ -11,6 +11,8 @@ Attendees:
   - Dividing teams
 - Go over rules and advice
   - Push often, especially after big steps
+  - JS in scripts, CSS in styles, HTML in public
+  - branch usage
   - Proper file, class, and id labelling
   - Leave helpful comments
   - Use proper indenting
