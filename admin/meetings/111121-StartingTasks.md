@@ -26,4 +26,18 @@ Attendees: Audrey, Hugs, Steven, Daniel, Brandon, Jay
   - Sometime this weekend (Sat or Sun)
 
 ## Notes
-- 
+- Current Front-end: Audrey, Steven, Melissa, Tianyue, Jay
+- Front-end Team 1:
+  - Currently: Audrey, need 2 more
+  - Tasks: HTML pages in the project
+  - Sprint and Retrospective Prep and Notes (due Mon)
+- Front-end Team 2:
+  - Currently: Steven, Jay, need 1 more
+  - Tasks: HTML pages in the project
+  - ADR (due Mon)
+- Current Back-end: Wesley, Daniel, Hugs, Brandon, Jay
+- Back-end (all):
+  - Currently: Hugs, Daniel, Brandon, Wesley, Jay
+  - Tasks: HTML pages in the project
+  - CI/CD Pipeline (due Mon)
+- Sprint/Retro when2meet: https://www.when2meet.com/?13617626-L7nWQ
