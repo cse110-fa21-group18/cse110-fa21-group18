@@ -1,7 +1,7 @@
 # Starting Tasks 11/11 
 Time: 3:30-4:30pm  
 Location: On Zoom  
-Attendees: 
+Attendees: Audrey, Hugs, Steven, Daniel, Brandon, Jay
 
 ---  
 
@@ -11,6 +11,8 @@ Attendees:
   - Dividing teams
 - Go over rules and advice
   - Push often, especially after big steps
+  - JS in scripts, CSS in styles, HTML in public
+  - branch usage
   - Proper file, class, and id labelling
   - Leave helpful comments
   - Use proper indenting
