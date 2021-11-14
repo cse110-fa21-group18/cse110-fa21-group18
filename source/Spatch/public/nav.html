@@ -4,19 +4,45 @@
 <meta name="description" content="Audrey's Portfolio">
 
 <head>
-    <link rel="stylesheet" href="">
-    <script src="/JS/nav.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../styles/nav.css">
+
+    <!-- Using this tutorial!
+    https://www.youtube.com/watch?v=wEfaoAa99XY&ab_channel=CodingLab -->
 </head>
 <body>
-    <ul class="fixed-top nav nav-pills justify-content-left" id="navbar"> 
-        <li class="nav-item">
-            <a class="nav-link" id="HomeTop" href="/index.html"><img src="../images/az-logo.png" id="az-logo"></a>
-        </li> 
-        <li class="nav-item" id="first-item">
-            <a class="nav-link" id="AboutMeNav" href="/AboutMe.html">About Me</a>
-        </li>
-        <li class="nav-item" id="button-nav">
-            <img id="darkButton" class="switchButton" src="/images/Dark Button.svg" tabindex="0">
-        </li>
-    </ul>
+    <div class="sidebar">
+        <!-- Logo section / Menu icon collapsible -->
+        <div class="logo-content">
+            <div class="logo">
+                <img src="frontEnd1-assets/Spatch-logo-placeholder.png" id="logo-icon" alt="Logo">
+                <!-- <div class="logo-name">Spatch</div> -->
+            </div>
+            <img src="frontEnd1-assets/Nav-Icons/menu.svg" id="menu-btn" alt="Menu icon">
+        </div>
+        <!-- Other nav icons -->
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#">
+                    <img src="frontEnd1-assets/Nav-Icons/home.svg" class="nav-icons" alt="Home icon">
+                    <span class="links-name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <img src="frontEnd1-assets/Nav-Icons/search.svg" class="nav-icons" alt="Search icon">
+                    <span class="links-name">Search</span>
+                </a>
+                <span class="tooltip">Search</span>
+            </li>
+        </ul>
+    </div>
+    <div class="home-content">
+        <h1>Title</h1>
+    </div>
+    <script src="../scripts/nav.js"></script>
 </body>
+</html>
