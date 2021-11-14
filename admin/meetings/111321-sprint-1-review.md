@@ -1,6 +1,6 @@
 # Sprint (30 min) - Show and Tell  
-When: 11/13 7-7:30pm
-Attendees: Audrey, Hugs, Jay, Melissa, Wesley, Tianyue 
+When: 11/13 7-7:30pm  
+Attendees: Audrey, Hugs, Jay, Melissa, Wesley, Tianyue  
   
 ---
   
