@@ -1,11 +1,10 @@
-111321-retrospective.md  
-Retrospective (30min)
+# Retrospective (30min)
 When: 11/13 7:30-8pm  
 Attendees: Audrey, Hugs, Jay, Melissa, Wesley, Tianyue   
   
   ---
   
-Purpose: to share their honest feedback on what’s going well, what could be improved, and generate a discussion around things that should change next time around + action items
+### Purpose: to share their honest feedback on what’s going well, what could be improved, and generate a discussion around things that should change next time around + action items
   
 Feedback
 - Going well
