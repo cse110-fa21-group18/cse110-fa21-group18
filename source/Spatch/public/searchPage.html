@@ -21,11 +21,9 @@
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
-    <div class="main-content">
-        <div class="SearchTitle">
-            <!-- <h1>Search for the Right Recipe</h1> -->
-        </div>
+        <div id="nav-placeholder"></div>
+        <div class="main-content">
+
 
         <!-- SearchBar and Button that displays filter options -->
 
@@ -71,10 +69,11 @@
                     <input id = "cheap" type="checkBox"></input>
                     <p id="cheapText">Cheap</p>
                 </div>
-                <button  type="button" id="submitFilter">Submit</button>
+                <button  type="button" id="submitFilter" onclick="toggleFilter()">Submit</button>
             </div>
         </div>
     </div>
+    
     <!-- Recipe Results -->
     <div>
 
