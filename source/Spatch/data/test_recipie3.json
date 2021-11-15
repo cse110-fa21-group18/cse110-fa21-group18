@@ -1,0 +1,252 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://thealmondeater.com/#organization",
+            "name": "The Almond Eater",
+            "url": "https://thealmondeater.com/",
+            "sameAs": [
+                "https://www.facebook.com/TheAlmondEater",
+                "https://www.instagram.com/thealmondeater/",
+                "https://www.pinterest.com/thealmondeater/boards/",
+                "https://twitter.com/thealmondeater"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "@id": "https://thealmondeater.com/#logo",
+                "inLanguage": "en-US",
+                "url": "https://thealmondeater.com/wp-content/uploads/2020/03/almond-eater-logo.png",
+                "contentUrl": "https://thealmondeater.com/wp-content/uploads/2020/03/almond-eater-logo.png",
+                "width": 500,
+                "height": 500,
+                "caption": "The Almond Eater"
+            },
+            "image": {
+                "@id": "https://thealmondeater.com/#logo"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://thealmondeater.com/#website",
+            "url": "https://thealmondeater.com/",
+            "name": "The Almond Eater",
+            "description": "Healthy, Real Food Recipes",
+            "publisher": {
+                "@id": "https://thealmondeater.com/#organization"
+            },
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://thealmondeater.com/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://thealmondeater.com/breakfast-quesadilla/#primaryimage",
+            "inLanguage": "en-US",
+            "url": "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7.jpg",
+            "contentUrl": "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7.jpg",
+            "width": 1200,
+            "height": 1800,
+            "caption": "egg and black bean quesadilla stacked on parchment paper"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://thealmondeater.com/breakfast-quesadilla/#webpage",
+            "url": "https://thealmondeater.com/breakfast-quesadilla/",
+            "name": "Breakfast Quesadilla - The Almond Eater",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://thealmondeater.com/breakfast-quesadilla/#primaryimage"
+            },
+            "datePublished": "2021-08-21T09:00:00+00:00",
+            "dateModified": "2021-09-26T19:24:43+00:00",
+            "description": "This one-pan Breakfast Quesadilla is easy, simple, and vegetarian, too. Enjoy it for breakfast or when you\u2019re craving breakfast for dinner!",
+            "breadcrumb": {
+                "@id": "https://thealmondeater.com/breakfast-quesadilla/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": [
+                        "https://thealmondeater.com/breakfast-quesadilla/"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://thealmondeater.com/breakfast-quesadilla/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://thealmondeater.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Breakfast",
+                    "item": "https://thealmondeater.com/category/breakfast/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Breakfast Quesadilla"
+                }
+            ]
+        },
+        {
+            "@type": "Article",
+            "@id": "https://thealmondeater.com/breakfast-quesadilla/#article",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/breakfast-quesadilla/#webpage"
+            },
+            "author": {
+                "@id": "https://thealmondeater.com/#/schema/person/8764007811c6d427672ff6da501fa779"
+            },
+            "headline": "Breakfast Quesadilla",
+            "datePublished": "2021-08-21T09:00:00+00:00",
+            "dateModified": "2021-09-26T19:24:43+00:00",
+            "wordCount": 976,
+            "commentCount": 0,
+            "publisher": {
+                "@id": "https://thealmondeater.com/#organization"
+            },
+            "image": {
+                "@id": "https://thealmondeater.com/breakfast-quesadilla/#primaryimage"
+            },
+            "thumbnailUrl": "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7.jpg",
+            "articleSection": [
+                "Breakfast",
+                "Mediterranean Diet",
+                "Vegetarian"
+            ],
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "CommentAction",
+                    "name": "Comment",
+                    "target": [
+                        "https://thealmondeater.com/breakfast-quesadilla/#respond"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://thealmondeater.com/#/schema/person/8764007811c6d427672ff6da501fa779",
+            "name": "Erin",
+            "description": "Erin is the recipe developer, writer and photographer behind the healthy food blog, The Almond Eater. She's been blogging since 2014 and loves to create food for many different diets, including vegan, gluten free and/or Whole30 recipes.",
+            "sameAs": [
+                "https://thealmondeater.com/about/",
+                "https://www.facebook.com/TheAlmondEater",
+                "https://twitter.com/TheAlmondEater"
+            ],
+            "url": "https://thealmondeater.com/author/erin/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@type": "Recipe",
+            "name": "Breakfast Quesadilla",
+            "author": {
+                "@type": "Person",
+                "name": "Erin"
+            },
+            "description": "This one-pan Breakfast Quesadilla is easy, simple, and completely vegetarian. Enjoy it for breakfast on the go or when you\u2019re craving breakfast for dinner!",
+            "datePublished": "2021-08-21T05:00:00+00:00",
+            "image": [
+                "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7-500x500.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7-500x375.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2021/08/Breakfast-Quesadilla-1-7-480x270.jpg"
+            ],
+            "recipeYield": [
+                "1"
+            ],
+            "cookTime": "PT8M",
+            "totalTime": "PT8M",
+            "recipeIngredient": [
+                "1 8&quot; flour tortilla",
+                "2  eggs",
+                "1 cup spinach",
+                "1/4 tsp garlic powder",
+                "1/4 cup cheddar cheese (shredded)",
+                "1/4 cup black beans (drained and rinsed; or pinto )",
+                "fresh salsa for serving"
+            ],
+            "recipeInstructions": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Spray a large skillet with nonstick spray and heat over medium heat. Next, whisk the eggs together in a bowl, then pour them into the skillet and immediately add the spinach and garlic powder. Stir frequently until the eggs and spinach are cooked, then remove them from the skillet; set aside.",
+                    "name": "Whisk",
+                    "url": "https://thealmondeater.com/breakfast-quesadilla/#wprm-recipe-57724-step-0-0"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Wipe out the skillet with a paper towel. Then, place the skillet back over the heat and add the tortilla. Place the cheese and beans on one side of it, then carefully add the eggs/spinach on top and fold the other side of the tortilla over, using a spatula to press it down.",
+                    "name": "Wipe",
+                    "url": "https://thealmondeater.com/breakfast-quesadilla/#wprm-recipe-57724-step-0-1"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Cook for 1 minute, then carefully flip the tortilla over and cook for 1 more minute or until the cheese has melted.",
+                    "name": "Cook",
+                    "url": "https://thealmondeater.com/breakfast-quesadilla/#wprm-recipe-57724-step-0-2"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Remove the quesadilla from the skillet, then use a sharp knife of pizza cutter to slice the quesadilla into 3 pieces. Serve with salsa and enjoy!",
+                    "name": "Slice",
+                    "url": "https://thealmondeater.com/breakfast-quesadilla/#wprm-recipe-57724-step-0-3"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "ratingCount": "1"
+            },
+            "recipeCategory": [
+                "Breakfast"
+            ],
+            "recipeCuisine": [
+                "American"
+            ],
+            "suitableForDiet": [
+                "https://schema.org/VegetarianDiet"
+            ],
+            "keywords": "breakfast quesadilla",
+            "nutrition": {
+                "@type": "NutritionInformation",
+                "calories": "396 kcal",
+                "carbohydrateContent": "28 g",
+                "proteinContent": "25 g",
+                "fatContent": "20 g",
+                "saturatedFatContent": "9 g",
+                "transFatContent": "1 g",
+                "cholesterolContent": "357 mg",
+                "sodiumContent": "531 mg",
+                "fiberContent": "5 g",
+                "sugarContent": "2 g",
+                "unsaturatedFatContent": "10 g",
+                "servingSize": "1 serving"
+            },
+            "@id": "https://thealmondeater.com/breakfast-quesadilla/#recipe",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/breakfast-quesadilla/#article"
+            },
+            "mainEntityOfPage": "https://thealmondeater.com/breakfast-quesadilla/#webpage"
+        }
+    ]
+}

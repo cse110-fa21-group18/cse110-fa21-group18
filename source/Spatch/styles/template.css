@@ -2,3 +2,13 @@ body {
     /* some stuff */
     background-color: white;
 }
+
+div {
+    width: 800px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#border {
+    height: 100px;
+}

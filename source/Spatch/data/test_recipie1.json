@@ -1,0 +1,236 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://thealmondeater.com/#organization",
+            "name": "The Almond Eater",
+            "url": "https://thealmondeater.com/",
+            "sameAs": [
+                "https://www.facebook.com/TheAlmondEater",
+                "https://www.instagram.com/thealmondeater/",
+                "https://www.pinterest.com/thealmondeater/boards/",
+                "https://twitter.com/thealmondeater"
+            ],
+            "logo": {
+                "@type": "ImageObject",
+                "@id": "https://thealmondeater.com/#logo",
+                "inLanguage": "en-US",
+                "url": "https://thealmondeater.com/wp-content/uploads/2020/03/almond-eater-logo.png",
+                "contentUrl": "https://thealmondeater.com/wp-content/uploads/2020/03/almond-eater-logo.png",
+                "width": 500,
+                "height": 500,
+                "caption": "The Almond Eater"
+            },
+            "image": {
+                "@id": "https://thealmondeater.com/#logo"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://thealmondeater.com/#website",
+            "url": "https://thealmondeater.com/",
+            "name": "The Almond Eater",
+            "description": "Healthy, Real Food Recipes",
+            "publisher": {
+                "@id": "https://thealmondeater.com/#organization"
+            },
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://thealmondeater.com/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#primaryimage",
+            "inLanguage": "en-US",
+            "url": "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1.jpg",
+            "contentUrl": "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1.jpg",
+            "width": 700,
+            "height": 1049,
+            "caption": "Cinnamon Roll Protein Smoothie | thealmondeater.com"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#webpage",
+            "url": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/",
+            "name": "Cinnamon Roll Protein Smoothie-The Almond Eater",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#primaryimage"
+            },
+            "datePublished": "2019-02-13T10:00:01+00:00",
+            "dateModified": "2020-06-23T11:42:18+00:00",
+            "description": "This Cinnamon Roll Protein Smoothie legit tastes like a Cinnabon cinnamon roll and is perfect for a post workout treat without the guilt!",
+            "breadcrumb": {
+                "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": [
+                        "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://thealmondeater.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Drinks",
+                    "item": "https://thealmondeater.com/category/drinks/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Cinnamon Roll Protein Smoothie"
+                }
+            ]
+        },
+        {
+            "@type": "Article",
+            "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#article",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#webpage"
+            },
+            "author": {
+                "@id": "https://thealmondeater.com/#/schema/person/8764007811c6d427672ff6da501fa779"
+            },
+            "headline": "Cinnamon Roll Protein Smoothie",
+            "datePublished": "2019-02-13T10:00:01+00:00",
+            "dateModified": "2020-06-23T11:42:18+00:00",
+            "wordCount": 621,
+            "commentCount": 47,
+            "publisher": {
+                "@id": "https://thealmondeater.com/#organization"
+            },
+            "image": {
+                "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#primaryimage"
+            },
+            "thumbnailUrl": "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1.jpg",
+            "articleSection": [
+                "Drinks"
+            ],
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "CommentAction",
+                    "name": "Comment",
+                    "target": [
+                        "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#respond"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://thealmondeater.com/#/schema/person/8764007811c6d427672ff6da501fa779",
+            "name": "Erin",
+            "description": "Erin is the recipe developer, writer and photographer behind the healthy food blog, The Almond Eater. She's been blogging since 2014 and loves to create food for many different diets, including vegan, gluten free and/or Whole30 recipes.",
+            "sameAs": [
+                "https://thealmondeater.com/about/",
+                "https://www.facebook.com/TheAlmondEater",
+                "https://twitter.com/TheAlmondEater"
+            ],
+            "url": "https://thealmondeater.com/author/erin/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@type": "Recipe",
+            "name": "Cinnamon Roll Protein Smoothie",
+            "author": {
+                "@type": "Person",
+                "name": "Erin"
+            },
+            "description": "This Cinnamon Roll Protein Smoothie tastes like a Cinnabon cinnamon roll but it's good for you--perfect for that post workout treat!",
+            "datePublished": "2019-02-13T05:00:01+00:00",
+            "image": [
+                "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1-500x500.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1-500x375.jpg",
+                "https://thealmondeater.com/wp-content/uploads/2019/02/Cinnamon-Roll-Protein-Smoothie-1-480x270.jpg"
+            ],
+            "recipeYield": [
+                "1"
+            ],
+            "prepTime": "PT5M",
+            "totalTime": "PT5M",
+            "recipeIngredient": [
+                "1  banana",
+                "1  scoop vanilla protein powder",
+                "1/4 cup plain yogurt",
+                "1/2 tsp cinnamon",
+                "1/4 cup almond milk",
+                "6  ice cubes"
+            ],
+            "recipeInstructions": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Place ingredients into a blender and pulse until everything is smooth.",
+                    "name": "",
+                    "url": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#wprm-recipe-16882-step-0-0"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enjoy!",
+                    "name": "",
+                    "url": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#wprm-recipe-16882-step-0-1"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.74",
+                "ratingCount": "15"
+            },
+            "recipeCategory": [
+                "Drinks"
+            ],
+            "recipeCuisine": [
+                "American"
+            ],
+            "suitableForDiet": [
+                "https://schema.org/GlutenFreeDiet",
+                "https://schema.org/VegetarianDiet"
+            ],
+            "keywords": "cinnamon smoothie, smoothie",
+            "nutrition": {
+                "@type": "NutritionInformation",
+                "calories": "158 kcal",
+                "sugarContent": "17 g",
+                "sodiumContent": "116 mg",
+                "fatContent": "3 g",
+                "saturatedFatContent": "1 g",
+                "carbohydrateContent": "31 g",
+                "fiberContent": "4 g",
+                "proteinContent": "5 g",
+                "cholesterolContent": "10 mg",
+                "servingSize": "1 serving"
+            },
+            "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#recipe",
+            "isPartOf": {
+                "@id": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#article"
+            },
+            "mainEntityOfPage": "https://thealmondeater.com/cinnamon-roll-protein-smoothie-2/#webpage"
+        }
+    ]
+}
