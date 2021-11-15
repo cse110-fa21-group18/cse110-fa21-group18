@@ -8,6 +8,14 @@
     padding: 50px;
 }
 
+.home-top {
+    align-items: center;
+}
+
+.create-new-recipe-top {
+    text-align: right;
+}
+
 .recipe-row {
     margin-top: 50px;
     margin-bottom: 20px;
