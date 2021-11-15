@@ -7,15 +7,17 @@
 }
 
 body {
+    overscroll-behavior: none;
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* When the menu is closed */
 .sidebar {
+    overflow:visible;
     padding: 0%;
     position: fixed;
     top: 0;
@@ -168,15 +170,15 @@ body {
     transition: all 0.3s ease;
 }
 
-.home-content {
+.main-content {
     position: absolute;
-    height: 100%;
+    /* height: 100%; */
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
 }
 
-.sidebar.active ~ .home-content {
+.main-content.active {
     width: calc(100% - 240px);
     left: 240px;
 }

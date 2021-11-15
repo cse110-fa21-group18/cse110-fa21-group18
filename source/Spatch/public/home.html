@@ -16,6 +16,7 @@
 
     <!-- Our Personal CSS Files -->
     <link rel='stylesheet' href='../styles/home.css'>
+    <!-- Injected for nav -->
     <link rel='stylesheet' href='../styles/nav.css'>
 
     <!-- Our Personal JS Files -->
@@ -23,31 +24,62 @@
 </head>
 
 <body>
-    <div class="main-content">
-        <div id="nav-placeholder">
-            <!-- <div class="here">
-                <h1>text</h1>
-            </div> -->
-        </div>
-        <!-- <div class="home-content">
-            <h1>Welcome</h1>
+    <div class="container">
+        <div id="nav-placeholder"></div>
+        <div class="main-content">
+            <h1>Welcome, user!</h1>
             <div class="recipe-row">
-                <h3>My Recipes</h3>
+                <h4>My Recipes</h4>
                 <div class="row">
                     <div class="col recipe-display">
-                        
+                        some cards to display here
                     </div>
                 </div>
             </div>
-        </div> -->
+            <div class="recipe-row">
+                <h4>Recents</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>My Cookbooks</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cookbooks to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>All Recipes</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>Cookbook 1</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>Cookbook 2</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script>
-        $(function(){
-            $("#nav-placeholder").load("nav.html");
-            // $("#nav-placeholder").before("nav.html");
-        });
-    </script>
-    <script src="../scripts/nav.js"></script>
+    <!-- Injected for nav -->
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script id="replace_with_navbar" src="../scripts/nav.js"></script>
 </body>
 </html>
