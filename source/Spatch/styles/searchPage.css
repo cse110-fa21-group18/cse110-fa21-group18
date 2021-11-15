@@ -1,0 +1,89 @@
+.SearchTitle {
+    display: inline-flex;
+    padding: center;
+    padding: 2%;
+    margin-top: 3%;
+    margin-left: 18%;
+    margin-right: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+    margin: auto;
+    white-space: nowrap;
+    padding: center;
+    text-align: center;
+    size: 80%;
+    width: 50%;
+    
+}
+
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    padding: center;
+    padding: 2%;
+    margin-top: 2%;
+    margin-left: 34%;
+    margin-right: 25%;
+
+}
+
+
+.popUp{
+    display: flex;
+    flex-direction: column;
+    padding: center;
+    background-color: rgb(193, 196, 199);
+    padding: 5%;
+    gap: 30%;
+    margin-top: 2%;
+    margin-left: 32%;
+    margin-right: 25%;
+    margin-bottom: 7%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.filter-section{
+    display: inline-flex;
+    margin-bottom: 5%;
+}
+
+.filterCheckbox{
+    display: inline-flex;
+    
+}
+
+input.filterOption{ 
+    width: 85%;
+}
+
+input.filterSlider{
+    width: 95%;
+}
+
+.squareButton{
+    width: 10%;
+    
+}
+
+.checkBoxSection{
+    display: flex;
+    flex-direction: row;
+    padding: center;
+    padding: 2%;
+    gap: 50%;
+
+}
+
+#showpop{
+    display: none;
+}
+
+#showpop.show{
+    display: block;
+}
+
