@@ -16,68 +16,74 @@
 
     <!-- Our Personal CSS Files -->
     <link rel='stylesheet' href='../styles/searchPage.css'>
-
-    <!-- Our Personal JS Files -->
-    <script src='../scripts/search.js'></script>
+    <!-- Injected for nav -->
+    <link rel='stylesheet' href='../styles/nav.css'>
 </head>
 
 <body>
-
-    <div class="SearchTitle">
-        <!-- <h1>Search for the Right Recipe</h1> -->
-    </div>
-
-    <!-- SearchBar and Button that displays filter options -->
-
-    <div class="SearchBar">
-        <input class="filterOption" type="search" id="inputBox" placeholder="Search"/>
-        <button id="filterButton" class="squareButton" onclick="toggleFilter()"></button>
-    </div>
-
-  
-    <!-- Filter Display -->
-    <div class="popUp" id="showpop">
-
-        <!-- cuisine filter -->
-        <p>Cuisine</p>
-        <div class = "filter-section">
-            <input class = "filterOption" id = "cuisine"></input>
-            <button class="squareButton" type="button" id="cuisineButton"></button>
+    <div id="nav-placeholder"></div>
+    <div class="main-content">
+        <div class="SearchTitle">
+            <!-- <h1>Search for the Right Recipe</h1> -->
         </div>
 
-        <!-- Ingredients filter -->
-        <p>Ingredients</p>
-        <div class = "filter-section">
-            <input class = "filterOption" id = "ingredients"></input>
-            <button class="squareButton" type="button" id="ingredientsButton"></button>
+        <!-- SearchBar and Button that displays filter options -->
+
+        <div class="SearchBar">
+            <input class="filterOption" type="search" id="inputBox" placeholder="Search"/>
+            <button id="filterButton" class="squareButton" onclick="toggleFilter()"></button>
         </div>
 
-        <!-- Diet Filter -->
-        <p>Diet</p>
-        <div class = "filter-section">
-            <input class = "filterOption" id = "diet"></input>
-            <button class="squareButton" type="button" id="dietButton"></button>
-        </div>
+    
+        <!-- Filter Display -->
+        <div class="popUp" id="showpop">
 
-        <!-- Cook Time -->
-        <p>Total Cook Time</p>
-        <div class = "filter-section">
-            <input class = "filterSlider" id = "cookTime" type="range"></input>
-        </div>
-        
-        <!-- Is the meals cheap -->
-        <div class = "checkBoxSection">
-            <div class = "filterCheckbox">
-                <input id = "cheap" type="checkBox"></input>
-                <p id="cheapText">Cheap</p>
+            <!-- cuisine filter -->
+            <p>Cuisine</p>
+            <div class = "filter-section">
+                <input class = "filterOption" id = "cuisine"></input>
+                <button class="squareButton" type="button" id="cuisineButton"></button>
             </div>
-            <button  type="button" id="submitFilter">Submit</button>
+
+            <!-- Ingredients filter -->
+            <p>Ingredients</p>
+            <div class = "filter-section">
+                <input class = "filterOption" id = "ingredients"></input>
+                <button class="squareButton" type="button" id="ingredientsButton"></button>
+            </div>
+
+            <!-- Diet Filter -->
+            <p>Diet</p>
+            <div class = "filter-section">
+                <input class = "filterOption" id = "diet"></input>
+                <button class="squareButton" type="button" id="dietButton"></button>
+            </div>
+
+            <!-- Cook Time -->
+            <p>Total Cook Time</p>
+            <div class = "filter-section">
+                <input class = "filterSlider" id = "cookTime" type="range"></input>
+            </div>
+            
+            <!-- Is the meals cheap -->
+            <div class = "checkBoxSection">
+                <div class = "filterCheckbox">
+                    <input id = "cheap" type="checkBox"></input>
+                    <p id="cheapText">Cheap</p>
+                </div>
+                <button  type="button" id="submitFilter">Submit</button>
+            </div>
         </div>
     </div>
-
     <!-- Recipe Results -->
     <div>
 
     </div>
+
+    <!-- Injected for nav -->
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script id="replace_with_navbar" src="../scripts/nav.js"></script>
+    <!-- Our Personal JS Files -->
+    <script src='../scripts/search.js'></script>
 </body>
 </html>
