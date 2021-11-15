@@ -15,23 +15,71 @@
     <!-- https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
 
     <!-- Our Personal CSS Files -->
-    <link rel='stylesheet' href='../styles/template.css'>
+    <link rel='stylesheet' href='../styles/home.css'>
+    <!-- Injected for nav -->
+    <link rel='stylesheet' href='../styles/nav.css'>
 
     <!-- Our Personal JS Files -->
     <!-- <script src='/scripts/YOUR-SCRIPT-HERE'></script> -->
 </head>
 
 <body>
-    <!-- Content goes here -->
-    <h1>Welcome</h1>
-    <!-- Template Recipe Display -->
-    <div class="recipe-row">
-        <h2>My Recipes</h2>
-        <div class="row">
-            <div class="col recipe-display">
-                <!-- Lab 6 using JS -->
+    <div class="container">
+        <div id="nav-placeholder"></div>
+        <div class="main-content">
+            <h1>Welcome, user!</h1>
+            <div class="recipe-row">
+                <h4>My Recipes</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>Recents</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>My Cookbooks</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cookbooks to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>All Recipes</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>Cookbook 1</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-row">
+                <h4>Cookbook 2</h4>
+                <div class="row">
+                    <div class="col recipe-display">
+                        some cards to display here
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Injected for nav -->
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script id="replace_with_navbar" src="../scripts/nav.js"></script>
 </body>
 </html>

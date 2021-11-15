@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content {
+    padding: 50px;
+}
+
+.recipe-row {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
