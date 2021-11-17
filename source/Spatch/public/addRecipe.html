@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+<title>Add Recipe | Spatch</title>
+
+<link rel="stylesheet" href="../styles/addRecipe.css">
+
+</head>
+
+<body>
+    <div id="formDiv">
+    <h1>Create Recipe</h1>
+    <div id="recipeTitleEntry" class="entryDiv">
+        <div class="subTitle">Recipe Title</div>
+        <input type="text" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
+    </div>
+    <!--Have gray text instructions next to the inputs-->
+    <div id="imageSelection" class="entryDiv">
+        <div class="subTitle">Images</div>
+        <div id="placeholder"></div>
+    </div>
+    <!--Try to have suggestions by javascript while entering-->
+    <!--Consider a drop down bar instead-->
+    <div id="cuisineType" class="entryDiv">
+        <div class="subTitle">Cuisine type</div>
+    </div>
+    <div id="totalTime">
+        <div class="subTitle">Total Time</div>
+    </div>
+    <div id="servingSize">
+        <div class="subTitle">Service Size</div>
+        <select id="servingSizeChoice" name="servingSizeChoice">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div id="diets" class="entryDiv">
+        <div class="subTitle">Diets</div>
+        <textarea id="dietEntry" name="dietEntry" rows="3" cols="40">
+            Tell us about the diets that your recipe supports
+        </textarea>
+    </div>
+    <div id="ingredients" class="entryDiv">
+        <div class="subTitle">Ingredients</div>
+        <textarea id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40">
+            Tell us about what materials make your recipe great
+        </textarea>
+    </div>
+    <div id="instructions" class="entryDiv">
+        <div class="subTitle">Instructions</div>
+        <textarea id="instructionsEntry" name="instructionsEntry" rows="5" cols="40">
+            Tell the foodies how to make your dish
+        </textarea>
+    </div>
+    </div>
+</body>

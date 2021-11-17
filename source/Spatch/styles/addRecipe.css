@@ -1,0 +1,36 @@
+.subTitle{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    height: 1.5em;
+    top: 0;
+    left: 0;
+}
+
+.entryDiv{
+    position: relative;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#placeholder{
+    position: relative;
+    height: 5em;
+    width: 10em;
+}
+
+#totalTime{
+    position: relative;
+    width: 50%;
+}
+
+#servingSize{
+    position: relative;
+    width: 50%;
+}
+
+#formDiv{
+    position: absolute;
+    width: 70%;
+    left: 30%;
+}
