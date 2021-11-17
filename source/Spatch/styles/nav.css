@@ -17,6 +17,7 @@ body {
 
 /* When the menu is closed */
 .sidebar {
+    z-index: 2;
     overflow:visible;
     padding: 0%;
     position: fixed;
@@ -171,6 +172,7 @@ body {
 }
 
 .main-content {
+    z-index: 1;
     position: absolute;
     /* height: 100%; */
     width: calc(100% - 78px);
