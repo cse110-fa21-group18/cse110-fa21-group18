@@ -21,11 +21,13 @@
 
 #totalTime{
     position: relative;
+    display: inline;
     width: 50%;
 }
 
 #servingSize{
     position: relative;
+    display: inline;
     width: 50%;
 }
 

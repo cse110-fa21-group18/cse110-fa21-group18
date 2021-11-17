@@ -26,12 +26,14 @@
     <!--Consider a drop down bar instead-->
     <div id="cuisineType" class="entryDiv">
         <div class="subTitle">Cuisine type</div>
+        <input type="text" id="cuisineTypeEntry" class="cuisineTypeEntry">
     </div>
-    <div id="totalTime">
-        <div class="subTitle">Total Time</div>
-    </div>
-    <div id="servingSize">
-        <div class="subTitle">Service Size</div>
+    <span id="totalTime">
+        <span class="subTitle">Total Time</span>
+        <input type="text" id="totalTimeEntry" name="totalTimeEntry">
+    </span>
+    <span id="servingSize">
+        <span class="subTitle">Service Size</span>
         <select id="servingSizeChoice" name="servingSizeChoice">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -39,7 +41,7 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-    </div>
+    </span>
     <div id="diets" class="entryDiv">
         <div class="subTitle">Diets</div>
         <textarea id="dietEntry" name="dietEntry" rows="3" cols="40">
