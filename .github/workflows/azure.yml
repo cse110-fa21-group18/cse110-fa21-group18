@@ -49,3 +49,10 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Super-Linter
+      uses: github/super-linter@v4.8.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
