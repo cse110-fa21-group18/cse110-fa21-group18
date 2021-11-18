@@ -16,10 +16,15 @@ class Card extends HTMLElement {
                 border: #505050 2px solid;
                 border-radius: 10px;
                 padding: 5px;
-                float: left;
+                // float: left;
                 margin-left: 20px;
 
                 box-shadow: 2px 2px darkgray;
+                box-shadow: 1px 1px 10px #999;
+                margin: 2px;
+                cursor: pointer;
+                display:inline-block;
+                vertical-align:top;
             }
 
             .wrapper:hover {
@@ -95,7 +100,7 @@ class Card extends HTMLElement {
             .bookmark {
                 width: 60px;
                 height: 60px;
-                position: absolute;
+                position: relative;
                 z-index: 1;
                 background-color: gray;
                 background: url('/source/Spatch/public/Assets-images/bookmark_empty.png') no-repeat;

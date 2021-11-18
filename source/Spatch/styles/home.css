@@ -23,3 +23,14 @@
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
+.recipe-list {
+    margin-top: 30px;
+}
+
+.recipe-display {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}

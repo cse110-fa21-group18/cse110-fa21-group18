@@ -33,4 +33,28 @@ const fakeCardData = [
         cook_time: 'IE 20 minutes',
         tags: ['Norway food', 'easy']
     },
+    {
+        image_link: 'https://picsum.photos/200/300?random=3',
+        recipe_title: 'Title C',
+        cook_time: 'IE 20 minutes',
+        tags: ['Norway food', 'easy']
+    },
+    {
+        image_link: 'https://picsum.photos/200/300?random=3',
+        recipe_title: 'Title C',
+        cook_time: 'IE 20 minutes',
+        tags: ['Norway food', 'easy']
+    },
+    {
+        image_link: 'https://picsum.photos/200/300?random=3',
+        recipe_title: 'Title C',
+        cook_time: 'IE 20 minutes',
+        tags: ['Norway food', 'easy']
+    },
+    {
+        image_link: 'https://picsum.photos/200/300?random=3',
+        recipe_title: 'Title C',
+        cook_time: 'IE 20 minutes',
+        tags: ['Norway food', 'easy']
+    },
 ]
