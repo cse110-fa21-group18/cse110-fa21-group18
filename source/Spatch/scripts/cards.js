@@ -26,6 +26,7 @@ class Card extends HTMLElement {
                 animation-duration: 0.5s;
                 animation-name: hover_card;
                 box-shadow: 6px 6px gray;
+                cursor: pointer;
             }
 
             @keyframes hover_card {
