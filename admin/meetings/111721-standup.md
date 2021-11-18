@@ -27,5 +27,5 @@ On Zoom
 - Feedback
   - We need to have a code quality check (i.e codacy)
    - It is ok to focus on MVP for now
-- If we need help with pipeline, set up meeting with TA
+  - If we need help with pipeline, set up meeting with TA
 
