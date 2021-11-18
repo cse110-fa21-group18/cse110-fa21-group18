@@ -28,50 +28,49 @@
         <!-- SearchBar and Button that displays filter options -->
 
         <div class="SearchBar">
-            <input class="filterOption" type="search" id="inputBox" placeholder="Search"/>
-            <button id="filterButton" class="squareButton" onclick="toggleFilter()"></button>
+            <input  id="searchInput" placeholder="Search"/>
+            <button id="filterToggle"  onclick="toggleFilter()"></button>
         </div>
 
-    
         <!-- Filter Display -->
-        <div class="popUp" id="showpop">
-
+        <div class="popUp" id="showpop">  
             <!-- cuisine filter -->
             <p>Cuisine</p>
             <div class = "filter-section">
-                <input class = "filterOption" id = "cuisine"></input>
-                <button class="squareButton" type="button" id="cuisineButton"></button>
+                <input id = "cuisine"></input>
+                <button type="button" id="cuisineButton"></button>
             </div>
 
             <!-- Ingredients filter -->
             <p>Ingredients</p>
             <div class = "filter-section">
-                <input class = "filterOption" id = "ingredients"></input>
-                <button class="squareButton" type="button" id="ingredientsButton"></button>
+                <input id = "ingredients"></input>
+                <button type="button" id="ingredientsButton"></button>
             </div>
 
             <!-- Diet Filter -->
             <p>Diet</p>
             <div class = "filter-section">
-                <input class = "filterOption" id = "diet"></input>
-                <button class="squareButton" type="button" id="dietButton"></button>
+                <input id = "diet"></input>
+                <button  type="button" id="dietButton"></button>
             </div>
 
             <!-- Cook Time -->
             <p>Total Cook Time</p>
             <div class = "filter-section">
-                <input class = "filterSlider" id = "cookTime" type="range"></input>
+                <input id = "cookTime" type="range"></input>
             </div>
             
-            <!-- Is the meals cheap -->
-            <div class = "checkBoxSection">
+            <!-- Is the meal cheap -->
+            <div class = "filter-section">
                 <div class = "filterCheckbox">
                     <input id = "cheap" type="checkBox"></input>
-                    <p id="cheapText">Cheap</p>
+                    <p>Cheap</p>
                 </div>
                 <button  type="button" id="submitFilter" onclick="toggleFilter()">Submit</button>
             </div>
-        </div>
+        </div> 
+        
     </div>
     
     <!-- Recipe Results -->
