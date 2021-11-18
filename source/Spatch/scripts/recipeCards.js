@@ -10,8 +10,8 @@ class Card extends HTMLElement {
         const style = document.createElement('style');
         const styleText = `
             .wrapper {
-                width: 230px;
-                height: 308px;
+                width: 200px;
+                height: 283px;
                 border-style: solid;
                 border: #505050 2px solid;
                 border-radius: 10px;
@@ -24,25 +24,19 @@ class Card extends HTMLElement {
 
             .wrapper:hover {
                 animation-duration: 0.5s;
-                // animation-name: hover_card;
+                animation-name: hover_card;
                 box-shadow: 6px 6px gray;
-                // width: 250px;
-                // height: 338px;
             }
 
-            // @keyframes hover_card {
-            //     from {
-            //         box-shadow: 2px 2px darkgray;
-            //         width: 230px;
-            //         height: 308px;
-            //     }
+            @keyframes hover_card {
+                from {
+                    box-shadow: 2px 2px darkgray;
+                }
 
-            //     to {
-            //         box-shadow: 6px 6px gray;
-            //         width: 250px;
-            //         height: 338px;
-            //     }
-            // }
+                to {
+                    box-shadow: 6px 6px gray;
+                }
+            }
 
             .photo_wrapper {
                 height: 60%;
@@ -59,7 +53,7 @@ class Card extends HTMLElement {
             .title {
                 overflow: auto;
                 height: 18%;
-                font-size: 200%;
+                font-size: 170%;
                 font-weight: bold;
             }
 
@@ -70,12 +64,12 @@ class Card extends HTMLElement {
 
             .tag_wrapper {
                 height: 11%;
-                overflow: auto;
+                overflow: hidden;
                 white-space: nowrap;
             }
 
             .tag_element {
-                font-size: 125%;
+                font-size: 110%;
                 margin-right: 10px;
                 padding-left: 5px;
                 padding-right: 5px;
@@ -89,6 +83,28 @@ class Card extends HTMLElement {
                 color: #505050;
                 background-color: white;
             }
+
+            .bookmark_wrapper {
+                width: 60px;
+                height: 0px;
+                overflow: visible;
+                float: right;
+            }
+
+            .bookmark {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                z-index: 1;
+                background-color: gray;
+                background: url('/source/Spatch/public/Assets-images/bookmark_empty.png') no-repeat;
+                background-size: contain;
+            }
+
+            .bookmark:hover {
+                background: url('/source/Spatch/public/Assets-images/bookmark_hover.png') no-repeat;
+                background-size: contain;
+            }
         `
         // Append the style and create the container element
         style.innerHTML = styleText;
@@ -97,6 +113,16 @@ class Card extends HTMLElement {
         const wrapper = document.createElement('div');
         wrapper.classList.add('wrapper');
         this.shadowRoot.appendChild(wrapper);
+
+        // Append the bookmark button
+        const bookmark_wrapper = document.createElement('div');
+        const bookmark_img = document.createElement('div');
+
+        bookmark_wrapper.classList.add('bookmark_wrapper');
+        bookmark_img.classList.add('bookmark');
+
+        bookmark_wrapper.appendChild(bookmark_img);
+        wrapper.appendChild(bookmark_wrapper);
 
         // Append the photo and it's container (contained to have a border radius)
         const img_wrapper = document.createElement('div');
