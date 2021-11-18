@@ -25,8 +25,9 @@
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 8%;
-    padding: 2%;
     background-color: #DEE8F2;
+    margin-left: 40%;
+    margin-right: 40% ;
 }
 
 .popUp > p{
@@ -42,7 +43,7 @@
     justify-content: center;
     padding: 2%;
     margin-bottom: -1%;
-    position: relative;
+
 }
 
 .filter-section > input{ 
