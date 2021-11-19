@@ -20,6 +20,10 @@
     padding-top: 2%;
 }
 
+#recipe-title-items {
+    align-items: center;
+}
+
 .recipeName{
     padding: 2%;
     font-weight: bold;
@@ -63,8 +67,16 @@
     height: auto;
 }
 
+#edit-recipe-button {
+    margin-top: 30px;
+}
+
+#edit-bookmark-div {
+    display: block;
+}
+
 .bookmark{
-    width: 25%;
+    width: 25px;
     height: auto;
     float: right;
     margin-right: 15%;

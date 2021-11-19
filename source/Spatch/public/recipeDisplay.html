@@ -28,11 +28,11 @@
             <input type="image" src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack" />
             <div class="row justify-content-start">
                 <div class="col-8" >
-                    <div class="row ">
+                    <div class="row" id="recipe-title-items">
                         <div class="col-8">
-                                <h1 class="recipeName">Recipe Name </h1>   
+                            <h1 class="recipeName">Recipe Name</h1>   
                         </div>
-                        <div class="col-4">
+                        <div class="col-4" id="edit-bookmark-div">
                             <input type="image" src="./Assets-images/bookmark_empty.svg" name="bookmark" class="bookmark" id="bookmark" />
                         </div>
                     </div>
@@ -71,6 +71,7 @@
 
                         <dt class="col">Tags</dt>
                         <img src="./Assets-images/tag.svg" alt="">
+                        <dt class="col"><button type="button" class="btn btn-primary" id="edit-recipe-button">Edit Recipe</button></dt>
                     </dl>
                 </div>
             </div>
@@ -87,6 +88,8 @@
             </div>
         </div>
     </div>
+    <!-- JS files -->
+    <script src="../scripts/recipeDisplay.js"></script>
     <!-- Injected for nav -->
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
