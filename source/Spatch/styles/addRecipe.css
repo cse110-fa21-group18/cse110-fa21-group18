@@ -1,3 +1,10 @@
+#create-recipe-title {
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
 .create-recipe-input-fields {
     width: 100%;
     padding: 10px;
@@ -49,6 +56,10 @@
     padding: 50px;
 }
 
+#discard-or-create-buttons {
+    margin-top: 20px;
+}
+
 #create-recipe-button {
-    float: right;
+    text-align: right;
 }

@@ -23,7 +23,7 @@
 <body>
     <div id="nav-placeholder"></div>
     <div class="main-content" id="formDiv">
-        <h1>Create Recipe</h1>
+        <h1 id="create-recipe-title">Create Recipe</h1>
         <div id="recipeTitleEntry" class="entryDiv">
             <div class="subTitle">Recipe Title</div>
             <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
@@ -36,20 +36,20 @@
         <div id="imageSelection" class="entryDiv">
             <div class="subTitle">Images</div>
             <!-- <div id="placeholder">upload an image</div> -->
-            <button type="button" class="btn btn-secondary">Upload an image</button>
+            <button type="button" class="btn btn-outline-secondary">Upload an image</button>
         </div>
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
         <div id="cuisineType" class="entryDiv">
             <div class="subTitle">Cuisine type</div>
-            <input type="text" id="cuisineTypeEntry" class="cuisineTypeEntry">
+            <input type="text" class="create-recipe-input-fields" id="cuisineTypeEntry" class="cuisineTypeEntry" placeholder="i.e. Italian, Chinese, etc...">
         </div>
         <span id="totalTime">
             <span class="subTitle">Total Time</span>
-            <input type="text" class="create-recipe-input-fields" id="totalTimeEntry" name="totalTimeEntry">
+            <input type="text" class="create-recipe-input-fields" id="totalTimeEntry" name="totalTimeEntry" placeholder="i.e. XX hrs XX minutes">
         </span>
         <span id="servingSize">
-            <span class="subTitle">Service Size</span>
+            <span class="subTitle">Serving Size</span>
             <select id="servingSizeChoice" name="servingSizeChoice">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -70,7 +70,13 @@
             <div class="subTitle">Instructions</div>
             <textarea class="create-recipe-input-fields" id="instructionsEntry" name="instructionsEntry" rows="5" cols="40" placeholder="Tell the foodies how to make your dish"></textarea>
         </div>
-        <button type="button" id="create-recipe-button" class="btn btn-primary">Create Recipe</button>
+        <div class="row" id="discard-or-create-buttons">
+            <div class="col" id="discard-button">
+                <button type="button" class="btn btn-danger">Discard</button></div>
+            <div class="col" id="create-recipe-button">
+                <button type="button" class="btn btn-primary">Create Recipe</button>
+            </div>
+        </div>
     </div>
 
     <!-- Injected for nav -->
