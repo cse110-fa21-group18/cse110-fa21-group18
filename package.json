@@ -1,1 +1,19 @@
-
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Spatch Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse110-fa21-group18/cse110-fa21-group18.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse110-fa21-group18/cse110-fa21-group18/issues"
+  },
+  "homepage": "https://github.com/cse110-fa21-group18/cse110-fa21-group18#readme"
+}
