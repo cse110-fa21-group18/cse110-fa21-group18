@@ -15,7 +15,7 @@
     <!-- https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
 
     <!-- Our Personal CSS Files -->
-    <link rel='stylesheet' href='../styles/home.css'>
+    <link rel='stylesheet' href='../styles/recipeDisplay.css'>
     <!-- Injected for nav -->
     <link rel='stylesheet' href='../styles/nav.css'>
 </head>
@@ -26,17 +26,24 @@
         
         <div class="main-content">
             <input type="image" src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack" />
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="recipeTitle">
-                        <h1 class="recipeName">Recipe Name <input type="image" src="./Assets-images/bookmark_empty.svg" name="bookmark" class="bookmark" id="bookmark" /></h1>   
+            <div class="row ">
+                <div class="col-8" >
+                    <div class="row ">
+                        <div class="col-8">
+                                <h1 class="recipeName">Recipe Name </h1>   
+                        </div>
+                        <div class="col-4">
+                            <input type="image" src="./Assets-images/bookmark_empty.svg" name="bookmark" class="bookmark" id="bookmark" />
+                        </div>
                     </div>
+                    
+                    
                     <div class="recipeImage">
                         <img src="./Assets-images/recipeImg.svg">
                     </div>
                     
                     <div class="ingredients">
-                        <h2>Ingredients</h2>
+                        <h4>Ingredients</h4>
                         <ul>
                             <li>ingredients 1</li>
                             <li>ingredients 2</li>
@@ -46,16 +53,30 @@
                             <li>ingredients 6</li>
                         </ul>
                     </div>
-                  </div>
+                </div>
                 
-                  <div class="col-sm-4" >
-                    <img src="./Assets-images/infoCard.svg">
-                    
-                  </div>
+                <div class="col-4" style="background-image: url(./Assets-images/infoCard.svg);" >
+                    <dl class="dl-horizontal">
+                        <dt class="col">Created by</dt>
+                        <dd class="col">Author</dd>
+
+                        <dt class="col">Cuisine</dt>
+                        <dd class="col">Type</dd>
+
+                        <dt class="col">Total Time</dt>
+                        <dd class="col">XX min</dd>
+
+                        <dt class="col">Servings</dt>
+                        <dd class="col">XX</dd>
+
+                        <dt class="col">Tags</dt>
+                        <img src="./Assets-images/tag.svg" alt="">
+                    </dl>
+                </div>
             </div>
             
-            <div id="instructions">
-                <h2>Instruction</h2>
+            <div class="instructions">
+                <h4>Instruction</h4>
                 <ol class="list-group list-group-flush">
                     <li class="list-group-item">An item</li>
                     <li class="list-group-item">A second item</li>

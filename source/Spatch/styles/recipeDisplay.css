@@ -2,40 +2,68 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 .main-content {
-    padding: 50px;
+    padding: 5%;
+    text-size-adjust: auto;
 }
+
 .row{
-    width:600px;
-    height:190px;
-    background-color:green;
-    padding-top:20px;
-    padding-left:15px;
-    padding-right:15px;
+    padding-top: 2%;
 }
 
-.back button{
-    padding: 50px;
-    margin-left: 10%;
-}
-
-.recipeTitle{
-    height: 100px;
-    width: 100px;
-}
 h1{
-    vertical-align: middle
+    padding: 2%;
+    font-size:4vw;
+    display: inline;
+}
+
+.recipeImage{
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+.ingredients{
+    padding-top: 5%;
+    
+}
+.ingredients h4{
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.instructions{
+    padding-top: 5%;
+}
+
+.instructions h4{
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+li{
+    font-size: 2.3vw;
+}
+img {
+    width: 100%;
+    height: auto;
 }
 .bookmark{
-    position: absolute;
-    right: 30px;
-    vertical-align: middle
-}
-.infoCard{
+    width: 25%;
+    height: auto;
     float: right;
-    width: 100px;
-    height: 200px;
-    background-color: gray;
+    margin-right: 15%;
+}
+.goBack{
+    width: 3%;
+    height: auto;
+}
+.dl-horizontal{
+    padding: 15%;
+    font-size: 2vw;
+}
+dt{
+    padding-top: 10%;
 }
