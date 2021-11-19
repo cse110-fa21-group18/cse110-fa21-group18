@@ -49,7 +49,7 @@
     align-items: center;
     justify-content: center;
     padding: 2%;
-    margin-bottom: -1%;
+    margin-bottom: 1%;
     margin-left: 10%;
     margin-right: 10%;
 
@@ -68,35 +68,51 @@
     text-align: center;
 }
 
+.filter-slider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .filter-slider > input{
-    width: 25%;
+    width: 95%;
     height: 5%;
+}
+
+
+.submitFilter-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.submitFilter-section > button{
+    width: 60%;
 }
 
 .checkBox-section{
     display: flex;
     flex-direction: row;
-    gap: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
     align-items: center;
-    justify-content: center;
+    padding: 2%;
+    margin-bottom: -1%;
+    margin-left: 15%;
 
-}
-
-#submitFilter {
-    width: 52%;
-    height: 5%;
-    font-size: 60%;
-}
-
-.filterCheckbox, .filterCheckbox > p{
-    display: inline-flex;
-    gap: 5%;
-    font-size: 12%;
-    margin-left: 10%;
-    margin-right: 40%;
     
+}
+.checkBox-section > input{
+    size: 20%;
 }
 
 #showpop, #showTriangle{
