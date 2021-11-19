@@ -44,8 +44,6 @@ jobs:
         # Build and test the project, then
         # deploy to Azure Web App.
         npm install
-        npm run build
-        npm run test 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
@@ -59,3 +57,10 @@ jobs:
       uses: github/super-linter@v4.8.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  code-checker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Codacy Analysis CLI
+      uses: codacy/codacy-analysis-cli-action@4.0.0
+      env:
+        CODACY_PROJECT_TOKEN: S{{ secrets.CODACY_PROJECT_TOKEN }}
