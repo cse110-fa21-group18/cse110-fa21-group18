@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    max-width: 1080px;
+}
+
+.goBack{
+    width: 30px;
+    height: auto;
+}
+
+.row{
+    padding-top: 2%;
+}
+
+#recipe-title-items {
+    align-items: center;
+}
+
+.recipeName{
+    padding: 2%;
+    font-weight: bold;
+    display: inline;
+}
+
+.recipeImage{
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+.ingredients{
+    padding-top: 5%;
+    
+}
+.ingredients h2{
+    font-weight: bold;
+}
+.ingredients li{
+    font-size: 24px;
+}
+
+#infoCard{
+    background-color: #EEEEEE;
+    border-radius: 12px;
+}
+
+.instructions{
+    padding-top: 5%;
+}
+
+.instructions h2{
+    font-weight: bold;
+}
+.instructions li{
+    font-size: 24px;
+}
+
+.recipeImage img {
+    width: 100%;
+    height: auto;
+}
+
+#edit-recipe-button {
+    margin-top: 30px;
+}
+
+#edit-bookmark-div {
+    display: block;
+}
+
+.bookmark{
+    width: 25px;
+    height: auto;
+    float: right;
+    margin-right: 15%;
+}
+
+.dl-horizontal{
+    padding: 15%;
+    font-size: 18px;
+}
+.dl-horizontal img{
+    margin-top: 5%;
+    width: 30%;
+}
+.dl-horizontal dt{
+    padding-top: 10%;
+}
