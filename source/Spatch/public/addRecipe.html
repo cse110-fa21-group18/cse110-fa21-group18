@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+    <title>Add Recipe | Spatch</title>
+    
+    <!-- Favicon -->
+    <link rel='icon' type='image/png' href='/favicon.png'>
+
+    <!-- Bootstrap (goes before our CSS Files) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
+
+    <!-- Our Personal CSS Files -->
+    <link rel="stylesheet" href="../styles/addRecipe.css">
+    <!-- Injected for nav -->
+    <link rel='stylesheet' href='../styles/nav.css'>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="main-content" id="formDiv">
+        <h1 id="create-recipe-title">Create Recipe</h1>
+        <div id="recipeTitleEntry" class="entryDiv">
+            <div class="subTitle">Recipe Title</div>
+            <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
+        </div>
+        <div id="recipeTitleEntry" class="entryDiv">
+            <div class="subTitle">Recipe Description</div>
+            <textarea class="create-recipe-input-fields" id="recipeDescription" name="recipeDescription" rows="3" cols="40" placeholder="Tell us about your recipe"></textarea>
+        </div>
+        <!--Have gray text instructions next to the inputs-->
+        <div id="imageSelection" class="entryDiv">
+            <div class="subTitle">Images</div>
+            <!-- <div id="placeholder">upload an image</div> -->
+            <button type="button" class="btn btn-secondary">Upload an image</button>
+        </div>
+        <!--Try to have suggestions by javascript while entering-->
+        <!--Consider a drop down bar instead-->
+        <div id="cuisineType" class="entryDiv">
+            <div class="subTitle">Cuisine type</div>
+            <input type="text" class="create-recipe-input-fields" id="cuisineTypeEntry" class="cuisineTypeEntry" placeholder="i.e. Italian, Chinese, etc...">
+        </div>
+        <span id="totalTime">
+            <span class="subTitle">Total Time</span>
+            <input type="text" class="create-recipe-input-fields" id="totalTimeEntry" name="totalTimeEntry" placeholder="i.e. XX hrs XX minutes">
+        </span>
+        <span id="servingSize">
+            <span class="subTitle">Serving Size</span>
+            <select id="servingSizeChoice" name="servingSizeChoice">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </span>
+        <div id="diets" class="entryDiv">
+            <div class="subTitle">Diets</div>
+            <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
+        </div>
+        <div id="ingredients" class="entryDiv">
+            <div class="subTitle">Ingredients</div>
+            <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>
+        </div>
+        <div id="instructions" class="entryDiv">
+            <div class="subTitle">Instructions</div>
+            <textarea class="create-recipe-input-fields" id="instructionsEntry" name="instructionsEntry" rows="5" cols="40" placeholder="Tell the foodies how to make your dish"></textarea>
+        </div>
+        <div class="row" id="discard-or-create-buttons">
+            <div class="col" id="discard-button-div">
+                <a role="button" id="discard-button" class="btn btn-danger" href="home.html">Discard</a>
+            </div>
+            <div class="col" id="create-recipe-button-div">
+                <button type="button" id="create-recipe-button" class="btn btn-primary">Create Recipe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Injected for nav -->
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script id="replace_with_navbar" src="../scripts/nav.js"></script>
+</body>

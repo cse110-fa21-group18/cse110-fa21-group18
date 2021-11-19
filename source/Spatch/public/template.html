@@ -16,14 +16,18 @@
 
     <!-- Our Personal CSS Files -->
     <link rel='stylesheet' href='../styles/template.css'>
+    <!-- Injected for nav -->
+    <link rel='stylesheet' href='../styles/nav.css'>
 </head>
 
 <body>
-    <!-- Content goes here -->
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button>Button</button>
+    <div id="nav-placeholder"></div>
+    <div class="main-content">
+        <!-- Main content goes here -->
+    </div>
 
-    <!-- Our Personal JS Files -->
-    <!-- <script src='/scripts/YOUR-SCRIPT-HERE'></script> -->
+    <!-- Injected for nav -->
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script id="replace_with_navbar" src="../scripts/nav.js"></script>
 </body>
 </html>
