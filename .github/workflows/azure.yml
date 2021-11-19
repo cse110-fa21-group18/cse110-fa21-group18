@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Codacy Analysis CLI
-      uses: codacy/codacy-analysis-cli-action@4.0.0
+      uses: codacy/codacy-analysis-cli-action@3.0.3
       env:
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
   jsdoc-generator:
