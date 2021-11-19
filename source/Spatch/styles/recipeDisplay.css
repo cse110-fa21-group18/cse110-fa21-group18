@@ -2,19 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 .main-content {
-    padding: 5%;
-    text-size-adjust: auto;
+    padding: 50px;
+}
+
+.home-top {
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
 .row{
     padding-top: 2%;
 }
 
-h1{
+.recipeName{
     padding: 2%;
     font-size:4vw;
     display: inline;
@@ -43,13 +48,15 @@ h1{
     font-weight: bold;
 }
 
-li{
+.ingredients li{
     font-size: 2.3vw;
 }
-img {
+
+.recipeImage img {
     width: 100%;
     height: auto;
 }
+
 .bookmark{
     width: 25%;
     height: auto;
@@ -64,6 +71,10 @@ img {
     padding: 15%;
     font-size: 2vw;
 }
-dt{
+.dl-horizontal img{
+    margin-top: 5%;
+    width: 30%;
+}
+.dl-horizontal dt{
     padding-top: 10%;
 }
