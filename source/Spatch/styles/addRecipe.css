@@ -1,0 +1,65 @@
+#create-recipe-title {
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.create-recipe-input-fields {
+    width: 100%;
+    padding: 10px;
+}
+
+.subTitle{
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    display: block;
+    height: 1.5em;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.entryDiv{
+    position: relative;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#placeholder{
+    position: relative;
+    height: 5em;
+    width: 10em;
+}
+
+#totalTime{
+    position: relative;
+    display: inline;
+    width: 50%;
+}
+
+#servingSizeChoice {
+    width: 60px;
+}
+
+#servingSize{
+    position: relative;
+    display: inline;
+    width: 50%;
+}
+
+#formDiv{
+    position: absolute;
+    width: 70%;
+    padding: 50px;
+}
+
+#discard-or-create-buttons {
+    margin-top: 20px;
+}
+
+#create-recipe-button {
+    text-align: right;
+}
