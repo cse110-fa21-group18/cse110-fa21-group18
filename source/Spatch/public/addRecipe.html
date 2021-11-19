@@ -26,12 +26,17 @@
         <h1>Create Recipe</h1>
         <div id="recipeTitleEntry" class="entryDiv">
             <div class="subTitle">Recipe Title</div>
-            <input type="text" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
+            <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
+        </div>
+        <div id="recipeTitleEntry" class="entryDiv">
+            <div class="subTitle">Recipe Description</div>
+            <textarea class="create-recipe-input-fields" id="recipeDescription" name="recipeDescription" rows="3" cols="40" placeholder="Tell us about your recipe"></textarea>
         </div>
         <!--Have gray text instructions next to the inputs-->
         <div id="imageSelection" class="entryDiv">
             <div class="subTitle">Images</div>
-            <div id="placeholder"></div>
+            <!-- <div id="placeholder">upload an image</div> -->
+            <button type="button" class="btn btn-secondary">Upload an image</button>
         </div>
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
@@ -41,7 +46,7 @@
         </div>
         <span id="totalTime">
             <span class="subTitle">Total Time</span>
-            <input type="text" id="totalTimeEntry" name="totalTimeEntry">
+            <input type="text" class="create-recipe-input-fields" id="totalTimeEntry" name="totalTimeEntry">
         </span>
         <span id="servingSize">
             <span class="subTitle">Service Size</span>
@@ -55,22 +60,17 @@
         </span>
         <div id="diets" class="entryDiv">
             <div class="subTitle">Diets</div>
-            <textarea id="dietEntry" name="dietEntry" rows="3" cols="40">
-                Tell us about the diets that your recipe supports
-            </textarea>
+            <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
         </div>
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
-            <textarea id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40">
-                Tell us about what materials make your recipe great
-            </textarea>
+            <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>
         </div>
         <div id="instructions" class="entryDiv">
             <div class="subTitle">Instructions</div>
-            <textarea id="instructionsEntry" name="instructionsEntry" rows="5" cols="40">
-                Tell the foodies how to make your dish
-            </textarea>
+            <textarea class="create-recipe-input-fields" id="instructionsEntry" name="instructionsEntry" rows="5" cols="40" placeholder="Tell the foodies how to make your dish"></textarea>
         </div>
+        <button type="button" id="create-recipe-button" class="btn btn-primary">Create Recipe</button>
     </div>
 
     <!-- Injected for nav -->
