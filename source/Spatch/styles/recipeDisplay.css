@@ -22,6 +22,7 @@
 .recipeName{
     padding: 2%;
     font-size:4vw;
+    font-weight: bold;
     display: inline;
 }
 
