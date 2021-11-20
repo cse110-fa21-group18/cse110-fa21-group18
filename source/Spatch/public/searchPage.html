@@ -32,8 +32,10 @@
             <button id="filterToggle"  onclick="toggleFilter()"></button>
         </div>
 
+
         <!-- Filter Display -->
-        <div class="popUp" id="showpop">  
+        <div class="popUp" id="showpop"> 
+
             <!-- cuisine filter -->
             <p>Cuisine</p>
             <div class = "filter-section">
@@ -57,19 +59,20 @@
 
             <!-- Cook Time -->
             <p>Total Cook Time</p>
-            <div class = "filter-section">
+            <div class = "filter-slider">
                 <input id = "cookTime" type="range"></input>
             </div>
             
             <!-- Is the meal cheap -->
-            <div class = "filter-section">
-                <div class = "filterCheckbox">
-                    <input id = "cheap" type="checkBox"></input>
-                    <p>Cheap</p>
-                </div>
-                <button  type="button" id="submitFilter" onclick="toggleFilter()">Submit</button>
+            <div class = "checkBox-section">
+                <input id = "cheap" type="checkBox"></input>
+                <label for="cheap">  Cheap</label>
+            </div>
+            <div class = "submitFilter-section">
+                <button  type="button" onclick="toggleFilter()">Submit</button>
             </div>
         </div> 
+
         
     </div>
     
