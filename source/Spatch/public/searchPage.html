@@ -29,7 +29,9 @@
 
         <div class="SearchBar">
             <input  id="searchInput" placeholder="Search for a Recipe" />
-            <button id="filterToggle"  onclick="toggleFilter()"><img id="filterImage" src="frontEnd1-assets/search-page-icons/filter.png"></img></button>
+            <button id="filterToggle"  onclick="toggleFilter()">
+                <img id="filterImage" src="frontEnd1-assets/search-page-icons/filter.png"></img>
+            </button>
         </div>
 
 
@@ -41,6 +43,9 @@
             <div class = "filter-section">
                 <input id = "cuisine"></input>
                 <button type="button" id="cuisineButton"></button>
+            </div>
+
+            <div class="chosenFilters">
             </div>
 
             <!-- Ingredients filter -->
@@ -66,11 +71,11 @@
             <!-- Is the meal cheap -->
             <div class = "checkBox-section">
                 <input id = "cheap" type="checkBox"></input>
-                <label for="cheap">  Cheap</label>
+                <label for="cheap">Cheap</label>
             </div>
-            <div class = "submitFilter-section">
+            <!-- <div class = "submitFilter-section">
                 <button  type="button" onclick="toggleFilter()">Submit</button>
-            </div>
+            </div> -->
         </div> 
 
         
