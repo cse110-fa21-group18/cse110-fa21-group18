@@ -1,4 +1,6 @@
+// module.exports = { updateRecipesLocalStorage, updateInstructionsLocalStorage, getInstructionsFromStorage, getRecipesFromStorage, getRecipe, getRecipeInstructions, deleteRecipe, updateRecipe, discoverRecipes};
 //necessary variables
+module.exports = {testerr};
 var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
 //var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
 var recipes = [];
@@ -8,53 +10,56 @@ var reccomended = [];
 //sample id for current use
 const recipeId = 324694;
 
+export function testerr(){
+  console.log('was good');
+}
 //sets recipes in localStorage
 function updateRecipesLocalStorage(){
-  localStorage.setItem("recipes", recipes);
+  localStorage.setItem("recipes", JSON.stringify(recipes));
 }
 
 //sets recipe instructions in localstorage
 function updateInstructionsLocalStorage(){
-  localStorage.setItem("instructions", recipeInstructions);
+  localStorage.setItem("instructions", JSON.stringify(recipeInstructions));
 }
 
 //retrieves recipe instructions from localStorage, call on page load
-function getInstructionsFromStorage(){
-  var store = localStorage.getItem("instructions");
-  return JSON.parse(store);
+export function getInstructionsFromStorage(){
+  return JSON.parse(localStorage.getItem("instructions"));
 }
 
 //retrieves recipes from localStorage, call on page load
-function getRecipesFromStorage(){
-  var store = localStorage.getItem("recipes");
-  return JSON.parse(store);
+export function getRecipesFromStorage(){
+  console.log('hello');
+  return JSON.parse(localStorage.getItem("recipes"));
 }
 
 //retrieves recipe information from id, make sure to have apikey input
-function getRecipe(id, apikey){
+async function getRecipe(id, apikey){
 //JSON placeholder is a simple placeholder REST API that returns JSON
-fetch(`https://api.spoonacular.com/recipes/${id}/information?${apikey}`)
+await fetch(`https://api.spoonacular.com/recipes/${id}/information?${apikey}`)
     .then(response=> {
         //response.json() turns the response objects body into JSON
         //response.json() returns a JS promise
         //Use response.text() to turn your response object to text
         return response.json();
     })
-    .then(data=> {
+    .then(async data=> {
         //We have successfully made a GET request!
         //Log the data to the console:
         // console.log(data);
-        recipes.push(JSON.stringify(data));
+        recipes.push(data);
+        // console.log(recipes[0].title);
         // console.log(JSON.parse(recipes));
         updateRecipesLocalStorage();
-        getRecipeInstructions(id, key);
+        await getRecipeInstructions(id, key);
     })
 }
 
 //retrieves recipe instructions from id, make sure to have apikey input
-function getRecipeInstructions(id, apikey){
+async function getRecipeInstructions(id, apikey){
 //JSON placeholder is a simple placeholder REST API that returns JSON
-fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?${apikey}`)
+await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?${apikey}`)
     .then(response=> {
         //response.json() turns the response objects body into JSON
         //response.json() returns a JS promise
@@ -66,7 +71,7 @@ fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?${apikey}`
         //Log the data to the console:
         // console.log(JSON.stringify(data));
         // data = JSON.stringify(data);
-        recipeInstructions.push(JSON.stringify(data));
+        recipeInstructions.push(data);
         // console.log(JSON.parse(recipeInstructions)[0]);
         updateInstructionsLocalStorage();
     })
@@ -99,12 +104,12 @@ function updateRecipe(updatedRecipe, updatedInstructions){
   }
 }
 //searches for and returns an array of num size of recipe objects similar to user's recipes or random
-function discoverRecipes(id, apikey){
+async function discoverRecipes(id, apikey){
   if(recipes.length == 0){
     return ["hola"];
   }
   let index = Math.floor(Math.random() * recipes.length);
-  fetch(`https://api.spoonacular.com/recipes/${id}/similar?${apikey}`)
+  await fetch(`https://api.spoonacular.com/recipes/${id}/similar?${apikey}`)
     .then(response=> {
       //response.json() turns the response objects body into JSON
       //response.json() returns a JS promise
@@ -118,7 +123,6 @@ function discoverRecipes(id, apikey){
       // data = JSON.stringify(data);
       // console.log("awioejf")
       reccomended.push(JSON.stringify(data));
-      console.log(reccomended.length);
       // console.log(JSON.parse(reccomended)[0]);
   })
 }
@@ -133,11 +137,38 @@ function createRecipe(recipe, recipeInstructions){
 
 //call on page load to set current variables to those in localstorage
 function setLocalData(){
-  this.recipes.push(getRecipesFromStorage());
-  this.recipeInstructions.push(getInstructionsFromStorage());
+  recipes = localStorage.getItem("recipes");
+  recipeInstructions = localStorage.getItem("instructions");
+  console.log(JSON.parse(recipes)[0].title);
+  console.log(JSON.parse(recipeInstructions)[0][0].steps[0].step);
 }
-function test(){
-  console.log(reccomended);
+
+async function test(){
+  // localStorage.clear();
+  // setLocalData();
+  
+
+  recipes = getRecipesFromStorage();
+  recipeInstructions = getInstructionsFromStorage();
+  console.log(recipes[0].title);
+  console.log(recipeInstructions[0][0].steps[0].step);
+
+
+  // await getRecipe(recipeId,key);
+  // console.log(recipes[0].title);
+  // console.log(recipeInstructions[0][0].steps[0].step);
+
+
+
+
+  // setLocalData();
+  // console.log(JSON.parse(recipes)[0].title);
+  // console.log(JSON.parse(recipeInstructions));
+  // await getRecipe(recipeId, key);
+  // await discoverRecipes(recipeId, key);
+  // console.log(reccomended);
+  // console.log(recipes);
+  // console.log(recipeInstructions[0][0].steps[0].step);
   // console.log(recipes.length);
   // console.log(recipeInstructions.length);
   // getRecipe(recipeId, key);
@@ -149,12 +180,10 @@ function test(){
   // console.log(recipes[0].title);
 }
 
-setLocalData();
-getRecipe(recipeId, key);
-// discoverRecipes(recipeId, key);
-// console.log(reccomended);
-console.log(recipes);
-console.log(recipeInstructions);
 
-//test();
+
+// getRecipe(recipeId, key);
+test();
+// console.log(recipes);
+// console.log(recipeInstructions);
 
