@@ -6,17 +6,30 @@
     margin-top: 8%;
     margin-left: 20%;
     margin-right: 10%;
+    gap: 1%;
 
 }
 
 #searchInput{
     width: 80%;
     height: 60px;
+    font-size: 30px;
+    left: 5%;
+    color: rgb(56, 55, 55);
 }
+
 
 #filterToggle{
     height: 60px;
-    width: 60px;  
+    width: 60px; 
+    border-radius: 8%;
+
+}
+
+
+#filterImage{
+    height: 40px;
+    width: 40px; 
 }
 
 
@@ -31,7 +44,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     position: absolute;
-    left: 27%;
+    left: 22%;
     width: 20%;
 }
 
