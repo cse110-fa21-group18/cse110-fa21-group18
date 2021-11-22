@@ -47,12 +47,16 @@ class Card extends HTMLElement {
                 height: 60%;
                 border-radius: 10px;
                 overflow: hidden;
+                left: 50%;
+                align-items: center;
             }
 
             img {
+                // Fix later!
                 width: 100%;
-                bottom: 50%;
-                position: relative;
+                // bottom: 50%;
+                // position: relative;
+                height: 100%;
             }
 
             .title {
