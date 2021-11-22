@@ -29,15 +29,16 @@
             <div class="subTitle">Recipe Title</div>
             <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
         </div>
-        <div id="recipeTitleEntry" class="entryDiv">
+        <!-- <div id="recipeTitleEntry" class="entryDiv">
             <div class="subTitle">Recipe Description</div>
             <textarea class="create-recipe-input-fields" id="recipeDescription" name="recipeDescription" rows="3" cols="40" placeholder="Tell us about your recipe"></textarea>
-        </div>
+        </div> -->
         <!--Have gray text instructions next to the inputs-->
         <div id="imageSelection" class="entryDiv">
-            <div class="subTitle">Images</div>
+            <div class="subTitle">Image</div>
+            <p id="currImage">No Current image</p>
             <!-- <div id="placeholder">upload an image</div> -->
-            <button type="button" class="btn btn-secondary">Upload an image</button>
+            <button type="button" class="btn btn-secondary">Upload new image</button>
         </div>
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
@@ -51,18 +52,20 @@
         </span>
         <span id="servingSize">
             <span class="subTitle">Serving Size</span>
-            <select id="servingSizeChoice" name="servingSizeChoice">
+            <input type="text" class="create-recipe-input-fields" id="servingSizeChoice" name="servingSizeChoice" placeholder="">
+
+            <!-- <select id="servingSizeChoice" name="servingSizeChoice">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-            </select>
+            </select> -->
         </span>
-        <div id="diets" class="entryDiv">
+        <!-- <div id="diets" class="entryDiv">
             <div class="subTitle">Diets</div>
             <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
-        </div>
+        </div> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
             <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>
@@ -84,4 +87,6 @@
     <!-- Injected for nav -->
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
+    <script src="../scripts/editRecipeComponent.js"></script>
+    <script src="../scripts/editRecipe.js"></script>
 </body>

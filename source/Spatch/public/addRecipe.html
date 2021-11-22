@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <script src="../scripts/addRecipe.js"></script>
     <div id="nav-placeholder"></div>
     <div class="main-content" id="formDiv">
         <h1 id="create-recipe-title">Create Recipe</h1>
@@ -28,13 +29,13 @@
             <div class="subTitle">Recipe Title</div>
             <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
         </div>
-        <div id="recipeTitleEntry" class="entryDiv">
+        <!-- <div id="recipeTitleEntry" class="entryDiv">
             <div class="subTitle">Recipe Description</div>
             <textarea class="create-recipe-input-fields" id="recipeDescription" name="recipeDescription" rows="3" cols="40" placeholder="Tell us about your recipe"></textarea>
-        </div>
+        </div> -->
         <!--Have gray text instructions next to the inputs-->
         <div id="imageSelection" class="entryDiv">
-            <div class="subTitle">Images</div>
+            <div class="subTitle">Image</div>
             <!-- <div id="placeholder">upload an image</div> -->
             <button type="button" class="btn btn-secondary">Upload an image</button>
         </div>
@@ -58,10 +59,10 @@
                 <option value="5">5</option>
             </select>
         </span>
-        <div id="diets" class="entryDiv">
+        <!-- <div id="diets" class="entryDiv">
             <div class="subTitle">Diets</div>
             <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
-        </div>
+        </div> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
             <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>

@@ -159,21 +159,23 @@ class Card extends HTMLElement {
         wrapper.appendChild(div_cooktime);
 
         // Append the recipie tags
-        const tags_wrapper = document.createElement('div');
-        tags_wrapper.classList.add('tag_wrapper');
+        // const tags_wrapper = document.createElement('div');
+        // tags_wrapper.classList.add('tag_wrapper');
 
-        // TODO Backend
-        const tags = spoonful.tags;
-        tags.forEach(value => {
-            const div_tag = document.createElement('div');
-            div_tag.classList.add('tag_element');
-            div_tag.innerHTML = value;
-            tags_wrapper.appendChild(div_tag);
-        });
-        wrapper.appendChild(tags_wrapper);
+        // // TODO Backend
+        // const tags = spoonful.tags;
+        // tags.forEach(value => {
+        //     const div_tag = document.createElement('div');
+        //     div_tag.classList.add('tag_element');
+        //     div_tag.innerHTML = value;
+        //     tags_wrapper.appendChild(div_tag);
+        // });
+        // wrapper.appendChild(tags_wrapper);
 
         wrapper.addEventListener('click', e => {
-            alert('This selection should route to the recipe info screen for: ' + spoonful.recipe_title);
+            sessionStorage.setItem("clickIndex", spoonful.index);
+            console.log(spoonful.index);
+            document.location.href = 'recipeDisplay.html';
         })        
     }
 }
