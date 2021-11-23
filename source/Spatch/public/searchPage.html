@@ -42,7 +42,7 @@
             <p>Cuisine</p>
             <div class = "filter-section">
                 <input id = "cuisine"></input>
-                <button type="button" id="cuisineButton"></button>
+                <button type="button" id="cuisineButton" onclick="cuisineTag()"></button>
             </div>
 
             <div class="chosenFilters">
@@ -52,20 +52,20 @@
             <p>Ingredients</p>
             <div class = "filter-section">
                 <input id = "ingredients"></input>
-                <button type="button" id="ingredientsButton"></button>
+                <button type="button" id="ingredientsButton" onclick="ingredientsTag()"></button>
             </div>
 
             <!-- Diet Filter -->
             <p>Diet</p>
             <div class = "filter-section">
                 <input id = "diet"></input>
-                <button  type="button" id="dietButton"></button>
+                <button  type="button" id="dietButton" onclick="dietTag()"></button>
             </div>
 
             <!-- Cook Time -->
             <p>Total Cook Time</p>
             <div class = "filter-slider">
-                <input id = "cookTime" type="range"></input>
+                <input id = "cookTime" type="range" min="0" max="20"></input>
             </div>
             
             <!-- Is the meal cheap -->
