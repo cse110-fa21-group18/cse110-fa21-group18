@@ -14,6 +14,10 @@ async function init() {
 
   //   console.log(recipes.length);
   //   console.log(recipeInstructions.length);
+  let ingredientCards = document.getElementById('ingredient-cards');
+  let ingredientCard = document.createElement('ingredient-card');
+  alert(ingredientCard);
+  ingredientCards.appendChild(ingredientCard);
 }
 
 function discardRecipe() {
