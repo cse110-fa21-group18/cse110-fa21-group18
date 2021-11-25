@@ -17,6 +17,16 @@ async function init() {
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
   ingredientCards.appendChild(ingredientCard);
+
+  let addIngredientButton = document.getElementById('add-ingredient-cards');
+  addIngredientButton.addEventListener('click', createIngredientCard);
+}
+
+function createIngredientCard()
+{
+  let ingredientCards = document.getElementById('ingredient-cards');
+  let ingredientCard = document.createElement('ingredient-card');
+  ingredientCards.appendChild(ingredientCard);
 }
 
 function discardRecipe() {
