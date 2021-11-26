@@ -15,6 +15,7 @@ async function init() {
   let addIngredientButton = document.getElementById('add-ingredient-cards');
   addIngredientButton.addEventListener('click', createIngredientCard);
   createIngredientCard();
+}
 
 function createIngredientCard()
 {

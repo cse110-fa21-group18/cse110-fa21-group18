@@ -110,7 +110,7 @@ class Ingredient extends HTMLElement {
 
         const discardButton = document.createElement('button');
         discardButton.classList.add('btn');
-        discardButton.classList.add('btn-danger');
+        discardButton.classList.add('btn-outline-danger');
         discardButton.classList.add('btn-sm');
         discardButton.innerHTML = "Discard";
         mainDiv.appendChild(discardButton);
