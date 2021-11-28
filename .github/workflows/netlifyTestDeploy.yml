@@ -41,7 +41,7 @@ jobs:
     steps:
     - name: JSDoc Action
       uses: andstor/jsdoc-action@v1.2.0
-  code-coverage-reporter:
+  code-coverage-report:
     runs-on: ubuntu-latest
     steps:
     - name: Code Coverage Report
