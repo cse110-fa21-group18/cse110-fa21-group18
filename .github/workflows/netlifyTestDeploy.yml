@@ -41,3 +41,10 @@ jobs:
     steps:
     - name: JSDoc Action
       uses: andstor/jsdoc-action@v1.2.0
+  code-coverage-report:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Code Coverage Report
+      uses: romeovs/lcov-reporter-action@v0.2.11
+      with:
+        lcov-file: ./coverage/lcov.info
