@@ -21,8 +21,8 @@
 </head>
 
 <body>
-        <div id="nav-placeholder"></div>
-        <div class="main-content">
+    <div id="nav-placeholder"></div>
+    <div class="main-content">
 
 
         <!-- SearchBar and Button that displays filter options -->
@@ -41,8 +41,7 @@
             <!-- cuisine filter -->
             <p>Cuisine</p>
             <div class = "filter-section">
-                <input id = "cuisine"></input>
-                <button type="button" id="cuisineButton" onclick="cuisineTag()"></button>
+                <input id = "cuisine" placeholder="i.e. Italian, American, etc"></input>
             </div>
 
             <div class="chosenFilters">
@@ -51,21 +50,24 @@
             <!-- Ingredients filter -->
             <p>Ingredients</p>
             <div class = "filter-section">
-                <input id = "ingredients"></input>
-                <button type="button" id="ingredientsButton" onclick="ingredientsTag()"></button>
+                <input id = "ingredients" placeholder="i.e. tomato, onion, etc"></input>
             </div>
 
             <!-- Diet Filter -->
             <p>Diet</p>
             <div class = "filter-section">
-                <input id = "diet"></input>
-                <button  type="button" id="dietButton" onclick="dietTag()"></button>
+                <input id = "diet" placeholder="i.e. Vegan, Vegetarian, etc"></input>
             </div>
 
             <!-- Cook Time -->
-            <p>Total Cook Time</p>
+            <p>Max Cook Time</p>
             <div class = "filter-slider">
-                <input id = "cookTime" type="range" min="0" max="20"></input>
+                <input id = "timeHr"></input>
+                <label for="timeHr">hr</label>
+
+                <input id = "timeMin"></input>
+                <label for="timeMin">min</label>
+                
             </div>
             
             <!-- Is the meal cheap -->
@@ -73,9 +75,11 @@
                 <input id = "cheap" type="checkBox"></input>
                 <label for="cheap">Cheap</label>
             </div>
-            <!-- <div class = "submitFilter-section">
-                <button  type="button" onclick="toggleFilter()">Submit</button>
-            </div> -->
+
+            <!-- button to apply all filters -->
+            <div class = "submit-filter-section">
+                <button id="applyFilters" onclick="submitFilter()" >Apply Filters</button>
+            </div>
         </div> 
 
         
@@ -83,6 +87,9 @@
     
     <!-- Recipe Results -->
     <div>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          </button>
 
     </div>
 

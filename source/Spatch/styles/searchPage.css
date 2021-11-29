@@ -13,9 +13,10 @@
 #searchInput{
     width: 80%;
     height: 60px;
-    font-size: 30px;
+    font-size: 20px;
     left: 5%;
     color: rgb(56, 55, 55);
+    padding-left: 3%;
 }
 
 
@@ -23,6 +24,9 @@
     height: 60px;
     width: 60px; 
     border-radius: 8%;
+    border-color:#DADADA ;
+    background-color: #DADADA;
+    box-shadow: none;
 
 }
 
@@ -46,6 +50,7 @@
     position: absolute;
     left: 22%;
     width: 20%;
+    min-width: 40px;
 }
 
 
@@ -53,7 +58,7 @@
 .popUp > p{
     font-size: 15px;
     margin-bottom: -2%;
-    text-align: center;
+    padding-left: 15%;
  }
 
 .filter-section{
@@ -69,57 +74,34 @@
 }
 
 .filter-section > input{ 
-    width: 80%;
+    width: 95%;
     height: 10%;
-}
-
-
-
-.filter-section > button{
-    height: 20px;
-    width: 20px; 
-    border-radius: 20%; 
-}
-
-.plusImage{
-    height: 18px;
-    width: 18px; 
+    padding: 3%;
+    font-size: 15px;
+    
 
 }
-
 
 
 .filter-slider{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     padding: 2%;
     margin-bottom: 1%;
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 2%;
 }
 
 .filter-slider > input{
-    width: 95%;
+    width: 25%;
     height: 5%;
+    margin-left: 5%;
+    padding-left: 2%;
 }
 
-
-.submitFilter-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-    margin-bottom: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-
-}
-
-.submitFilter-section > button{
-    width: 60%;
+.filter-slider > label{
+    margin-left: 2%;
 }
 
 .checkBox-section{
@@ -136,11 +118,42 @@
     size: 20%;
 }
 
-#showpop, #showTriangle{
+.checkBox-section > label{
+    margin-left: 3%;
+}
+
+.submit-filter-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.submit-filter-section > button{
+    width: 100px;
+    height: 25px;
+    padding-bottom: 1%;
+    border-radius: 5%; 
+    border-color: #DADADA;
+    background-color: #DADADA;
+    text-align: center;
+    font-size: 13px;
+    min-width: 80px;
+    margin: auto;
+
+
+}
+
+#showpop{
     display: none;
 }
 
-#showpop.show, #showTriangle.show{
+#showpop.show{
     display: block;
 }
 
