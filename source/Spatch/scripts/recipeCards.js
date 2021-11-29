@@ -10,15 +10,15 @@ class Card extends HTMLElement {
         const style = document.createElement('style');
         const styleText = `
             .wrapper {
-                width: 200px;
+                width: 250px;
                 height: 283px;
-                border-style: solid;
-                border: #505050 2px solid;
+                // border-style: solid;
+                border: #999 1px solid;
                 border-radius: 10px;
                 padding: 5px;
                 // float: left;
 
-                box-shadow: 2px 2px darkgray;
+                // box-shadow: 2px 2px darkgray;
                 box-shadow: 1px 1px 10px #999;
                 margin-right: 15px;
                 cursor: pointer;
@@ -29,26 +29,31 @@ class Card extends HTMLElement {
             .wrapper:hover {
                 animation-duration: 0.5s;
                 animation-name: hover_card;
-                box-shadow: 6px 6px #0E6EFD;
+                // border: #000 2px solid;
+                // box-shadow: 6px 6px #0E6EFD;
+                box-shadow: 1px 1px 10px #0E6EFD;
                 cursor: pointer;
             }
 
             @keyframes hover_card {
                 from {
-                    box-shadow: 2px 2px darkgray;
+                    // box-shadow: 2px 2px darkgray;
+                    box-shadow: 1px 1px 10px #999;
                 }
 
                 to {
-                    box-shadow: 6px 6px #0E6EFD;
+                    // border: 2px 2px darkgray;
+                    box-shadow: 1px 1px 10px #0E6EFD;
                 }
             }
 
             .photo_wrapper {
                 height: 60%;
-                border-radius: 10px;
+                border-radius: 5px;
                 overflow: hidden;
                 left: 50%;
                 align-items: center;
+                width: 250px;
             }
 
             img {
@@ -64,11 +69,14 @@ class Card extends HTMLElement {
                 height: 18%;
                 font-size: 170%;
                 font-weight: bold;
+                margin-top: 15px;
+                margin-left: 5px;
             }
 
             .cooktime {
                 color: #505050;
                 height: 11%;
+                margin-left: 5px;
             }
 
             .tag_wrapper {
@@ -106,18 +114,24 @@ class Card extends HTMLElement {
                 position: relative;
                 z-index: 1;
                 background-color: gray;
-                background: url('/source/Spatch/public/Assets-images/bookmark_empty.png') no-repeat;
+                background: url('/source/Spatch/public/Assets-images/circle-bookmark-unchecked.svg') no-repeat;
                 background-size: contain;
+                margin-top:2px;
             }
 
             .bookmark:hover {
-                background: url('/source/Spatch/public/Assets-images/bookmark_hover.png') no-repeat;
+                background: url('/source/Spatch/public/Assets-images/circle-bookmark-checked.svg') no-repeat;
                 background-size: contain;
             }
         `
         // Append the style and create the container element
         style.innerHTML = styleText;
         this.shadowRoot.appendChild(style);
+
+        // temp
+        // const wrapperAll = document.createElement('div');
+        // wrapperAll.classList.add('wrapper');
+        // this.shadowRoot.appendChild(wrapperAll);
 
         const wrapper = document.createElement('div');
         wrapper.classList.add('wrapper');
@@ -180,7 +194,7 @@ class Card extends HTMLElement {
             sessionStorage.setItem("clickIndex", spoonful.index);
             console.log(spoonful.index);
             document.location.href = 'recipeDisplay.html';
-        })        
+        })  
     }
 }
 customElements.define('recipe-card', Card);
