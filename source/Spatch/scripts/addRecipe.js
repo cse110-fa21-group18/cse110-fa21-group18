@@ -18,7 +18,7 @@ async function init() {
 
 function discardRecipe() {
   // TODO: redirect back to home page, no saves
-  document.location.href = 'home.html';
+  document.location.href = '../home.html';
 }
 
 function sendData() {
@@ -107,5 +107,5 @@ function createRecipe() {
   localStorage.setItem("recipes", JSON.stringify(recipes));
 
   // console.log(recipes);
-  document.location.href = 'home.html';
+  document.location.href = '../home.html';
 }
