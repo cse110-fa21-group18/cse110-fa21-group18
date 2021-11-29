@@ -15,7 +15,7 @@
     <!-- https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
 
     <!-- Our Personal CSS Files -->
-    <link rel='stylesheet' href='../styles/home.css'>
+    <link rel='stylesheet' href='../styles/cookbookDisplay.css'>
     <!-- Injected for nav -->
     <link rel='stylesheet' href='../styles/nav.css'>
 </head>
@@ -25,24 +25,14 @@
         <div id="nav-placeholder"></div>
         <div class="main-content">
             <!-- Main home content here -->
-            <div class="row home-top">
-                <div class="col">
-                    <h1>Let's get cooking!</h1>
-                </div>
-                <div class="col create-new-recipe-top">
-                    <a role="button" class="btn btn-primary" href="addRecipe.html">Create new recipe</a>
-                </div>
+            <div>
+                <span id="headerOne"> Cookbook Title </span>
+                <span id="changeToCircle"> ---- </span>
             </div>
             <div class="recipe-row">
-                <h2>All Recipes</h2>
+                <h2>`Cookbook title` Recipes</h2>
                 <div class="row recipe-list">
                     <div id="all-recipes-cards" class="col recipe-display"></div>
-                </div>
-            </div>
-            <div class="recipe-row">
-                <h2>Cookbooks</h2>
-                <div class="row recipe-list">
-                    <div id="all-cookbooks" class="col recipe-display"></div>
                 </div>
             </div>
             <!-- <div class="recipe-row">

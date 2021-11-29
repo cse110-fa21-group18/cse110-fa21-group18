@@ -37,17 +37,20 @@ async function init() {
 
   // fetch the recipes and wait for them to load
   const main = document.querySelector("#all-recipes-cards");
+  const cookbook = document.querySelector("#all-cookbooks");
 
   fakeCardData.forEach((sfData) => {
     const nextCard = document.createElement("recipe-card");
     nextCard.data = sfData;
     main.appendChild(nextCard);
   });
+
+  const fakeCard = document.createElement("cookbook-card");
+  fakeCard.data = fakeCardData[0];
+  cookbook.appendChild(fakeCard);
 }
 
-const fakeCardData = [
-
-];
+const fakeCardData = [];
 
 //SERVICE FUNCTIONS
 
