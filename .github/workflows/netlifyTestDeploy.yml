@@ -21,20 +21,12 @@ jobs:
     environment: production
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-        registry-url: https://npm.pkg.github.com/
-        scope: '@cse110-fa21-group18'
-    - name: Deploy
+   
       run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
     - name: npm install, build, and test
       run: |
         npm install
         npm build
-        npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint:
     runs-on: ubuntu-latest
     steps:
