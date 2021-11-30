@@ -40,7 +40,7 @@ function searchTextInput(){
 Event listener to collect all tags for cuisine filter
 */
 function cuisineTag(){
-  let cuisineFilter = document.getElementById('cuisine');
+  let cuisineFilter = document.getElementById("cuisine");
   return cuisineFilter.value; 
 }
 
