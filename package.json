@@ -4,7 +4,7 @@
   "description": "Spatch Project",
   "main": "home.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@cse110-fa21-fa21-group18"
+    "registry": "https://npm.pkg.github.com/@cse110-fa21-group18"
   },
   "scripts": {
     "test": "jest"
