@@ -104,10 +104,16 @@ class Card extends HTMLElement {
                 background-size: contain;
                 margin-top:2px;
             }
-            .bookmark:hover {
-                background: url('/source/Spatch/public/Assets-images/circle-bookmark-checked.svg') no-repeat;
-                background-size: contain;
-            }
+            // .bookmark:hover {
+            //     width: 60px;
+            //     height: 60px;
+            //     position: relative;
+            //     z-index: 1;
+            //     background-color: gray;
+            //     background: url('/source/Spatch/public/Assets-images/circle-bookmark-checked.svg') no-repeat;
+            //     background-size: contain;
+            //     margin-top:2px;
+            // }
         `
         // Append the style and create the container element
         style.innerHTML = styleText;
