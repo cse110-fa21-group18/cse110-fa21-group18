@@ -31,8 +31,6 @@ jobs:
         # deploy to Azure Web App.
         npm install
         npm build
-        npm pack
-        npm ci
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -77,6 +75,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+          scope: '@htclorina'
       - run: npm ci
       - run: npm publish
         env:
