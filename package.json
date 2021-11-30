@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cse110-fa21-group18/cse110-fa21-group18.git"
+    "url": "git://github.com/cse110-fa21-group18/cse110-fa21-group18.git"
   },
   "author": "",
   "license": "ISC",
