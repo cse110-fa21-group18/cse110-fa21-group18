@@ -56,7 +56,6 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
-          scope: 'cse110-fa21-group18'
       - run: npm install
       - run: npm publish
         env:
