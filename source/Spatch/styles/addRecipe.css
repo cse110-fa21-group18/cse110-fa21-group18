@@ -56,7 +56,9 @@
     padding: 50px;
 }
 
-#discard-or-create-buttons {
+#discard-or-create-buttons,
+#delete-or-edit-buttons
+{
     margin-top: 20px;
 }
 
