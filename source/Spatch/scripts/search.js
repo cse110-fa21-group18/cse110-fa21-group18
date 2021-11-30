@@ -56,7 +56,7 @@ function ingredientsTag(){
 Event listener to collect all tags for diet filter
 */
 function dietTag(){
-  let dietFilter = document.getElementById('diet');
+  let dietFilter = document.getElementById("diet");
   return dietFilter.value;
 }
 
