@@ -41,7 +41,18 @@ async function init() {
     let saveButton = document.getElementById("save-recipe-button");
     deleteButton.addEventListener("click", deleteRecipe);
     saveButton.addEventListener("click", saveChanges);
+
+    let addIngredientButton = document.getElementById('add-ingredient-cards');
+    addIngredientButton.addEventListener('click', createIngredientCard);
+    createIngredientCard();
 };
+
+function createIngredientCard()
+{
+  let ingredientCards = document.getElementById('ingredient-cards');
+  let ingredientCard = document.createElement('ingredient-card');
+  ingredientCards.appendChild(ingredientCard);
+}
 
 //deletes a recipe from the recipes array in localStorage
 function deleteRecipe() {

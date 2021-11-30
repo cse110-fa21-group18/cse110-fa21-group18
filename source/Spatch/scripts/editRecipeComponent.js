@@ -35,12 +35,15 @@ class editRecipe extends HTMLElement {
         servings.setAttribute('value', spoonful.servings ? spoonful.servings : '');
         
         // Ingredients
-        const ingredientsItems = document.querySelector("#ingredientsEntry");
+        // TODO: Edit this to work with the ingredient card format
+        // Would be nice to reference the createIngredientCard function
+        // Create the ingredient cards and fill in the items
+        /*const ingredientsItems = document.querySelector("#ingredientsEntry");
         let ing = spoonful.ingredients[0].name;
         for(let i = 1; i < spoonful.ingredients.length; i ++){
           ing += (", " + spoonful.ingredients[i].name);
         }
-        ingredientsItems.value = ing;
+        ingredientsItems.value = ing;*/
         // console.log(ing);
 
         // Instructions

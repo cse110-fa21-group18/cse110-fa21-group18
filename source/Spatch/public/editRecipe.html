@@ -54,13 +54,6 @@
             <span class="subTitle">Serving Size</span>
             <input type="text" class="create-recipe-input-fields" id="servingSizeChoice" name="servingSizeChoice" placeholder="">
 
-            <!-- <select id="servingSizeChoice" name="servingSizeChoice">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select> -->
         </span>
         <!-- <div id="diets" class="entryDiv">
             <div class="subTitle">Diets</div>
@@ -68,7 +61,26 @@
         </div> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
-            <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>
+            <div id="ingredient-cards">
+                <!--Below is the format that will be added
+                by clicking the "add ingredient button"
+                The three fields are name, amount, and unit
+
+                <div class="ingredient-ind">
+                    <input type="text" class="ingredient-ind-name" name="ingredient-ind-name" placeholder="Ingredient">
+                    <input type="text" class="ingredient-ind-amount" name="ingredient-ind-amount" placeholder="Amount">
+                    <select class="ingredient-ind-unit" name="ingredient-ind-unit">
+                        <option value="lbs">lbs</option>
+                        <option value="kgs">kgs</option>
+                        <option value="pieces">pieces</option>
+                        <option value="ml">ml</option>
+                    </select>
+                    <button class="btn btn-outline-danger btn-sm">Discard</button>
+
+                </div>
+                -->
+            </div>
+            <button class="btn btn-primary" id="add-ingredient-cards">Add ingredient</button>
         </div>
         <div id="instructions" class="entryDiv">
             <div class="subTitle">Instructions</div>
@@ -89,4 +101,5 @@
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
     <script src="../scripts/editRecipeComponent.js"></script>
     <script src="../scripts/editRecipe.js"></script>
+    <script src="../scripts/IngredientInd.js"></script>
 </body>
