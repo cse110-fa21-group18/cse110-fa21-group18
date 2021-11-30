@@ -29,6 +29,7 @@ jobs:
         # deploy to Azure Web App.
         npm install
         npm build
+        npm pack
   lint:
     runs-on: ubuntu-latest
     steps:
