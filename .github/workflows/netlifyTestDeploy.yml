@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-deploy-publish:
+  build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
     environment: production
@@ -25,6 +25,8 @@ jobs:
       run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
     - name: npm install, build, and test
       run: |
+        # Build and test the project, then
+        # deploy to Azure Web App.
         npm install
         npm build
   lint:
@@ -46,4 +48,3 @@ jobs:
       uses: romeovs/lcov-reporter-action@v0.2.11
       with:
         lcov-file: ./coverage/lcov.info
-  
