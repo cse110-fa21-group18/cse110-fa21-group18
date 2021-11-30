@@ -1,14 +1,13 @@
 class Card extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    set data(spoonful) {
-
-        // Similar to how styles were managed in Lab 6
-        const style = document.createElement('style');
-        const styleText = `
+  set data(spoonful) {
+    // Similar to how styles were managed in Lab 6
+    const style = document.createElement("style");
+    const styleText = `
             .wrapper {
                 width: 200px;
                 height: 283px;
@@ -114,73 +113,92 @@ class Card extends HTMLElement {
                 background: url('/source/Spatch/public/Assets-images/bookmark_hover.png') no-repeat;
                 background-size: contain;
             }
-        `
-        // Append the style and create the container element
-        style.innerHTML = styleText;
-        this.shadowRoot.appendChild(style);
+        `;
+    // Append the style and create the container element
+    style.innerHTML = styleText;
+    this.shadowRoot.appendChild(style);
 
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('wrapper');
-        this.shadowRoot.appendChild(wrapper);
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
+    this.shadowRoot.appendChild(wrapper);
 
-        // Append the bookmark button
-        const bookmark_wrapper = document.createElement('div');
-        const bookmark_img = document.createElement('div');
+    // Append the bookmark button
+    const bookmark_wrapper = document.createElement("div");
+    const bookmark_img = document.createElement("div");
 
-        bookmark_wrapper.classList.add('bookmark_wrapper');
-        bookmark_img.classList.add('bookmark');
+    bookmark_wrapper.classList.add("bookmark_wrapper");
+    bookmark_img.classList.add("bookmark");
 
-        bookmark_wrapper.appendChild(bookmark_img);
-        wrapper.appendChild(bookmark_wrapper);
+    bookmark_wrapper.appendChild(bookmark_img);
+    wrapper.appendChild(bookmark_wrapper);
 
-        // Append the photo and it's container (contained to have a border radius)
-        const img_wrapper = document.createElement('div');
-        img_wrapper.classList.add('photo_wrapper');
+    // Append the photo and it's container (contained to have a border radius)
+    const img_wrapper = document.createElement("div");
+    img_wrapper.classList.add("photo_wrapper");
 
-        // TODO: Backend
-        const img = document.createElement('img');
-        img.setAttribute('src', spoonful.image_link);
-        img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.recipe_title));
+    // TODO: Backend
+    const img = document.createElement("img");
+    img.setAttribute("src", spoonful.image_link);
+    img.setAttribute(
+      "alt",
+      spoonful.image_alt
+        ? spoonful.image_alt
+        : "Picture of " + spoonful.recipe_title
+    );
 
-        img_wrapper.appendChild(img);
-        wrapper.appendChild(img_wrapper);
+    img_wrapper.appendChild(img);
+    wrapper.appendChild(img_wrapper);
 
-        // Append the Recipie Title
-        const div_title = document.createElement('div');
-        div_title.classList.add('title');
+    // Append the Recipie Title
+    const div_title = document.createElement("div");
+    div_title.classList.add("title");
 
-        // TODO: Backend
-        div_title.innerHTML = spoonful.recipe_title;
+    // TODO: Backend
+    div_title.innerHTML = spoonful.recipe_title;
 
-        wrapper.appendChild(div_title);
+    wrapper.appendChild(div_title);
 
-        // Append the recipie cooktime
-        const div_cooktime = document.createElement('div');
-        div_cooktime.classList.add('cooktime');
+    // Append the recipie cooktime
+    const div_cooktime = document.createElement("div");
+    div_cooktime.classList.add("cooktime");
 
-        // TODO: Backend
-        div_cooktime.innerHTML = "🕑 " + (spoonful.cook_time ? spoonful.cook_time : '(see recipe)');
-        wrapper.appendChild(div_cooktime);
+    // TODO: Backend
+    div_cooktime.innerHTML =
+      "🕑 " + (spoonful.cook_time ? spoonful.cook_time : "(see recipe)");
+    wrapper.appendChild(div_cooktime);
 
-        // Append the recipie tags
-        // const tags_wrapper = document.createElement('div');
-        // tags_wrapper.classList.add('tag_wrapper');
+    // const bookmarkImage = document.getElementById("edit-bookmark-div");
+    // console.log(JSON.parse(localStorage.getItem("favorites")));
+    // if (
+    //   JSON.parse(localStorage.getItem("favorites")).indexOf(
+    //     sessionStorage.getItem("clickIndex")
+    //   ) > -1
+    // ) {
+    //   bookmarkImage.src = "edit-bookmark-div";
+    // } else {
+    //     bookmarkImage.src = "./Assets-images/bookmark_empty.svg";
+    // }
 
-        // // TODO Backend
-        // const tags = spoonful.tags;
-        // tags.forEach(value => {
-        //     const div_tag = document.createElement('div');
-        //     div_tag.classList.add('tag_element');
-        //     div_tag.innerHTML = value;
-        //     tags_wrapper.appendChild(div_tag);
-        // });
-        // wrapper.appendChild(tags_wrapper);
+    // Append the recipie tags
+    // const tags_wrapper = document.createElement('div');
+    // tags_wrapper.classList.add('tag_wrapper');
 
-        wrapper.addEventListener('click', e => {
-            sessionStorage.setItem("clickIndex", spoonful.index);
-            console.log(spoonful.index);
-            document.location.href = 'recipeDisplay.html';
-        })        
-    }
+    // // TODO Backend
+    // const tags = spoonful.tags;
+    // tags.forEach(value => {
+    //     const div_tag = document.createElement('div');
+    //     div_tag.classList.add('tag_element');
+    //     div_tag.innerHTML = value;
+    //     tags_wrapper.appendChild(div_tag);
+    // });
+    // wrapper.appendChild(tags_wrapper);
+
+    wrapper.addEventListener("click", (e) => {
+      sessionStorage.setItem("clickIndex", spoonful.index);
+
+      console.log(spoonful.index);
+      document.location.href = "recipeDisplay.html";
+    });
+  }
 }
-customElements.define('recipe-card', Card);
+customElements.define("recipe-card", Card);

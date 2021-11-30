@@ -38,8 +38,14 @@
         <div id="imageSelection" class="entryDiv">
             <div class="subTitle">Image</div>
             <!-- <div id="placeholder">upload an image</div> -->
-            <button type="button" class="btn btn-secondary">Upload an image</button>
+            <!-- <button type="button" class="btn btn-secondary">Upload an image</button> -->
+            <div class="form-group">
+                  <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+                  <input type="file" class="form-control-file btn btn-secondary" id="recipeImage">
+            </div>
+            
         </div>
+        
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
         <div id="cuisineType" class="entryDiv">
@@ -66,6 +72,7 @@
             <div class="subTitle">Diets</div>
             <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
         </div> -->
+        <!-- <button onclick="getIngredientList()">ingredient test</button> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
             <div id="ingredient-cards">

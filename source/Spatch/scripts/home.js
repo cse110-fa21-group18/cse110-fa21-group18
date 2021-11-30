@@ -8,6 +8,10 @@ async function init() {
   if (recipes === null) {
     recipes = [];
   }
+  var favorites = JSON.parse(localStorage.getItem("favorites"));
+  if (favorites === null) {
+    favorites = [];
+  }
   //   var recipeInstructions = JSON.parse(localStorage.getItem("instructions"));
   var testingIds = [209128, 31868, 9751, 206706, 209251];
 //   await getRecipe(324694, key, recipes);
