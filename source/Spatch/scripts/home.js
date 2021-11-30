@@ -29,11 +29,6 @@ async function init() {
     fakeCardData.push(test);
     // console.log(recipes[i].analyzedInstructions[0].steps[0].step);
   }
-  //   console.log(testingIds.length);
-  //   for (let j = 0; j < testingIds.length; j++) {
-  //     await getRecipe(testingIds[j], key);
-  //   }
-  //   console.log(recipes.length);
 
   // fetch the recipes and wait for them to load
   const main = document.querySelector("#all-recipes-cards");
@@ -52,7 +47,7 @@ const fakeCardData = [
 //SERVICE FUNCTIONS
 
 //retrieves recipe information from id, make sure to have apikey input
-async function getRecipe(id, apikey, recipeArray, instructions) {
+async function getRecipe(id, apikey, recipeArray) {
   //JSON placeholder is a simple placeholder REST API that returns JSON
   await fetch(`https://api.spoonacular.com/recipes/${id}/information?${apikey}`)
     .then((response) => {
