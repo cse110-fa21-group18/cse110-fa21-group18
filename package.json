@@ -2,10 +2,13 @@
   "name": "cse110-spatch",
   "version": "1.0.0",
   "description": "Spatch Project",
-  "main": "home.html",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github/@htclorina"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cse110-fa21-group18/cse110-fa21-group18.git"
