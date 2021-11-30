@@ -21,6 +21,8 @@
 </head>
 
 <body>
+    <script src="../scripts/addRecipe.js"></script>
+    <script src="../scripts/IngredientInd.js"></script>
     <div id="nav-placeholder"></div>
     <div class="main-content" id="formDiv">
         <h1 id="create-recipe-title">Create Recipe</h1>
@@ -28,16 +30,22 @@
             <div class="subTitle">Recipe Title</div>
             <input type="text" class="create-recipe-input-fields" id="recipeTitle" name="recipeTitle" placeholder="An awesome title for your dish">
         </div>
-        <div id="recipeTitleEntry" class="entryDiv">
+        <!-- <div id="recipeTitleEntry" class="entryDiv">
             <div class="subTitle">Recipe Description</div>
             <textarea class="create-recipe-input-fields" id="recipeDescription" name="recipeDescription" rows="3" cols="40" placeholder="Tell us about your recipe"></textarea>
-        </div>
+        </div> -->
         <!--Have gray text instructions next to the inputs-->
         <div id="imageSelection" class="entryDiv">
-            <div class="subTitle">Images</div>
+            <div class="subTitle">Image</div>
             <!-- <div id="placeholder">upload an image</div> -->
-            <button type="button" class="btn btn-secondary">Upload an image</button>
+            <!-- <button type="button" class="btn btn-secondary">Upload an image</button> -->
+            <div class="form-group">
+                  <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+                  <input type="file" class="form-control-file btn btn-secondary" id="recipeImage">
+            </div>
+            
         </div>
+        
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
         <div id="cuisineType" class="entryDiv">
@@ -48,6 +56,8 @@
             <span class="subTitle">Total Time</span>
             <input type="text" class="create-recipe-input-fields" id="totalTimeEntry" name="totalTimeEntry" placeholder="i.e. XX hrs XX minutes">
         </span>
+
+
         <span id="servingSize">
             <span class="subTitle">Serving Size</span>
             <select id="servingSizeChoice" name="servingSizeChoice">
@@ -58,13 +68,33 @@
                 <option value="5">5</option>
             </select>
         </span>
-        <div id="diets" class="entryDiv">
+        <!-- <div id="diets" class="entryDiv">
             <div class="subTitle">Diets</div>
             <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
-        </div>
+        </div> -->
+        <!-- <button onclick="getIngredientList()">ingredient test</button> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
-            <textarea class="create-recipe-input-fields" id="ingredientsEntry" name="ingredientsEntry" rows="3" cols="40" placeholder="Tell us about what materials make your recipe great"></textarea>
+            <div id="ingredient-cards">
+                <!--Below is the format that will be added
+                by clicking the "add ingredient button"
+                The three fields are name, amount, and unit
+
+                <div class="ingredient-ind">
+                    <input type="text" class="ingredient-ind-name" name="ingredient-ind-name" placeholder="Ingredient">
+                    <input type="text" class="ingredient-ind-amount" name="ingredient-ind-amount" placeholder="Amount">
+                    <select class="ingredient-ind-unit" name="ingredient-ind-unit">
+                        <option value="lbs">lbs</option>
+                        <option value="kgs">kgs</option>
+                        <option value="pieces">pieces</option>
+                        <option value="ml">ml</option>
+                    </select>
+                    <button class="btn btn-outline-danger btn-sm">Discard</button>
+
+                </div>
+                -->
+            </div>
+            <button class="btn btn-primary" id="add-ingredient-cards">Add ingredient</button>
         </div>
         <div id="instructions" class="entryDiv">
             <div class="subTitle">Instructions</div>

@@ -25,7 +25,7 @@
         <div id="nav-placeholder"></div>
         
         <div class="main-content" >
-            <input type="image" src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack" />
+            <a href="home.html"><img src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack"></a>
             <div class="row justify-content-start">
                 <div class="col-8" >
                     <div class="row" id="recipe-title-items">
@@ -44,13 +44,13 @@
                     
                     <div class="ingredients">
                         <h2>Ingredients</h2>
-                        <ul>
-                            <li>ingredients 1</li>
-                            <li>ingredients 2</li>
+                        <ul id="ingredientList" >
+                            <!-- <li class="ingredients-items">Ingredients</li> -->
+                            <!-- <li>ingredients 2</li>
                             <li>ingredients 3</li>
                             <li>ingredients 4</li>
                             <li>ingredients 5</li>
-                            <li>ingredients 6</li>
+                            <li>ingredients 6</li> -->
                         </ul>
                     </div>
                 </div>
@@ -58,19 +58,19 @@
                 <div class="col-4" id="infoCard"  >
                     <dl class="dl-horizontal">
                         <dt class="col">Created by</dt>
-                        <dd class="col">Author</dd>
+                        <dd id="author" class="col">Author</dd>
 
                         <dt class="col">Cuisine</dt>
-                        <dd class="col">Type</dd>
+                        <dd id="cuisine" class="col">Type</dd>
 
                         <dt class="col">Total Time</dt>
-                        <dd class="col">XX min</dd>
+                        <dd id="totalTime" class="col">XX min</dd>
 
                         <dt class="col">Servings</dt>
-                        <dd class="col">XX</dd>
+                        <dd id="servings" class="col">XX</dd>
 
-                        <dt class="col">Tags</dt>
-                        <img src="./Assets-images/tag.svg" alt="">
+                        <!-- <dt class="col">Tags</dt>
+                        <img src="./Assets-images/tag.svg" alt=""> -->
                         <dt class="col"><button type="button" class="btn btn-primary" id="edit-recipe-button">Edit Recipe</button></dt>
                     </dl>
                 </div>
@@ -78,20 +78,22 @@
             
             <div class="instructions">
                 <h2>Instruction</h2>
-                <ol class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
+                <ol id="instructionList" class="list-group list-group-flush">
+                    <!-- <li class="instruction-item list-group-item">An item</li> -->
+                    <!-- <li class="list-group-item">A second item</li>
                     <li class="list-group-item">A third item</li>
                     <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item">And a fifth one</li> -->
                   </ol>
             </div>
         </div>
     </div>
     <!-- JS files -->
     <script src="../scripts/recipeDisplay.js"></script>
+    <script src ="../scripts/recipeDisplayComponent.js"></script>
+    
     <!-- Injected for nav -->
-    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <!-- <script src="//code.jquery.com/jquery.min.js"></script>  -->
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
 </body>
 </html>

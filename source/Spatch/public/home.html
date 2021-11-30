@@ -4,7 +4,7 @@
 <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
 
-    <title>Title</title>
+    <title>Home | Spatch</title>
 
     <!-- Favicon -->
     <link rel='icon' type='image/png' href='/favicon.png'>
@@ -34,19 +34,18 @@
                 </div>
             </div>
             <div class="recipe-row">
+                <h2>Favorites</h2>
+                <div class="row recipe-list">
+                    <div id="favorites-cards" class="col recipe-display"></div>
+                </div>
+            </div>
+            <div class="recipe-row">
                 <h2>My Recipes</h2>
                 <div class="row recipe-list">
-                    <div class="col recipe-display"></div>
+                    <div id="all-recipes-cards" class="col recipe-display"></div>
                 </div>
             </div>
-            <!-- <div class="recipe-row">
-                <h4>Recents</h4>
-                <div class="row">
-                    <div class="col recipe-display">
-                        some cards to display here
-                    </div>
-                </div>
-            </div>
+            <!--
             <div class="recipe-row">
                 <h4>My Cookbooks</h4>
                 <div class="row">
@@ -79,11 +78,10 @@
                     </div>
                 </div>
             </div> -->
-            <a role="button" href="recipeDisplay.html">temp recipe display</a>
         </div>
     </div>
     <!-- Injected for nav -->
-    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
     <!-- Recipe card -->
     <script src="../scripts/home.js"></script>
