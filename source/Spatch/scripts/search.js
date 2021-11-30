@@ -70,7 +70,7 @@ function cookingTimeHr(){
 }
 
 function cookingTimeMin(){
-  let timeMinutes = document.getElementById('timeMin');
+  let timeMinutes = document.getElementById("timeMin");
   return timeMinutes.value;
 }
 
