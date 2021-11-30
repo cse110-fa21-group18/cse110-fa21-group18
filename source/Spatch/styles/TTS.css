@@ -2,7 +2,7 @@
     padding-left: 10px;
     font-size: 2em;
     border-style: solid;
-    max-width: 14%;
+    max-width: 200px;
     margin-bottom: 10px;
 }
 
@@ -10,7 +10,7 @@
     padding-left: 10px;
     font-size: 2em;
     border-style: solid;
-    max-width: 7%;
+    max-width: 150px;
 }
 
 i:hover {
