@@ -12,8 +12,16 @@ async function init() {
 
   //   var recipeInstructions = JSON.parse(localStorage.getItem("instructions"));
 
-  //   console.log(recipes.length);
-  //   console.log(recipeInstructions.length);
+  let addIngredientButton = document.getElementById('add-ingredient-cards');
+  addIngredientButton.addEventListener('click', createIngredientCard);
+  createIngredientCard();
+}
+
+function createIngredientCard()
+{
+  let ingredientCards = document.getElementById('ingredient-cards');
+  let ingredientCard = document.createElement('ingredient-card');
+  ingredientCards.appendChild(ingredientCard);
 }
 
 function discardRecipe() {

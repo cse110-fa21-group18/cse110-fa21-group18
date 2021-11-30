@@ -4,6 +4,7 @@ async function init() {
     // TODO: extract the recipe id from url and access localstorage
     // to bring data into the form
     var recipes = JSON.parse(localStorage.getItem("recipes"));
+    // At the moment localStorage does not appear to contain anything
     if (recipes === null) {
       recipes = [];
     }

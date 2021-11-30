@@ -67,3 +67,34 @@
 #save-recipe-button-div {
     text-align: right;
 }
+
+.ingredient-ind {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.ingredient-ind-name{
+    display: inline-block;
+    position: relative;
+    width: 35%;
+    height: 100%;
+    margin-right: 1em;
+}
+
+.ingredient-ind-amount {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    margin-right: 1em;
+}
+
+.ingredient-ind-unit {
+    display: inline-block;
+    position: relative;
+    width: 15%;
+    height: 100%;
+    margin-right: 1em;
+}
