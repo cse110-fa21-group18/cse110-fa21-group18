@@ -102,10 +102,15 @@
 #instruction-cards {
     display: inline-block;
     position: relative;
-    width: 70%;
+    width: 90%;
     padding: 0.5em;
     border-radius: 5px;
     border-width: 0.3em;
     border-style: solid;
     border-color: #0d6efd;
+    margin-bottom: 1em;
+}
+
+#ingredient-cards {
+    margin-bottom: 1em;
 }

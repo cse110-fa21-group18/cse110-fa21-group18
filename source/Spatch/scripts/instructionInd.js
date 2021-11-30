@@ -13,6 +13,7 @@ class InstructionCard extends HTMLElement {
                 border-style: solid;
                 border-width: 1px;
                 padding: 0.5em 0.5em 0.5em 1em;
+                margin-bottom: 0.5em;
             }
 
             .instruction-text {
@@ -25,20 +26,22 @@ class InstructionCard extends HTMLElement {
             .instruction-time {
                 display: inline-block;
                 position: absolute;
-                right: 0;
-                width: 20%;
+                right: 3%;
+                width: 25%;
+            }
+
+            .instruction-time-input {
+                width: 100%;
             }
 
             .instruction-unit {
-                position: absolute;
-                right: 1em;
-                top: 0.6em;
+                margin-left: -20px;
             }
 
             .instruction-discard {
                 position: absolute;
-                right: 3.1em;
-                bottom: 1.4em;
+                right: 3%;
+                bottom: 15%;
             }
         `
         style.innerHTML = styleText;
@@ -60,22 +63,25 @@ class InstructionCard extends HTMLElement {
         this.shadowRoot.appendChild(mainDiv);
 
         const insText = document.createElement('textarea');
-        insText.cols = 40;
+        insText.cols = 50;
         insText.rows = 3;
         insText.name = 'instruction-ind-text';
         insText.classList.add('instruction-text');
         mainDiv.appendChild(insText);
 
+        const insTimeContainer = document.createElement('span');
+        insTimeContainer.classList.add('instruction-time');
         const insTime = document.createElement('input');
-        insTime.classList.add('instruction-time');
+        insTime.classList.add('instruction-time-input');
         insTime.name = 'instruction-ind-time';
         insTime.placeholder = 'Time taken';
-        mainDiv.appendChild(insTime);
+        insTimeContainer.appendChild(insTime);
 
         const insUnit = document.createElement('span');
         insUnit.classList.add('instruction-unit');
         insUnit.innerHTML = 'M';
-        mainDiv.appendChild(insUnit);
+        insTimeContainer.appendChild(insUnit);
+        mainDiv.appendChild(insTimeContainer);
 
         let discardButton = document.createElement('button');
         discardButton.classList.add('btn');
