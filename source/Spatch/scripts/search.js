@@ -65,7 +65,7 @@ function dietTag(){
 Event listener to collect data for cooking time
 */
 function cookingTimeHr(){
-  let timeHour = document.getElementById('timeHr');
+  let timeHour = document.getElementById("timeHr");
   return timeHour.value;
 }
 
