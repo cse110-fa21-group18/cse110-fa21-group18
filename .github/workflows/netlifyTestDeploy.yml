@@ -21,7 +21,7 @@ jobs:
     environment: production
     steps:
     - uses: actions/checkout@v2
-   
+    - name: Deploy
       run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
     - name: npm install, build, and test
       run: |
