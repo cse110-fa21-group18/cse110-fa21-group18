@@ -1,5 +1,5 @@
 {
-  "name": "package.json",
+  "name": "spatch",
   "version": "1.0.0",
   "description": "Spatch Project",
   "main": "index.js",
