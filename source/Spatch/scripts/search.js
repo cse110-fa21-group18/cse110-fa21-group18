@@ -3,7 +3,7 @@ Function that toggles between showing filter options
 */
 function toggleFilter(){
   let filterPopUp = document.getElementById('showpop');
-  filterPopUp.classList.toggle('show');
+  filterPopUp.classList.toggle("show");
 }
  
 /*
