@@ -79,6 +79,6 @@ function cookingTimeMin(){
 Event listener to collect all for whether something is cheap
 */
 function isCheapFilters(){
-  let cheapFilter = document.getElementById('cheap');
+  let cheapFilter = document.getElementById("cheap");
   return cheapFilter.checked;
 }
