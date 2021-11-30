@@ -22,7 +22,7 @@ Event listener to submit request once 'Enter' key is hit for search
 */
 let searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('keypress', function (keyBoardEvent) {
-  if (keyBoardEvent.key === 'Enter') {
+  if (keyBoardEvent.key === "Enter") {
     console.log("search input: " + searchTextInput() );
 
   }
