@@ -2,7 +2,7 @@
   "name": "cse110-group18-spatch-package",
   "version": "1.0.0",
   "description": "Spatch Project",
-  "main": "home.js",
+  "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@cse110-fa21-group18"
   },
