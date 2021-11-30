@@ -66,6 +66,7 @@ class InstructionCard extends HTMLElement {
         insText.cols = 50;
         insText.rows = 3;
         insText.name = 'instruction-ind-text';
+        insText.placeholder = 'Guide the foodies through this step';
         insText.classList.add('instruction-text');
         mainDiv.appendChild(insText);
 

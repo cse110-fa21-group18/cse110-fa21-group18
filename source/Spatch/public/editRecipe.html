@@ -83,8 +83,10 @@
             <button class="btn btn-primary" id="add-ingredient-cards">Add ingredient</button>
         </div>
         <div id="instructions" class="entryDiv">
-            <div class="subTitle">Instructions</div>
-            <textarea class="create-recipe-input-fields" id="instructionsEntry" name="instructionsEntry" rows="5" cols="40" placeholder="Tell the foodies how to make your dish"></textarea>
+            <!--The JS will insert instruction card elements-->
+            <div id="instruction-cards">
+            </div>
+            <button class="btn btn-primary" id="add-instruction-cards">Add step</button>
         </div>
         <div class="row" id="delete-or-edit-buttons">
             <div class="col" id="delete-button-div">
@@ -102,4 +104,5 @@
     <script src="../scripts/editRecipeComponent.js"></script>
     <script src="../scripts/editRecipe.js"></script>
     <script src="../scripts/IngredientInd.js"></script>
+    <script src="../scripts/InstructionInd.js"></script>
 </body>
