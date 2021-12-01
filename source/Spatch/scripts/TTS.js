@@ -1,3 +1,15 @@
+window.addEventListener("DOMContentLoaded", init);
+
+async function init() {
+    const textTTS = document.getElementById("textTTS");
+    const TTSElement = document.createElement("recipe-tts");
+    TTSElement.data = {
+        step: "1",
+        text: "instruction"
+    };
+    textTTS.appendChild(TTSElement);
+}
+
 let speech = new SpeechSynthesisUtterance(document.querySelector('instructions').textContent);     //I just grabbed the text from a section called instructions that we can change later
 
 let toggleState = 0;
