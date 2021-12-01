@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    font-family: 'Cabin';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-wrap: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* overflow-x: hidden;  */
+}
+
+.nav1 {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.nav2 {
+    background-color: white;
+}
+
+section {
+    height: 100vh;
+    top:0;
+    transition: 0.5s;
+    display: flex;
+    padding: 100px;
+    background: black;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding: 20px 100px;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 80px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.overallDescriptions {
+    background-color: white;
+}
+
+.recipeBtn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 600;
+    color: black;
+    background: white;
+}
+
+header ul {
+    display: flex;
+    position: relative;
+}
+
+header ul li {
+    list-style: none;
+    display: inline-block;
+    font-weight: 300;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.navItems {
+    text-decoration: none;
+    color: white;
+}
+
+.features {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.description {
+    position: relative;
+    max-width: 800px;
+    color:white;
+    line-height: 25px;  
+    margin-right:200px
+}
+
+h3 {
+    line-height: 1.5em;
+    font-weight: 800;
+    font-size: 4em;
+    color: white;
+}
+
+span {
+    font-size: 2em;
+}
+
+.chefImg {
+    max-width: 800px;
+    border-radius: 30%;
+    top: 30px;
+    filter:brightness(90%);
+    position:relative;
+    display:flex;
+    flex-shrink: 0;
+}
+
+.ingImg {
+    border-radius: 30%;
+    filter:brightness(90%);
+    position:relative;
+    display:flex;
+    max-width: 800px;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.section2Description {
+    left: 100px;
+}
+
+.section2Btn {
+    color: white;
+    background: black;
+}
+
+.worldImg {
+    max-width: 800px;
+    border-radius: 20%;
+    min-height: 500px;
+    margin-left: 100px;
+}
+
+.detailFeature {
+    background-color: #FFFF8F;
+    width: 300px;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10%;
+}
+
+.logoImg {
+    width: 100px;   
+    height: 100px;
+    border-radius: 50%;
+}
+
+.featureTitle {
+    margin-top: -150px;
+    margin-bottom: 60px;
+    text-align:center;
+    padding-right: 50px;
+    font-size: 60px;
+    position: relative;
+    background-color:#FFFF8F;
+    border-radius: 50%;
+
+}
+
+h2 {
+    padding-bottom: 10px;
+    padding-top: 50px;
+}
+
+.overviewImg {
+    position:absolute;
+    top: -10px;
+    transform: translateX(80%);
+}
+
+.fewFeatures {
+    display: flex;
+    flex-shrink: 0; 
+    text-align: center;
+    padding-left: 50px;
+    width: auto;
+    padding-left: 130px;
+    position: relative;
+    line-height: 25px;
+    flex-shrink: 0;
+}
+
+.overview {
+    margin-top: 10%;
+    width: 100%;
+}
+
+.actionTitle {
+    text-align: center;
+    position: absolute;
+    color: white;
+    width: 1370px;
+    margin-bottom: 0;
+    font-size: 600%;
+    margin: 4%;
+    font-family: 'Lobster';
+
+}
+
+.actionTitle2 {
+    color: white;
+    width: 1300px;
+    height: 300px;
+    font-size: 400%;
+    margin: 16% 5%;
+    text-align: center;
+    position: absolute;
+    font-family: 'Dancing Script';
+}
+
+
+.actionBtn {
+    padding: 8px 20px;
+    border-radius: 60px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    background: white;
+    font-size: 3em;
+    max-height: 12%;
+    margin-top: 31%;
+    margin-left: 40%;
+    z-index: 1;
+}
