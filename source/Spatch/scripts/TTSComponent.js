@@ -4,7 +4,7 @@ class TTS extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
-    set data(text) {
+    set data(instruction) {
         // code here
 
         // css
@@ -58,7 +58,7 @@ class TTS extends HTMLElement {
 
         // Title
         const TTStitle = document.createElement('h3');
-        TTStitle.textContent = "TTS for step " + text.step;
+        TTStitle.textContent = "TTS for step " + instruction.step;
         wrapper.appendChild(TTStitle);
 
         // row col divs
@@ -83,8 +83,98 @@ class TTS extends HTMLElement {
         restartButton.textContent = "Restart";
         ttsRow.appendChild(restartButton);
 
-        // set the TTS
+        // === setting the TTS ===
+
+        let speech = new SpeechSynthesisUtterance(instruction.text);  
+        // let toggleState = 0;
+        window.speechSynthesis.cancel();
+
+        // Set Speech Language
+        speech.lang = "en";
+
         
+
+        // let voices = []; // global array of available voices
+
+        // function get_voices() {
+        //     return new Promise(
+        //         function (resolve, reject) {
+        //             // let synth = window.speechSynthesis;
+        //             let id;
+        
+        //             id = setInterval(() => {
+        //                 if (window.speechSynthesis.getVoices().length !== 0) {
+        //                     resolve(window.speechSynthesis.getVoices());
+        //                     clearInterval(id);
+        //                 }
+        //             }, 10);
+        //         }
+        //     )
+        // }
+
+        // // Get List of Voices
+        // window.speechSynthesis.onvoiceschanged = () => {
+        //     // Get List of Voices
+        //     voices = window.speechSynthesis.getVoices();
+          
+        //     // Initially set the First Voice in the Array.
+        //     speech.voice = voices[0];
+        //   };
+        // voices = get_voices()
+        // voices.then(function(voice) {
+            
+        // });
+
+        // speech.voice = voices[0];
+
+        // speech.volume = 100;
+
+        
+        playButton.addEventListener("click", ()=> {
+            window.speechSynthesis.speak(speech);
+        });
+
+    //     function toggleIcon(x) {
+    //         x.classList.toggle("fa-pause-circle");        //Pause
+    //         window.speechSynthesis.resume();
+    //         if(toggleState) {
+    //             toggleState = 0;
+    //         }
+    //         else {
+    //             toggleState = 1;
+    //         }
+    //     }
+
+    //     playButton.addEventListener("click", () => {
+    //         console.log(typeof instruction.text);
+
+    //         window.speechSynthesis.speak(speech);
+
+    //         console.log(window.speechSynthesis.speaking);
+
+    //         speech.onend = function(event) {
+    //             console.log('Utterance has finished being spoken after ' + event.elapsedTime + ' seconds.');
+    //         };
+
+    //         if(toggleState) {
+    //             window.speechSynthesis.speak(speech);
+    //             playButton.innerHTML = 'TTS Instructions <i onclick="toggleIcon(this)" class="fa fa-pause-circle">';   //Pause
+    //             speech.onend = function() {
+    //                 playButton.innerHTML = 'TTS Instructions <i onclick="toggleIcon(this)" class="fa fa-play-circle">';   //Play
+    //                 window.speechSynthesis.cancel();
+    //                 toggleState = 0;
+    //             }
+    //         }
+    //         else {
+    //             window.speechSynthesis.pause();
+    //             playButton.innerHTML = 'TTS Instructions <i onclick="toggleIcon(this)" class="fa fa-play-circle">';   //Resume
+    //         }
+    //     })
+
+    //     restartButton.addEventListener("click", () => {
+    //         window.speechSynthesis.cancel();
+    //     })
+
     }
 }
 customElements.define('recipe-tts', TTS);

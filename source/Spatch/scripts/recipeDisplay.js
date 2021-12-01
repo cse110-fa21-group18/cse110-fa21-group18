@@ -37,7 +37,7 @@ async function init() {
   });
 
   const bookmarkImage = document.getElementById("bookmark");
-  console.log(JSON.parse(localStorage.getItem("favorites")).indexOf(sessionStorage.getItem('clickIndex')) > -1);
+//   console.log(JSON.parse(localStorage.getItem("favorites")).indexOf(sessionStorage.getItem('clickIndex')) > -1);
   if (
     JSON.parse(localStorage.getItem("favorites")).indexOf(
       sessionStorage.getItem("clickIndex")
