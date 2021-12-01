@@ -1,0 +1,19 @@
+.btn_design {
+    padding-left: 10px;
+    font-size: 2em;
+    border-style: solid;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.btn_rst_design {
+    padding-left: 10px;
+    font-size: 2em;
+    border-style: solid;
+    max-width: 150px;
+}
+
+i:hover {
+    color:red;
+    cursor: pointer;
+}
