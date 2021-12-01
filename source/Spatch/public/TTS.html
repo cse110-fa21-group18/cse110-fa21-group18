@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+      <!-- need to include this link on recipeDisplay -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../styles/TTS.css">
+
+    <title>Text to Speech</title>
+    <style>
+      
+    </style>
+
+  </head>
+  <body>
+    <h1>Text to Speech</h1>
+
+    <instructions>
+      <h1>These are the steps</h1>
+      <p>Step 1. Open the bags of food <br>
+         Step 2. Take out the foods in the bag <br>
+         Step 3. Organize the food into bowls <br>
+         Step 4. Serve to your guests and enjoy
+      </p>
+    </instructions>
+    
+      <div id="start_pause_btn" class="btn_design">
+        TTS Instructions <i  onclick="toggleIcon(this)" class="fa fa-play-circle"></i>    <!--Play-->
+      </div>
+      <div id="restart_btn" class="btn_rst_design">
+        Restart <i  onclick="restartText(this)" class="fa fa-refresh"></i>
+      </div>
+
+    <div id="textTTS"></div>
+  </body>
+  <script src="../scripts/TTSComponent.js"></script>
+  <script src="../scripts/TTS.js"></script>
+</html>
