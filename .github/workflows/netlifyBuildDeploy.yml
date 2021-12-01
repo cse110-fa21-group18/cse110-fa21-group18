@@ -36,6 +36,11 @@ jobs:
       uses: github/super-linter@v4.8.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  auto-minify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Auto Minify
+      uses: nizarmah/auto-minify@v2.1.1 
   jsdoc-generator:
     runs-on: ubuntu-latest
     steps:
