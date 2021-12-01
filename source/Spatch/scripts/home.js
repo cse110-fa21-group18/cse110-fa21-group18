@@ -53,11 +53,11 @@ async function init() {
         currInd = parseInt(favorites[i]);
         console.log(currInd);
         const eachFav = {
-        image_link: recipes[i].image,
-        recipe_title: recipes[i].title,
-        cook_time: recipes[i].readyInMinutes + " minutes",
+        image_link: recipes[currInd].image,
+        recipe_title: recipes[currInd].title,
+        cook_time: recipes[currInd].readyInMinutes + " minutes",
         tags: ["Norway food", "easy"],
-        index: i
+        index: currInd
         };
         fav.push(eachFav);
         // console.log(recipes[i].analyzedInstructions[0].steps[0].step);
