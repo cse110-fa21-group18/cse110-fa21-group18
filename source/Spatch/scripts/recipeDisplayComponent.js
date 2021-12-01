@@ -58,17 +58,17 @@ class Display extends HTMLElement {
             listItem.classList.add("instruction-item");
             listItem.classList.add("list-group-item");
             listItem.appendChild(
-                document.createTextNode(spoonful.instructions[k].steps[i].step)
+                document.createTextNode("Step "+(i+1) + ": " + spoonful.instructions[k].steps[i].step)
             );
-            instructionList.appendChild(listItem);
-            // console.log(document.createTextNode(spoonful.instructions[k].steps[i].step));
             // set up TTS
             const TTSElement = document.createElement("recipe-tts");
             TTSElement.data = {
-                step: i + 1,
-                text: spoonful.instructions[k].steps[i].step
+                // step: i + 1,
+                text: "Step " + (i + 1) + spoonful.instructions[k].steps[i].step
             };
-            instructionList.appendChild(TTSElement);
+            listItem.appendChild(TTSElement);
+            instructionList.appendChild(listItem);
+            // console.log(document.createTextNode(spoonful.instructions[k].steps[i].step));
         }
     }
     //   console.log(spoonful.instructions[0].steps.length);

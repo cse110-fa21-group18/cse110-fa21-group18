@@ -16,16 +16,34 @@ class TTS extends HTMLElement {
             //     content: "\f09a";
             // }
             .wrapper {
-                width: 200px;
-                height: 100px;
-                background-color: #ddd;
+                width: 50%;
+                background-color: #FFEFAA;
                 border-radius: 10px;
                 padding: 20px;
                 padding-top: 1px;
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
             .tts-button {
                 display: block;
-                float:left;
+                // float:left;
+                width: 50px;
+                height: 40px;
+                color: #FFF;
+                background-color: #0B5ED7;
+                border: none;
+                border-radius: 10px;
+            }
+            .tts-button:hover {
+                display: block;
+                // float:left;
+                width: 50px;
+                height: 40px;
+                color: #0B5ED7;
+                background-color: #FFF;
+                border: solid 1px #0B5ED7;
+                border-radius: 10px;
+                cursor: pointer;
             }
             .btn_design {
                 padding-left: 10px;
@@ -58,7 +76,7 @@ class TTS extends HTMLElement {
 
         // Title
         const TTStitle = document.createElement('h3');
-        TTStitle.textContent = "TTS for step " + instruction.step;
+        TTStitle.textContent = "TTS";
         wrapper.appendChild(TTStitle);
 
         // row col divs
@@ -78,10 +96,10 @@ class TTS extends HTMLElement {
         playButton.classList.add("tts-button");
         ttsRow.appendChild(playButton);
         // Restart button
-        const restartButton = document.createElement("button");
-        restartButton.classList.add("tts-button");
-        restartButton.textContent = "Restart";
-        ttsRow.appendChild(restartButton);
+        // const restartButton = document.createElement("button");
+        // restartButton.classList.add("tts-button");
+        // restartButton.textContent = "Restart";
+        // ttsRow.appendChild(restartButton);
 
         // === setting the TTS ===
 
