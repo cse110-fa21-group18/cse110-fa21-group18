@@ -47,12 +47,15 @@ async function init() {
 
     // ==== Favorites ====
     const fav = [];
+    let currInd = 0;
 
     for (let i = 0; i < favorites.length; i++) {
+        currInd = parseInt(favorites[i]);
+        console.log(currInd);
         const eachFav = {
-        image_link: favorites[i].image,
-        recipe_title: favorites[i].title,
-        cook_time: favorites[i].readyInMinutes + " minutes",
+        image_link: recipes[i].image,
+        recipe_title: recipes[i].title,
+        cook_time: recipes[i].readyInMinutes + " minutes",
         tags: ["Norway food", "easy"],
         index: i
         };
@@ -62,7 +65,7 @@ async function init() {
 
     // fetch the recipes and wait for them to load
     const favSection = document.querySelector("#favorites-cards");
-
+    console.log(favorites);
     fav.forEach((favData) => {
         const favCard = document.createElement("recipe-card");
         favCard.data = favData;

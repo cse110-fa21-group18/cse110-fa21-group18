@@ -26,6 +26,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 
   // Initially set the First Voice in the Array.
   speech.voice = voices[0];
+  console.log(voices[0]);
 };
 
 speech.volume = 100;
