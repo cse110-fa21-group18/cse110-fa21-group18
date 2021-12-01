@@ -1,11 +1,8 @@
 {
-  "name": "cse110-group18-spatch-package",
+  "name": "cse110-spatch",
   "version": "1.0.0",
   "description": "Spatch Project",
   "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "test": "jest"
   },
