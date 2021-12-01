@@ -2,18 +2,29 @@
 <html lang = "en">
     <head>
         <meta charset = "UTF-8">
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+        <title>Recipe | Spatch</title>
+    
+        <!-- Favicon -->
+        <link rel='icon' type='image/png' href='/favicon.png'>
+    
+        <!-- Bootstrap (goes before our CSS Files) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
         <title>Ate Teen Landing Page</title>                   <!--This is the title of the landing page-->
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../styles/index.css">
     </head>
     <body>
         <section class ="nav1">
             <header>
                 <img src = "Assets-images/logo.png" class = "logo">
                 <ul>
-                    <li><a href="#" class = "navItems">Home</a></li>
-                    <li><a href="#" class = "navItems">Recipes</a></li>
-                    <li><a href="#" class = "navItems">Explore</a></li>   
-                    <li><a href="#" class = "navItems">About us</a></li>
+                    <li><a href="home.html" class = "navItems">Home</a></li>
+                    <li><a href="home.html" class = "navItems">Recipes</a></li>
+                    <li><a href="searchPage.html" class = "navItems">Explore</a></li>   
+                    <!-- <li><a href="#" class = "navItems">About us</a></li> -->
                 </ul>
             </header>
             <div class = "features">
@@ -23,7 +34,7 @@
                     <p> Welcome to the amazing Team Ate Teen Recipe Page. It is our mission to provide to you the easiest and most accessible means of 
                         creating and looking up any number of recipes to your liking. Don't be shy, remember what the great Auguste Gusteau said <b>"Anyone can cook"!</b>
                     </p>
-                    <a href="#" class="recipeBtn">Find Recipes</a>
+                    <a href="searchPage.html" class="recipeBtn">Find Recipes</a>
                 </div>
                 <div class = "recipeBookDiv">
                     <img src ="Assets-images/GusteauImg.png" class="chefImg">
@@ -41,7 +52,7 @@
                         the create my own recipe feature in our application. If you want to learn more about this feature please keep scrolling down. Or you can click
                         the <b>Create Recipe</b> button and be on your way.
                     </p>
-                    <a href="#" class="recipeBtn section2Btn">Create Recipe</a>
+                    <a href="home.html" class="recipeBtn section2Btn">Create Recipe</a>
                 </div>
             </div>
         </section>
@@ -55,7 +66,7 @@
                         as much as I have enjoyed your time here. One of our other biggest feature is our exploration page. If you are curious about what exactly
                         explroation entitles, continue scrolling to give it a quick read.
                     </p>
-                    <a href="#" class="recipeBtn section3Btn">Explore Recipes</a>
+                    <a href="searchPage.html" class="recipeBtn section3Btn">Explore Recipes</a>
                 </div>
                 <div class = "recipeBookDiv">
                     <img src ="Assets-images/worldFood.png" class="worldImg">
@@ -107,7 +118,7 @@
         <section nav1 callToActionPage>
             <h1 class="actionTitle">Is This The Recipe Book For You?</h1>
             <h1 class="actionTitle2">Only One Way To Find Out!</h1>
-            <a href="#" class="actionBtn">Click Here</a>
+            <a href="home.html" class="actionBtn">Click Here</a>
         </section>
     </body>
 </html>
