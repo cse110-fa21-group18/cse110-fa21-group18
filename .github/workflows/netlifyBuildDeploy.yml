@@ -60,7 +60,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://www.npmjs.com/package/cse110-spatch
       - run: npm install
       - run: npm publish
         env:
