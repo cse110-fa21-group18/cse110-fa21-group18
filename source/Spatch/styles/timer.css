@@ -8,7 +8,9 @@ body {
     display: inline-block;
     padding: 24px 32px;
     border-radius: 30px;
-    background: #D5D5D5;
+    background: #c6e2ff;
+    display: inline-block;
+    margin-left: 20px;
   }
   
   .timer__part {
