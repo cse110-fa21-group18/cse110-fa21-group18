@@ -1,5 +1,13 @@
 window.addEventListener("DOMContentLoaded", init);
 
+// Would be much more elegant to have
+// registerDrag and dropped
+// be in instructionInd
+// but I kept getting an error
+// saying "import and export can only
+// appear at the top level
+// of a module"
+
 async function init() {
   var recipes = JSON.parse(localStorage.getItem("recipes"));
   if (recipes === null) {
@@ -19,6 +27,8 @@ async function init() {
   let addInstructionButton = document.getElementById('add-instruction-cards');
   addInstructionButton.addEventListener('click', createInstructionCard);
   createInstructionCard();
+
+  numberCards();
 }
 
 function createIngredientCard()
@@ -28,11 +38,40 @@ function createIngredientCard()
   ingredientCards.appendChild(ingredientCard);
 }
 
+function registerDrag(ev)
+{
+    ev.dataTransfer.setData('dragged', ev.target);
+}
+
+function dropped(ev)
+{
+    let dragged = ev.dataTransfer.getData('dragged');
+    let draggedIndex = dragged.indexNo;
+    let targetIndex = ev.target.indexNo;
+    alert(draggedIndex);
+    alert(targetIndex);
+}
+
 function createInstructionCard()
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
+  instructionCard.draggable = true;
+  instructionCard.ondragstart = registerDrag;
+  instructionCard.ondrop = dropped;
   instructionCards.appendChild(instructionCard);
+}
+
+function numberCards()
+{
+  let instructionCards = document.getElementById('instruction-cards');
+  instructionCards = instructionCards.children;
+  for(let i=0; i<instructionCards.length; i++)
+  {
+    let curCard = instructionCards[i].shadowRoot.lastElementChild;
+    curCard = curCard.lastElementChild;
+    curCard.innerHTML = '#' + (i+1);
+  }
 }
 
 function discardRecipe() {

@@ -43,6 +43,14 @@ class InstructionCard extends HTMLElement {
                 right: 3%;
                 bottom: 15%;
             }
+
+            .instruction-ind-index {
+                color: #0d6efd;
+                position: absolute;
+                top: 48%;
+                right: 22%;
+                font-size: 1.8em;
+            }
         `
         style.innerHTML = styleText;
         this.shadowRoot.appendChild(style);
@@ -93,6 +101,19 @@ class InstructionCard extends HTMLElement {
         mainDiv.appendChild(discardButton);
 
         discardButton.addEventListener('click', removeElement);
+
+        this.indexNote = document.createElement('span');
+        this.indexNote.classList.add('instruction-ind-index');
+        this.indexNote.innerHTML = '#1';
+        mainDiv.appendChild(this.indexNote);
+
+        this.indexNo = 1;
+    }
+
+    set indexNo(index)
+    {
+        this.indexNote.innerHTML = '#' + index;
+        // this.indexNo = index;
     }
 }
 
