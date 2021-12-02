@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "description": "Spatch Project",
   "main": "index.js",
+  "publishConfig": {
+  "registry":"https://npm.pkg.github.com/@htclorina"
+  },
   "scripts": {
     "test": "jest"
   },
