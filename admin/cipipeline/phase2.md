@@ -1,0 +1,1 @@
+For phase 2 of the pipeline we have implemented code coverage reports, minification, and packaging. However, we are running into issues with publishing our package through the pipeline. While we have successesfully done so manually through vsc (published release is currently outdated), we have yet to get it functioning with the pipeline. 

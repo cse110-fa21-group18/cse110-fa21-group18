@@ -21,15 +21,17 @@
 </head>
 
 <body>
-        <div id="nav-placeholder"></div>
-        <div class="main-content">
+    <div id="nav-placeholder"></div>
+    <div class="main-content">
 
 
         <!-- SearchBar and Button that displays filter options -->
 
         <div class="SearchBar">
-            <input  id="searchInput" placeholder="Search"/>
-            <button id="filterToggle"  onclick="toggleFilter()"></button>
+            <input  id="searchInput" placeholder="Search for a Recipe" />
+            <button id="filterToggle"  onclick="toggleFilter()">
+                <img id="filterImage" src="frontEnd1-assets/search-page-icons/filter.png"></img>
+            </button>
         </div>
 
 
@@ -39,37 +41,44 @@
             <!-- cuisine filter -->
             <p>Cuisine</p>
             <div class = "filter-section">
-                <input id = "cuisine"></input>
-                <button type="button" id="cuisineButton"></button>
+                <input id = "cuisine" placeholder="i.e. Italian, American, etc"></input>
+            </div>
+
+            <div class="chosenFilters">
             </div>
 
             <!-- Ingredients filter -->
             <p>Ingredients</p>
             <div class = "filter-section">
-                <input id = "ingredients"></input>
-                <button type="button" id="ingredientsButton"></button>
+                <input id = "ingredients" placeholder="i.e. tomato, onion, etc"></input>
             </div>
 
             <!-- Diet Filter -->
             <p>Diet</p>
             <div class = "filter-section">
-                <input id = "diet"></input>
-                <button  type="button" id="dietButton"></button>
+                <input id = "diet" placeholder="i.e. Vegan, Vegetarian, etc"></input>
             </div>
 
             <!-- Cook Time -->
-            <p>Total Cook Time</p>
+            <p>Max Cook Time</p>
             <div class = "filter-slider">
-                <input id = "cookTime" type="range"></input>
+                <input id = "timeHr"></input>
+                <label for="timeHr">hr</label>
+
+                <input id = "timeMin"></input>
+                <label for="timeMin">min</label>
+                
             </div>
             
             <!-- Is the meal cheap -->
             <div class = "checkBox-section">
                 <input id = "cheap" type="checkBox"></input>
-                <label for="cheap">  Cheap</label>
+                <label for="cheap">Cheap</label>
             </div>
-            <div class = "submitFilter-section">
-                <button  type="button" onclick="toggleFilter()">Submit</button>
+
+            <!-- button to apply all filters -->
+            <div class = "submit-filter-section">
+                <button id="applyFilters" onclick="submitFilter()" >Apply Filters</button>
             </div>
         </div> 
 
@@ -78,6 +87,9 @@
     
     <!-- Recipe Results -->
     <div>
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          </button>
 
     </div>
 

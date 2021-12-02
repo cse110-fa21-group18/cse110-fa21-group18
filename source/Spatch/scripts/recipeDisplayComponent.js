@@ -54,13 +54,21 @@ class Display extends HTMLElement {
 
         for (let i = 0; i < spoonful.instructions[k].steps.length; i++) {
         //   console.log(spoonful.instructions[0].steps[i].step);
-        var listItem = document.createElement("li");
-        listItem.classList.add("instruction-item");
-        listItem.classList.add("list-group-item");
-        listItem.appendChild(
-            document.createTextNode(spoonful.instructions[k].steps[i].step)
-        );
-        instructionList.appendChild(listItem);
+            var listItem = document.createElement("li");
+            listItem.classList.add("instruction-item");
+            listItem.classList.add("list-group-item");
+            listItem.appendChild(
+                document.createTextNode("Step "+(i+1) + ": " + spoonful.instructions[k].steps[i].step)
+            );
+            // set up TTS
+            const TTSElement = document.createElement("recipe-tts");
+            TTSElement.data = {
+                // step: i + 1,
+                text: "Step " + (i + 1) + spoonful.instructions[k].steps[i].step
+            };
+            listItem.appendChild(TTSElement);
+            instructionList.appendChild(listItem);
+            // console.log(document.createTextNode(spoonful.instructions[k].steps[i].step));
         }
     }
     //   console.log(spoonful.instructions[0].steps.length);
