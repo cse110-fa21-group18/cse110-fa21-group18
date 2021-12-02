@@ -92,15 +92,15 @@ class InstructionCard extends HTMLElement {
         insTimeContainer.appendChild(insUnit);
         mainDiv.appendChild(insTimeContainer);
 
-        let discardButton = document.createElement('button');
-        discardButton.classList.add('btn');
-        discardButton.classList.add('btn-outline-danger');
-        discardButton.classList.add('btn-sm');
-        discardButton.classList.add('instruction-discard');
-        discardButton.innerHTML = "Discard";
-        mainDiv.appendChild(discardButton);
+        this.discardButton = document.createElement('button');
+        this.discardButton.classList.add('btn');
+        this.discardButton.classList.add('btn-outline-danger');
+        this.discardButton.classList.add('btn-sm');
+        this.discardButton.classList.add('instruction-discard');
+        this.discardButton.innerHTML = "Discard";
+        mainDiv.appendChild(this.discardButton);
 
-        discardButton.addEventListener('click', removeElement);
+        // this.discardButton.addEventListener('click', removeElement);
 
         this.indexNote = document.createElement('span');
         this.indexNote.classList.add('instruction-ind-index');
@@ -113,13 +113,12 @@ class InstructionCard extends HTMLElement {
     set indexNo(index)
     {
         this.indexNote.innerHTML = '#' + index;
-        // this.indexNo = index;
     }
 }
 
-function removeElement(clicked)
-{
-    clicked.target.parentElement.remove();
-}
+// function removeElement(clicked)
+// {
+//     clicked.target.parentElement.remove();
+// }
 
 customElements.define('instruction-card', InstructionCard);

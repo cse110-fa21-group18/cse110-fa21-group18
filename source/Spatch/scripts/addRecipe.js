@@ -27,8 +27,6 @@ async function init() {
   let addInstructionButton = document.getElementById('add-instruction-cards');
   addInstructionButton.addEventListener('click', createInstructionCard);
   createInstructionCard();
-
-  numberCards();
 }
 
 function createIngredientCard()
@@ -38,28 +36,38 @@ function createIngredientCard()
   ingredientCards.appendChild(ingredientCard);
 }
 
-function registerDrag(ev)
-{
-    ev.dataTransfer.setData('dragged', ev.target);
-}
-
-function dropped(ev)
-{
-    let dragged = ev.dataTransfer.getData('dragged');
-    let draggedIndex = dragged.indexNo;
-    let targetIndex = ev.target.indexNo;
-    alert(draggedIndex);
-    alert(targetIndex);
-}
+// Non-functional drag event handlers
+// The div won't move even if draggable is set to true
+// If you solve the issue, we could have dragging
+// for the instruction cards
+//
+// function registerDrag(ev)
+// {
+//     ev.dataTransfer.setData('dragged', ev.target);
+// }
+// 
+// function dropped(ev)
+// {
+//     let dragged = ev.dataTransfer.getData('dragged');
+//     let draggedIndex = dragged.indexNo;
+//     let targetIndex = ev.target.indexNo;
+//     alert(draggedIndex);
+//     alert(targetIndex);
+// }
 
 function createInstructionCard()
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
-  instructionCard.draggable = true;
-  instructionCard.ondragstart = registerDrag;
-  instructionCard.ondrop = dropped;
+  // More commands that would be useful for dragging
+  //
+  // instructionCard.draggable = true;
+  // instructionCard.ondragstart = registerDrag;
+  // instructionCard.ondrop = dropped;
+  instructionCard.discardButton.addEventListener('click', delCard);
   instructionCards.appendChild(instructionCard);
+
+  numberCards();
 }
 
 function numberCards()
@@ -68,9 +76,21 @@ function numberCards()
   instructionCards = instructionCards.children;
   for(let i=0; i<instructionCards.length; i++)
   {
-    let curCard = instructionCards[i].shadowRoot.lastElementChild;
-    curCard = curCard.lastElementChild;
-    curCard.innerHTML = '#' + (i+1);
+    instructionCards[i].indexNo = i + 1;
+  }
+}
+
+function delCard(event)
+{
+  let index = Number(event.target.parentElement.lastElementChild.innerHTML.substring(1));
+  let instructionCard = document.getElementById('instruction-cards');
+  instructionCards = instructionCard.children;
+  instructionCard.removeChild(instructionCards[index-1]);
+  instructionCards = instructionCard.children;
+  for(let i=index-1; i<instructionCards.length; i++)
+  {
+    let curIndex = Number(instructionCards[i].shadowRoot.lastElementChild.lastElementChild.innerHTML.substring(1));
+    instructionCards[i].indexNo = curIndex - 1;
   }
 }
 
