@@ -35,10 +35,15 @@ async function init() {
 
 }
 
+function submitFilter() {
+  removePreviousSearch();
+  getFilteredResults();
+  toggleFilter();
+}
+
 function removePreviousSearch(){
   const recipeResultsCards = document.querySelectorAll('.recipe-results > result-card');
   for(let i = 0; i < recipeResultsCards.length; i++){
-    console.log(recipeResultsCards[i]);
     recipeResultsCards[i].remove();
   }
 }
@@ -51,12 +56,6 @@ function loadRecipeCards(){
     recipeResults.appendChild(recipeResultsCard);
 
   }
-}
-
-function submitFilter() {
-  removePreviousSearch();
-  getFilteredResults();
-  toggleFilter();
 }
 
 
@@ -159,7 +158,7 @@ async function getSearchResults() {
       searchResults = data;
       sessionStorage.setItem('search', searchResults);
       loadRecipeCards();
-      // console.log(searchResults);
+      console.log(searchResults);
       // console.log(recipes[0].title);
       // console.log(JSON.parse(recipes));
       // localStorage.setItem("recipes", JSON.stringify(recipeArray));
