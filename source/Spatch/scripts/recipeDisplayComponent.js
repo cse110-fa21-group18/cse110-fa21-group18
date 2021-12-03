@@ -53,14 +53,36 @@ class Display extends HTMLElement {
     for(let k = 0; k < spoonful.instructions.length; k ++){
 
         for (let i = 0; i < spoonful.instructions[k].steps.length; i++) {
+            // Instructions
         //   console.log(spoonful.instructions[0].steps[i].step);
-        var listItem = document.createElement("li");
-        listItem.classList.add("instruction-item");
-        listItem.classList.add("list-group-item");
-        listItem.appendChild(
-            document.createTextNode(spoonful.instructions[k].steps[i].step)
-        );
-        instructionList.appendChild(listItem);
+            var listItem = document.createElement("li");
+            listItem.classList.add("instruction-item");
+            listItem.classList.add("list-group-item");
+            listItem.appendChild(
+                document.createTextNode("Step "+(i+1) + ": " + spoonful.instructions[k].steps[i].step)
+            );
+            const ttstimerDiv = document.createElement("div");
+            // set up TTS
+            const TTSElement = document.createElement("recipe-tts");
+            TTSElement.data = {
+                // step: i + 1,
+                text: "Step " + (i + 1) + spoonful.instructions[k].steps[i].step
+            };
+            ttstimerDiv.appendChild(TTSElement);
+            ttstimerDiv.classList.add("tts-timer-div");
+            // listItem.appendChild(TTSElement);
+            
+            //Timer
+            const timerDiv = document.createElement("div");
+            timerDiv.classList.add("timer");
+            ttstimerDiv.appendChild(timerDiv);
+            // listItem.appendChild(timerDiv);
+            new Timer(timerDiv);
+            listItem.appendChild(ttstimerDiv);
+
+            instructionList.appendChild(listItem);
+            // console.log(document.createTextNode(spoonful.instructions[k].steps[i].step));
+            
         }
     }
     //   console.log(spoonful.instructions[0].steps.length);

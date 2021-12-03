@@ -4,8 +4,13 @@ async function init() {
     // TODO: extract the recipe id from url and access localstorage
     // to bring data into the form
     var recipes = JSON.parse(localStorage.getItem("recipes"));
+    // At the moment localStorage does not appear to contain anything
     if (recipes === null) {
       recipes = [];
+    }
+    var favorites = JSON.parse(localStorage.getItem("favorites"));
+    if (favorites === null) {
+      favorites = [];
     }
     
     // Get recipe data schema
@@ -26,18 +31,25 @@ async function init() {
       },
     ];
 
+    sessionStorage.setItem(
+      "pic",
+      recipes[sessionStorage.getItem("clickIndex")].image
+    );
+
     // Set each recipe data
     const main = document.querySelector('.main-content');
 
     fakeCardData.forEach(sfData => {
         const editRecipe = document.createElement('edit-recipe');
-        editRecipe.setData(sfData, false);
+        editRecipe.data = sfData;
         main.appendChild(editRecipe);
     });
 
     // Set functionality of delete and save changes buttons
     let deleteButton = document.getElementById("delete-button");
     let saveButton = document.getElementById("save-recipe-button");
+    let uploadButton = document.getElementById("recipeImage");
+    uploadButton.addEventListener("change", storeImage);
     deleteButton.addEventListener("click", deleteRecipe);
     saveButton.addEventListener("click", saveChanges);
 };
@@ -84,7 +96,7 @@ function saveChanges() {
         extendedIngredientsList.push(currIngredientItem);
       }
 
-    // recipes[sessionStorage.getItem("clickIndex")].image = document.querySelector("#currImage").value;
+    recipes[sessionStorage.getItem("clickIndex")].image = sessionStorage.getItem('pic');
     // console.log(document.querySelector("#currImage").value);
     recipes[sessionStorage.getItem("clickIndex")].title = document.getElementById("recipeTitle").value;
     recipes[sessionStorage.getItem("clickIndex")].readyInMinutes = document.querySelector("#totalTimeEntry").value;
@@ -101,4 +113,23 @@ function saveChanges() {
 
     localStorage.setItem("recipes", JSON.stringify(recipes));
     document.location.href = 'recipeDisplay.html';
+}
+
+function getBase64(file) {
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    // console.log(reader.result);
+    sessionStorage.setItem("pic", reader.result);
+  };
+  reader.onerror = function (error) {
+    console.log("Error: ", error);
+  };
+}
+
+function storeImage() {
+  var files = document.getElementById("recipeImage").files;
+  if (files.length > 0) {
+    getBase64(files[0]);
+  }
 }
