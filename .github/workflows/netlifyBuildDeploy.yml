@@ -15,18 +15,29 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-and-deploy:
+  build-deploy-publish:
     name: Build and Deploy
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
     - name: Deploy
       run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.5.0
+      with:
+        node-version: 14
+        registry-url: https://npm.pkg.github.com/
+        scope: '@cse110-fa21-group18'
+    - run: npm install
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: npm install, build, and test
       run: |
         # Build and test the project, then
-        # deploy to Azure Web App.
+        # deploy to netlify.
         npm install
         npm build
   lint:
@@ -53,16 +64,3 @@ jobs:
       uses: romeovs/lcov-reporter-action@v0.2.11
       with:
         lcov-file: ./coverage/lcov.info
-  publish-gpr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-          registry-url: https://www.npmjs.com/
-      - run: npm install
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
