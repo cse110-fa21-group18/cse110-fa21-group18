@@ -6,7 +6,10 @@ class CookbookCard extends HTMLElement {
 
     setInfo(data, idx) {
 
-        console.log(data);
+        let localRecipes = JSON.parse(localStorage.getItem("recipes"));
+        if (localRecipes === null) {
+            localRecipes = [];
+        }
         
         // Similar to how styles were managed in Lab 6
         const style = document.createElement('style');
@@ -166,7 +169,8 @@ class CookbookCard extends HTMLElement {
             wrapper.appendChild(img_wrapper);
         } else if (data.recipes.length < 4) {
             const img = document.createElement('img');
-            img.setAttribute('src', 'https://spoonacular.com/recipeImages/199621-556x370.jpg');
+            const src = localRecipes[data.recipes[0]]['image'] ? localRecipes[data.recipes[0]]['image'] : localRecipes[data.recipes[0]]['image_link'];
+            img.setAttribute('src', src);
     
             img_wrapper.appendChild(img);
             wrapper.appendChild(img_wrapper);
@@ -179,10 +183,15 @@ class CookbookCard extends HTMLElement {
             const img3 = document.createElement('img');
             const img4 = document.createElement('img');
 
-            img1.setAttribute('src', 'https://spoonacular.com/recipeImages/199621-556x370.jpg');
-            img2.setAttribute('src', 'https://spoonacular.com/recipeImages/199621-556x370.jpg');
-            img3.setAttribute('src', 'https://spoonacular.com/recipeImages/199621-556x370.jpg');
-            img4.setAttribute('src', 'https://spoonacular.com/recipeImages/199621-556x370.jpg');
+            const src1 = localRecipes[data.recipes[0]]['image'] ? localRecipes[data.recipes[0]]['image'] : localRecipes[data.recipes[0]]['image_link'];
+            const src2 = localRecipes[data.recipes[1]]['image'] ? localRecipes[data.recipes[1]]['image'] : localRecipes[data.recipes[1]]['image_link'];
+            const src3 = localRecipes[data.recipes[2]]['image'] ? localRecipes[data.recipes[2]]['image'] : localRecipes[data.recipes[2]]['image_link'];
+            const src4 = localRecipes[data.recipes[3]]['image'] ? localRecipes[data.recipes[3]]['image'] : localRecipes[data.recipes[3]]['image_link'];
+
+            img1.setAttribute('src', src1);
+            img2.setAttribute('src', src2);
+            img3.setAttribute('src', src3);
+            img4.setAttribute('src', src4);
 
             img1.classList.add('fourPane');
             img2.classList.add('fourPane');
