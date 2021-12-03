@@ -59,7 +59,15 @@
     font-weight: bold;
 }
 .instructions li{
-    font-size: 24px;
+    font-size: 28px;
+}
+.instruction-item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.tts-timer-div {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .recipeImage img {

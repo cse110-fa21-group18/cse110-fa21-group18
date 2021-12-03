@@ -16,13 +16,21 @@ class TTS extends HTMLElement {
             //     content: "\f09a";
             // }
             .wrapper {
-                width: 50%;
+                width: 200px;
                 background-color: #FFEFAA;
-                border-radius: 10px;
-                padding: 20px;
-                padding-top: 1px;
+                border-radius: 30px;
+                // padding: 2px 24px;
+                padding: 1px;
+                // padding-top: 1px;
                 margin-top: 10px;
                 margin-bottom: 10px;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+            }
+            .tts-title {
+                display: inline-block;
+                margin-right: 20px;
             }
             .tts-button {
                 display: block;
@@ -33,9 +41,10 @@ class TTS extends HTMLElement {
                 background-color: #0B5ED7;
                 border: none;
                 border-radius: 10px;
+                display: inline-block;
             }
             .tts-button:hover {
-                display: block;
+                // display: block;
                 // float:left;
                 width: 50px;
                 height: 40px;
@@ -74,11 +83,6 @@ class TTS extends HTMLElement {
         // wrapper.innerHTML = text.step;
         this.shadowRoot.appendChild(wrapper);
 
-        // Title
-        const TTStitle = document.createElement('h3');
-        TTStitle.textContent = "TTS";
-        wrapper.appendChild(TTStitle);
-
         // row col divs
         const ttsRow = document.createElement("div");
         // ttsRow.classList.add("row");
@@ -89,6 +93,12 @@ class TTS extends HTMLElement {
         // ttsRow.appendChild(ttsColPlay);
         // ttsRow.appendChild(ttsColRestart);
         wrapper.appendChild(ttsRow);
+
+        // Title
+        const TTStitle = document.createElement('h3');
+        TTStitle.classList.add("tts-title");
+        TTStitle.textContent = "TTS";
+        ttsRow.appendChild(TTStitle);
 
         // Play button
         const playButton = document.createElement("button");
