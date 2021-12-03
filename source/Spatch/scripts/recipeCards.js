@@ -4,7 +4,7 @@ class Card extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
-    set data(spoonful) {
+    setData(spoonful, cookbook) {
 
         // Similar to how styles were managed in Lab 6
         const style = document.createElement('style');
@@ -190,11 +190,17 @@ class Card extends HTMLElement {
         // });
         // wrapper.appendChild(tags_wrapper);
 
+        // if (!cookbook) {
         wrapper.addEventListener('click', e => {
-            sessionStorage.setItem("clickIndex", spoonful.index);
-            console.log(spoonful.index);
-            document.location.href = 'recipeDisplay.html';
-        })  
+            if (cookbook) {
+                cookbook = false;
+            } else {
+                sessionStorage.setItem("clickIndex", spoonful.index);
+                console.log(spoonful.index);
+                document.location.href = 'recipeDisplay.html';
+            }
+        });
+        // }
     }
 }
 customElements.define('recipe-card', Card);

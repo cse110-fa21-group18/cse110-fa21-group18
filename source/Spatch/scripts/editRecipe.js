@@ -31,7 +31,7 @@ async function init() {
 
     fakeCardData.forEach(sfData => {
         const editRecipe = document.createElement('edit-recipe');
-        editRecipe.data = sfData;
+        editRecipe.setData(sfData, false);
         main.appendChild(editRecipe);
     });
 

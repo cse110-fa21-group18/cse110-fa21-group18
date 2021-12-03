@@ -8,6 +8,11 @@ async function init() {
   if (recipes === null) {
     recipes = [];
   }
+
+  let cookbooks = JSON.parse(localStorage.getItem("cookbooks"));
+  if (cookbooks === null) {
+    cookbooks = [];
+  } 
   //   var recipeInstructions = JSON.parse(localStorage.getItem("instructions"));
   var testingIds = [209128, 31868, 9751, 206706, 209251];
 //   await getRecipe(324694, key, recipes);
@@ -39,15 +44,22 @@ async function init() {
   const main = document.querySelector("#all-recipes-cards");
   const cookbook = document.querySelector("#all-cookbooks");
 
-  fakeCardData.forEach((sfData) => {
+  fakeCardData.forEach(sfData => {
     const nextCard = document.createElement("recipe-card");
-    nextCard.data = sfData;
+    nextCard.setData(sfData, false);
     main.appendChild(nextCard);
   });
 
-  const fakeCard = document.createElement("cookbook-card");
-  fakeCard.data = fakeCardData[0];
-  cookbook.appendChild(fakeCard);
+  cookbooks.forEach((data, i) => {
+    const fakeCard = document.createElement("cookbook-card");
+    fakeCard.setInfo(data, i);
+    cookbook.appendChild(fakeCard);
+  });
+
+  const newCookbook = document.getElementById("newCookbook");
+    newCookbook.addEventListener('click', e => {
+    sessionStorage.setItem("newCookbook", true);
+  });
 }
 
 const fakeCardData = [];

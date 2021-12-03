@@ -21,67 +21,40 @@
 </head>
 
 <body>
+    <div id="color-box">
+    </div>
     <div class="container">
         <div id="nav-placeholder"></div>
         <div class="main-content">
             <!-- Main home content here -->
             <div>
-                <span id="headerOne"> Cookbook Title </span>
-                <span id="changeToCircle"> ---- </span>
+                <div><a href="home.html"><img src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack"></a></div>
+                <input type="text" id="cookbookTitle" placeholder="Cookbook Title"></input>
+                <span id="changeToCircle"> Change color </span>
+                <span id="goDelete"> delete </span>
             </div>
             <div class="recipe-row">
-                <h2>`Cookbook title` Recipes</h2>
+                <h2>Recipes</h2>
                 <div class="row recipe-list">
-                    <div id="all-recipes-cards" class="col recipe-display"></div>
+                    <div id="cookbook-recipes" class="col recipe-display"></div>
                 </div>
             </div>
-            <!-- <div class="recipe-row">
-                <h2>Favorites</h2>
+            <div class="recipe-row hidden" id="recipe-list">
+                <h2>All Recipes</h2>
                 <div class="row recipe-list">
-                    <div id="favorites-cards" class="col recipe-display"></div>
-                </div>
-            </div> -->
-            <!--
-            <div class="recipe-row">
-                <h4>My Cookbooks</h4>
-                <div class="row">
-                    <div class="col recipe-display">
-                        some cookbooks to display here
-                    </div>
+                    <div id="all-recipes" class="col recipe-display"></div>
                 </div>
             </div>
-            <div class="recipe-row">
-                <h4>All Recipes</h4>
-                <div class="row">
-                    <div class="col recipe-display">
-                        some cards to display here
-                    </div>
-                </div>
+            <div id="add-new">
+                + Add Recipes
             </div>
-            <div class="recipe-row">
-                <h4>Cookbook 1</h4>
-                <div class="row">
-                    <div class="col recipe-display">
-                        some cards to display here
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-row">
-                <h4>Cookbook 2</h4>
-                <div class="row">
-                    <div class="col recipe-display">
-                        some cards to display here
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <!-- Injected for nav -->
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
     <!-- Recipe card -->
-    <script src="../scripts/home.js"></script>
+    <script src="../scripts/cookbookDisplay.js"></script>
     <script src="../scripts/recipeCards.js"></script>
-    <script src="../scripts/cookCards.js"></script>
 </body>
 </html>

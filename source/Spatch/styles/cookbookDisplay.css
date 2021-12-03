@@ -35,9 +35,85 @@
 
 #changeToCircle {
     background-color: #a3c1ad;
-    color: #a3c1ad;
+    padding: 4px;
+    border-radius: 10px;
+    left: 0.5em;
+    font-size: 1.5em;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    bottom: 8px;
 }
 
-#headerOne {
+#changeToCircle:hover {
+    background-color: var(--hover-circle)
+}
+
+#cookbookTitle {
     font-size: 3em;
+}
+
+#add-new {
+    position: relative;
+    width: 50%;
+    height: 5em;
+    background-color:cornflowerblue;
+    color:cornsilk;
+    left: 25%;
+    text-align: center;
+    line-height: 3.5em;
+    font-size: 2em;
+    border-radius: 35px;
+}
+
+#add-new:hover{
+    background-color:blue;
+}
+
+.goBack{
+    width: 30px;
+    height: auto;
+}
+
+#goDelete {
+    margin-left: 30px;
+    padding: 4px;
+    position: relative;
+    font-size: 1.5em;
+    background-color: crimson;
+    color:cornsilk;
+    border-radius: 10px;
+    bottom: 8px;
+    cursor: pointer;
+}
+
+#goDelete:hover {
+    background-color: red;
+}
+
+#goDelete:active {
+    background-color: maroon;
+    color:lightgray;
+}
+
+.hidden {
+    display: none;
+}
+
+#color-box {
+    display:none;
+    z-index: 5;
+    background-color: blue;
+    position: absolute;
+    left: 50px;
+}
+
+.colorSelector {
+    width: 150px;
+    height: 75px;
+    background-color:cornsilk
+}
+
+.colorSelector:hover {
+    background-color:darkgray;
 }
