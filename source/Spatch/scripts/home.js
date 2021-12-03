@@ -8,6 +8,12 @@ async function init() {
     if (recipes === null) {
         recipes = [];
     }
+
+    let cookbooks = JSON.parse(localStorage.getItem("cookbooks"));
+    if (cookbooks === null) {
+      cookbooks = [];
+    }
+
     var favorites = JSON.parse(localStorage.getItem("favorites"));
     if (favorites === null) {
         favorites = [];
@@ -41,8 +47,23 @@ async function init() {
 
     fakeCardData.forEach((sfData) => {
         const nextCard = document.createElement("recipe-card");
-        nextCard.data = sfData;
+        nextCard.setData(sfData, false);
         main.appendChild(nextCard);
+    });
+
+    // ==== Cookbooks ====
+    const cookbook = document.querySelector("#all-cookbooks");
+
+    cookbooks.forEach((data, i) => {
+        const fakeCard = document.createElement("cookbook-card");
+        fakeCard.setInfo(data, i);
+        cookbook.appendChild(fakeCard);
+    });
+    
+    // We have to let the cookbook page know when a new one is selected
+    const newCookbook = document.querySelector("#newCookbook");
+        newCookbook.addEventListener('click', e => {
+        sessionStorage.setItem("newCookbook", true);
     });
 
     // ==== Favorites ====
