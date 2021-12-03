@@ -2,6 +2,7 @@
 // This is the first function to be called, so when you are tracing your code start here.
 var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
 //var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
+let searchResults = [];
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -11,11 +12,13 @@ async function init() {
   */
   let searchInput = document.getElementById('searchInput');
   searchInput.addEventListener('keypress', function (keyBoardEvent) {
-    if (keyBoardEvent.key === "Enter") {
+    if (keyBoardEvent.key === 'Enter') {
+      removePreviousSearch();
       getFilteredResults();
-      console.log("Enter");
     }
   });
+
+  
 
   /*
   Event listener to submit request once 'Apply Filters' button is pressed
@@ -23,18 +26,37 @@ async function init() {
   let filterButton = document.getElementById('applyFilters');
   filterButton.addEventListener("click", submitFilter);
 
+  /*
+  Event listener to toggle filter
+  */
+  let filterToggle = document.getElementById('filterToggle');
+  filterToggle.addEventListener('click', toggleFilter);
 
 
 }
 
-let searchResults = [];
+function removePreviousSearch(){
+  const recipeResultsCards = document.querySelectorAll('.recipe-results > result-card');
+  for(let i = 0; i < recipeResultsCards.length; i++){
+    console.log(recipeResultsCards[i]);
+    recipeResultsCards[i].remove();
+  }
+}
 
+function loadRecipeCards(){
+  const recipeResults = document.querySelector('.recipe-results');
+  for(let i =0; i<searchResults['results'].length;i++){
+    const recipeResultsCard = document.createElement('result-card');
+    recipeResultsCard.data = searchResults['results'][i];
+    recipeResults.appendChild(recipeResultsCard);
+
+  }
+}
 
 function submitFilter() {
+  removePreviousSearch();
   getFilteredResults();
-  console.log("Apply Filters");
-  let filterPopUp = document.getElementById('showpop');
-  filterPopUp.classList.toggle('show');
+  toggleFilter();
 }
 
 
@@ -43,7 +65,7 @@ Function that toggles between showing filter options
 */
 function toggleFilter() {
   var filterPopUp = document.getElementById('showpop');
-  filterPopUp.classList.toggle("show");
+  filterPopUp.classList.toggle('show');
 }
 
 function getFilters() {
@@ -79,7 +101,7 @@ function searchTextInput() {
 function to collect all tags for cuisine filter
 */
 function cuisineTag() {
-  let cuisineFilter = document.getElementById("cuisine");
+  let cuisineFilter = document.getElementById('cuisine');
   return cuisineFilter.value; 
 }
 
@@ -113,7 +135,7 @@ function cookingTimeMin() {
 }
 
 /*
-function to collect all for whether something is cheap
+function to collect filter for cheap filter
 */
 function isCheapFilters() {
   let cheapFilter = document.getElementById("cheap");
@@ -135,10 +157,9 @@ async function getSearchResults() {
       //Log the data to the console:
       // console.log(data);
       searchResults = data;
-      console.log('Results ' + searchResults);
       sessionStorage.setItem('search', searchResults);
-      console.log(searchResults);
-
+      loadRecipeCards();
+      // console.log(searchResults);
       // console.log(recipes[0].title);
       // console.log(JSON.parse(recipes));
       // localStorage.setItem("recipes", JSON.stringify(recipeArray));
@@ -161,8 +182,8 @@ async function getFilteredResults() {
       //Log the data to the console:
       // console.log(data);
       searchResults = data;
-      console.log('Results ' + searchResults);
       sessionStorage.setItem('search', searchResults);
+      loadRecipeCards();
       // console.log(searchResults);
       // console.log(recipes[0].title);
       // console.log(JSON.parse(recipes));

@@ -61,6 +61,7 @@
     left: 22%;
     width: 20%;
     min-width: 200px;
+    z-index: 500;
 }
 
 
@@ -156,14 +157,14 @@
 }
 
 
-/* .recipe-results{
+.recipe-results{
     padding: center;
     padding: 2%;
     margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: #95bce4;
+    margin-left: 20%;
+    margin-right: 14%;
     padding-bottom: 50%;
     margin-bottom: 10%;
+    align-items: center;
 
-} */
+}
