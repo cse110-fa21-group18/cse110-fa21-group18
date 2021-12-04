@@ -114,7 +114,7 @@ function createRecipe() {
     // summary: document.getElementById("recipeDescription").value,
     summary: "",
     cuisines: document.getElementById("cuisineTypeEntry").value.split(","),
-    dishTypes: ["lunch", "main course", "main dish", "dinner"],
+    dishTypes: [],
     diets: [],
     occasions: [],
     winePairing: {},
