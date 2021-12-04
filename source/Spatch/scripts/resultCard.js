@@ -118,10 +118,6 @@ class resultCard extends HTMLElement {
         // Append the style and create the container element
         style.innerHTML = styleText;
         this.shadowRoot.appendChild(style);
-        // temp
-        // const wrapperAll = document.createElement('div');
-        // wrapperAll.classList.add('wrapper');
-        // this.shadowRoot.appendChild(wrapperAll);
         const wrapper = document.createElement('div');
         wrapper.classList.add('wrapper');
         this.shadowRoot.appendChild(wrapper);
@@ -153,18 +149,6 @@ class resultCard extends HTMLElement {
         // TODO: Backend
         div_cooktime.innerHTML = "🕑 " + (spoonful.cook_time ? spoonful.cook_time : '(see recipe)');
         wrapper.appendChild(div_cooktime);
-        // Append the recipie tags
-        // const tags_wrapper = document.createElement('div');
-        // tags_wrapper.classList.add('tag_wrapper');
-        // // TODO Backend
-        // const tags = spoonful.tags;
-        // tags.forEach(value => {
-        //     const div_tag = document.createElement('div');
-        //     div_tag.classList.add('tag_element');
-        //     div_tag.innerHTML = value;
-        //     tags_wrapper.appendChild(div_tag);
-        // });
-        // wrapper.appendChild(tags_wrapper);
         wrapper.addEventListener('click', e => {
             sessionStorage.setItem("clickIndex", spoonful.index);
             console.log(spoonful.index);

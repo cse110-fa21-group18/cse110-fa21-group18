@@ -2,7 +2,7 @@
 // This is the first function to be called, so when you are tracing your code start here.
 var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
 //var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
-let searchResults = [];
+searchResults = [];
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -50,12 +50,14 @@ function removePreviousSearch(){
 
 function loadRecipeCards(){
   const recipeResults = document.querySelector('.recipe-results');
+
   for(let i =0; i<searchResults['results'].length;i++){
     const recipeResultsCard = document.createElement('result-card');
     recipeResultsCard.data = searchResults['results'][i];
     recipeResults.appendChild(recipeResultsCard);
 
   }
+  
 }
 
 
