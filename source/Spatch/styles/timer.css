@@ -6,14 +6,17 @@ body {
   .timer {
     font-family: sans-serif;
     display: inline-block;
-    padding: 24px 32px;
+    padding: 10px 32px;
     border-radius: 30px;
-    background: #D5D5D5;
+    background: #c6e2ff;
+    display: inline-block;
+    margin-left: 20px;
+    /* height: 100px; */
   }
   
   .timer__part {
     font-size: 36px;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
   
   .timer__btn {
