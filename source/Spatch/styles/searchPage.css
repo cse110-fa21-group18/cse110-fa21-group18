@@ -147,9 +147,7 @@
 
 }
 
-.submit-filter-section > button{
-    width: 100px;
-    height: 25px;
+#applyFilters{
     font-size: 13px;
     min-width: 80px;
 
@@ -158,13 +156,12 @@
 
 
 .recipe-results{
+    display: flexbox;
+    align-content:center;
     padding: center;
     padding: 2%;
-    margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 14%;
-    padding-bottom: 50%;
+    padding-bottom: 10%;
     margin-bottom: 10%;
-    align-items: center;
+    margin-left: 10%;
 
 }

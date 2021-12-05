@@ -3,6 +3,7 @@
 var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
 //var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
 searchResults = [];
+toggleOn = false;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -14,7 +15,15 @@ async function init() {
   searchInput.addEventListener('keypress', function (keyBoardEvent) {
     if (keyBoardEvent.key === 'Enter') {
       removePreviousSearch();
-      getFilteredResults();
+      if(isFilterEmpty() == false || isSearchInputEmpty() == false){
+        getFilteredResults();
+      }
+      else{
+        console.log("no results");
+      }
+      if(toggleOn == true){
+        toggleFilter();
+      }
     }
   });
 
@@ -35,10 +44,33 @@ async function init() {
 
 }
 
+function isFilterEmpty(){
+  if (cuisineTag() == "" && ingredientsTag() == "" && dietTag() == "" &&
+  cookingTimeHr()  == "" && cookingTimeMin() == "") {
+    return true;
+  }
+  return false;
+}
+
+function isSearchInputEmpty(){
+  if(searchTextInput() == ""){
+    return true;
+  }
+  return false;
+}
+
 function submitFilter() {
   removePreviousSearch();
-  getFilteredResults();
-  toggleFilter();
+  if(isFilterEmpty() == false || isSearchInputEmpty() == false){
+    getFilteredResults();
+  }
+  else{
+    console.log("no results");
+  }
+  if(toggleOn == true){
+    toggleFilter();
+  }
+  
 }
 
 function removePreviousSearch(){
@@ -66,7 +98,7 @@ Function that toggles between showing filter options
 */
 function toggleFilter() {
   var filterPopUp = document.getElementById('showpop');
-  filterPopUp.classList.toggle('show');
+  toggleOn = filterPopUp.classList.toggle('show');
 }
 
 function getFilters() {
