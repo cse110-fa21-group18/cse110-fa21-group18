@@ -150,3 +150,22 @@ function saveChanges() {
     localStorage.setItem("recipes", JSON.stringify(recipes));
     document.location.href = 'recipeDisplay.html';
 }
+  
+function getBase64(file) {
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    // console.log(reader.result);
+    sessionStorage.setItem("pic", reader.result);
+  };
+  reader.onerror = function (error) {
+    console.log("Error: ", error);
+  };
+}
+
+function storeImage() {
+  var files = document.getElementById("recipeImage").files;
+  if (files.length > 0) {
+    getBase64(files[0]);
+  }
+}
