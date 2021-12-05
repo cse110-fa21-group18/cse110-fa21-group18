@@ -89,7 +89,7 @@ async function init() {
     console.log(favorites);
     fav.forEach((favData) => {
         const favCard = document.createElement("recipe-card");
-        favCard.data = favData;
+        favCard.setData(favData, false);
         favSection.appendChild(favCard);
     });
 }
