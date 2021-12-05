@@ -8,10 +8,6 @@ async function init() {
     if (recipes === null) {
       recipes = [];
     }
-    var favorites = JSON.parse(localStorage.getItem("favorites"));
-    if (favorites === null) {
-      favorites = [];
-    }
     
     // Get recipe data schema
     const fakeCardData = [
@@ -31,11 +27,6 @@ async function init() {
       },
     ];
 
-    sessionStorage.setItem(
-      "pic",
-      recipes[sessionStorage.getItem("clickIndex")].image
-    );
-
     // Set each recipe data
     const main = document.querySelector('.main-content');
 
@@ -48,11 +39,56 @@ async function init() {
     // Set functionality of delete and save changes buttons
     let deleteButton = document.getElementById("delete-button");
     let saveButton = document.getElementById("save-recipe-button");
-    let uploadButton = document.getElementById("recipeImage");
-    uploadButton.addEventListener("change", storeImage);
     deleteButton.addEventListener("click", deleteRecipe);
     saveButton.addEventListener("click", saveChanges);
+
+    let addIngredientButton = document.getElementById('add-ingredient-cards');
+    addIngredientButton.addEventListener('click', createIngredientCard);
+    createIngredientCard();
+
+    let addInstructionButton = document.getElementById('add-instruction-cards');
+    addInstructionButton.addEventListener('click', createInstructionCard);
+    createInstructionCard();
 };
+
+function createIngredientCard()
+{
+  let ingredientCards = document.getElementById('ingredient-cards');
+  let ingredientCard = document.createElement('ingredient-card');
+  ingredientCards.appendChild(ingredientCard);
+}
+
+function createInstructionCard()
+{
+  let instructionCards = document.getElementById('instruction-cards');
+  let instructionCard = document.createElement('instruction-card');
+
+  instructionCard.discardButton.addEventListener('click', delCard);
+  instructionCards.appendChild(instructionCard);
+
+  numberCards();
+}
+
+/*
+Note that this function is repeated in addRecipe
+This is not elegant
+I couldn't get function import/export to work for
+some reason, so this is what happened
+*/
+
+function delCard(event)
+{
+  let index = Number(event.target.parentElement.lastElementChild.innerHTML.substring(1));
+  let instructionCard = document.getElementById('instruction-cards');
+  instructionCards = instructionCard.children;
+  instructionCard.removeChild(instructionCards[index-1]);
+  instructionCards = instructionCard.children;
+  for(let i=index-1; i<instructionCards.length; i++)
+  {
+    let curIndex = Number(instructionCards[i].shadowRoot.lastElementChild.lastElementChild.innerHTML.substring(1));
+    instructionCards[i].indexNo = curIndex - 1;
+  }
+}
 
 //deletes a recipe from the recipes array in localStorage
 function deleteRecipe() {
@@ -96,7 +132,7 @@ function saveChanges() {
         extendedIngredientsList.push(currIngredientItem);
       }
 
-    recipes[sessionStorage.getItem("clickIndex")].image = sessionStorage.getItem('pic');
+    // recipes[sessionStorage.getItem("clickIndex")].image = document.querySelector("#currImage").value;
     // console.log(document.querySelector("#currImage").value);
     recipes[sessionStorage.getItem("clickIndex")].title = document.getElementById("recipeTitle").value;
     recipes[sessionStorage.getItem("clickIndex")].readyInMinutes = document.querySelector("#totalTimeEntry").value;
@@ -114,7 +150,7 @@ function saveChanges() {
     localStorage.setItem("recipes", JSON.stringify(recipes));
     document.location.href = 'recipeDisplay.html';
 }
-
+  
 function getBase64(file) {
   var reader = new FileReader();
   reader.readAsDataURL(file);

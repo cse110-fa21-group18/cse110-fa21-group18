@@ -23,6 +23,7 @@
 <body>
     <script src="../scripts/addRecipe.js"></script>
     <script src="../scripts/IngredientInd.js"></script>
+    <script src="../scripts/InstructionInd.js"></script>
     <div id="nav-placeholder"></div>
     <div class="main-content" id="formDiv">
         <h1 id="create-recipe-title">Create Recipe</h1>
@@ -38,14 +39,8 @@
         <div id="imageSelection" class="entryDiv">
             <div class="subTitle">Image</div>
             <!-- <div id="placeholder">upload an image</div> -->
-            <!-- <button type="button" class="btn btn-secondary">Upload an image</button> -->
-            <div class="form-group">
-                  <!-- <label for="exampleFormControlFile1">Example file input</label> -->
-                  <input type="file" class="form-control-file btn btn-secondary" id="recipeImage">
-            </div>
-            
+            <button type="button" class="btn btn-secondary">Upload an image</button>
         </div>
-        
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
         <div id="cuisineType" class="entryDiv">
@@ -72,7 +67,6 @@
             <div class="subTitle">Diets</div>
             <textarea class="create-recipe-input-fields" id="dietEntry" name="dietEntry" rows="3" cols="40" placeholder="Tell us about the diets that your recipe supports"></textarea>
         </div> -->
-        <!-- <button onclick="getIngredientList()">ingredient test</button> -->
         <div id="ingredients" class="entryDiv">
             <div class="subTitle">Ingredients</div>
             <div id="ingredient-cards">
@@ -98,8 +92,11 @@
         </div>
         <div id="instructions" class="entryDiv">
             <div class="subTitle">Instructions</div>
-            <textarea class="create-recipe-input-fields" id="instructionsEntry" name="instructionsEntry" rows="5" cols="40" placeholder="Tell the foodies how to make your dish"></textarea>
+            <!--The JS will insert instruction card elements-->
+            <div id="instruction-cards" draggable="true">
+            </div>
         </div>
+        <button class="btn btn-primary" id="add-instruction-cards">Add step</button>
         <div class="row" id="discard-or-create-buttons">
             <div class="col" id="discard-button-div">
                 <a role="button" id="discard-button" class="btn btn-danger" href="home.html">Discard</a>

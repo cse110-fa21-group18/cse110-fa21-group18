@@ -1,18 +1,20 @@
 window.addEventListener("DOMContentLoaded", init);
 
+// Would be much more elegant to have
+// registerDrag and dropped
+// be in instructionInd
+// but I kept getting an error
+// saying "import and export can only
+// appear at the top level
+// of a module"
+
 async function init() {
   var recipes = JSON.parse(localStorage.getItem("recipes"));
   if (recipes === null) {
     recipes = [];
   }
-  var favorites = JSON.parse(localStorage.getItem('favorites'));
-  if (favorites === null) {
-    favorites = [];
-  }
   let discardButton = document.getElementById("discard-button");
   let createButton = document.getElementById("create-recipe-button");
-  let uploadButton = document.getElementById("recipeImage");
-  uploadButton.addEventListener('change', storeImage)
   discardButton.addEventListener("click", discardRecipe);
   createButton.addEventListener("click", createRecipe);
 
@@ -21,17 +23,10 @@ async function init() {
   let addIngredientButton = document.getElementById('add-ingredient-cards');
   addIngredientButton.addEventListener('click', createIngredientCard);
   createIngredientCard();
-}
 
-function getIngredientList() {
-  let inst = document.getElementById("ingredient-cards").children;
-  for (let i = 0; i < inst.length; i++) {
-    var x = inst[i].shadowRoot.children[3].children[0].value;
-    var y = inst[i].shadowRoot.children[3].children[1].value;
-    var z = inst[i].shadowRoot.children[3].children[2].value;
-    // console.log(x, y, z);
-  }
-  // console.log(inst);
+  let addInstructionButton = document.getElementById('add-instruction-cards');
+  addInstructionButton.addEventListener('click', createInstructionCard);
+  createInstructionCard();
 }
 
 function createIngredientCard()
@@ -39,6 +34,71 @@ function createIngredientCard()
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
   ingredientCards.appendChild(ingredientCard);
+}
+
+// Non-functional drag event handlers
+// The div won't move even if draggable is set to true
+// If you solve the issue, we could have dragging
+// for the instruction cards
+//
+// function registerDrag(ev)
+// {
+//     ev.dataTransfer.setData('dragged', ev.target);
+// }
+// 
+// function dropped(ev)
+// {
+//     let dragged = ev.dataTransfer.getData('dragged');
+//     let draggedIndex = dragged.indexNo;
+//     let targetIndex = ev.target.indexNo;
+//     alert(draggedIndex);
+//     alert(targetIndex);
+// }
+
+function createInstructionCard()
+{
+  let instructionCards = document.getElementById('instruction-cards');
+  let instructionCard = document.createElement('instruction-card');
+  // More commands that would be useful for dragging
+  //
+  // instructionCard.draggable = true;
+  // instructionCard.ondragstart = registerDrag;
+  // instructionCard.ondrop = dropped;
+  instructionCard.discardButton.addEventListener('click', delCard);
+  instructionCards.appendChild(instructionCard);
+
+  numberCards();
+}
+
+function numberCards()
+{
+  let instructionCards = document.getElementById('instruction-cards');
+  instructionCards = instructionCards.children;
+  for(let i=0; i<instructionCards.length; i++)
+  {
+    instructionCards[i].indexNo = i + 1;
+  }
+}
+
+/*
+Note that this function is repeated in editRecipe
+This is not elegant
+I couldn't get function import/export to work for
+some reason, so this is what happened
+*/
+
+function delCard(event)
+{
+  let index = Number(event.target.parentElement.lastElementChild.innerHTML.substring(1));
+  let instructionCard = document.getElementById('instruction-cards');
+  instructionCards = instructionCard.children;
+  instructionCard.removeChild(instructionCards[index-1]);
+  instructionCards = instructionCard.children;
+  for(let i=index-1; i<instructionCards.length; i++)
+  {
+    let curIndex = Number(instructionCards[i].shadowRoot.lastElementChild.lastElementChild.innerHTML.substring(1));
+    instructionCards[i].indexNo = curIndex - 1;
+  }
 }
 
 function discardRecipe() {
@@ -67,22 +127,14 @@ function createRecipe() {
   }
 
   var extendedIngredientsList = [];
-    let inst = document.getElementById("ingredient-cards").children;
-    for (let i = 0; i < inst.length; i++) {
-      var x = inst[i].shadowRoot.children[3].children[0].value;
-      var y = inst[i].shadowRoot.children[3].children[1].value;
-      var z = inst[i].shadowRoot.children[3].children[2].value;
-      currIngredientItem = { name: x, amount: y, unit: z };
-      extendedIngredientsList.push(currIngredientItem);
-    }
-  // var currIngredientsList = document
-  //   .getElementById("ingredientsEntry")
-  //   .value.split(",");
+  var currIngredientsList = document
+    .getElementById("ingredientsEntry")
+    .value.split(",");
 
-  // for (let j = 0; j < currIngredientsList.length; j++) {
-  //   currIngredientItem = { name: currIngredientsList[j], amount: 0, unit: 0 };
-  //   extendedIngredientsList.push(currIngredientItem);
-  // }
+  for (let j = 0; j < currIngredientsList.length; j++) {
+    currIngredientItem = { name: currIngredientsList[j], amount: 0, unit: 0 };
+    extendedIngredientsList.push(currIngredientItem);
+  }
 
   const currentRecipe = {
     vegetarian: false,
@@ -109,7 +161,7 @@ function createRecipe() {
     servings: document.getElementById("servingSizeChoice").value,
     sourceUrl:
       "http://www.seriouseats.com/recipes/2011/01/dinner-tonight-spanish-style-meatloaf-recipe.html",
-    image: sessionStorage.getItem("pic"),
+    image: "https://spoonacular.com/recipeImages/199621-556x370.jpg",
     imageType: "jpg",
     // summary: document.getElementById("recipeDescription").value,
     summary: "",
@@ -127,37 +179,18 @@ function createRecipe() {
     ],
     originalId: null,
   };
-  // console.log(currentRecipe.title);
-  // console.log(currentRecipe.summary);
-  // console.log(currentRecipe.image);
-  // console.log(currentRecipe.cuisines);
-  // console.log(currentRecipe.readyInMinutes);
-  // console.log(currentRecipe.servings);
-  // console.log(currentRecipe.extendedIngredients);
-  // console.log(currentRecipe.analyzedInstructions[0]);
+  console.log(currentRecipe.title);
+  console.log(currentRecipe.summary);
+  console.log(currentRecipe.image);
+  console.log(currentRecipe.cuisines);
+  console.log(currentRecipe.readyInMinutes);
+  console.log(currentRecipe.servings);
+  console.log(currentRecipe.extendedIngredients);
+  console.log(currentRecipe.analyzedInstructions[0]);
 
   recipes.push(currentRecipe);
   localStorage.setItem("recipes", JSON.stringify(recipes));
 
   // console.log(recipes);
   document.location.href = 'home.html';
-}
-
-function getBase64(file) {
-  var reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    // console.log(reader.result);
-    sessionStorage.setItem('pic', reader.result);
-  };
-  reader.onerror = function (error) {
-    console.log("Error: ", error);
-  };
-}
-
-function storeImage() {
-  var files = document.getElementById("recipeImage").files;
-  if (files.length > 0) {
-    getBase64(files[0]);
-  }
 }
