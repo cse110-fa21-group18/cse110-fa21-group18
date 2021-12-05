@@ -80,6 +80,13 @@ function numberCards()
   }
 }
 
+/*
+Note that this function is repeated in editRecipe
+This is not elegant
+I couldn't get function import/export to work for
+some reason, so this is what happened
+*/
+
 function delCard(event)
 {
   let index = Number(event.target.parentElement.lastElementChild.innerHTML.substring(1));

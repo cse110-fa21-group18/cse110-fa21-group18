@@ -62,7 +62,32 @@ function createInstructionCard()
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
+
+  instructionCard.discardButton.addEventListener('click', delCard);
   instructionCards.appendChild(instructionCard);
+
+  numberCards();
+}
+
+/*
+Note that this function is repeated in addRecipe
+This is not elegant
+I couldn't get function import/export to work for
+some reason, so this is what happened
+*/
+
+function delCard(event)
+{
+  let index = Number(event.target.parentElement.lastElementChild.innerHTML.substring(1));
+  let instructionCard = document.getElementById('instruction-cards');
+  instructionCards = instructionCard.children;
+  instructionCard.removeChild(instructionCards[index-1]);
+  instructionCards = instructionCard.children;
+  for(let i=index-1; i<instructionCards.length; i++)
+  {
+    let curIndex = Number(instructionCards[i].shadowRoot.lastElementChild.lastElementChild.innerHTML.substring(1));
+    instructionCards[i].indexNo = curIndex - 1;
+  }
 }
 
 //deletes a recipe from the recipes array in localStorage
