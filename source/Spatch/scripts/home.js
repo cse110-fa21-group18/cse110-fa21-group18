@@ -4,10 +4,17 @@ window.addEventListener("DOMContentLoaded", init);
 
 // This is the first function to be called, so when you are tracing your code start here.
 async function init() {
+    var reccomended = [];
     var recipes = JSON.parse(localStorage.getItem("recipes"));
     if (recipes === null) {
         recipes = [];
     }
+
+    let cookbooks = JSON.parse(localStorage.getItem("cookbooks"));
+    if (cookbooks === null) {
+        cookbooks = [];
+    }
+
     var favorites = JSON.parse(localStorage.getItem("favorites"));
     if (favorites === null) {
         favorites = [];
@@ -17,20 +24,20 @@ async function init() {
     //   await getRecipe(324694, key, recipes);
 
     // tester code that loads localstorage
-        // console.log(testingIds.length);
-        // for (let j = 0; j < testingIds.length; j++) {
-        //   await getRecipe(testingIds[j], key, recipes);
-        // }
+    // console.log(testingIds.length);
+    // for (let j = 0; j < testingIds.length; j++) {
+    //   await getRecipe(testingIds[j], key, recipes);
+    // }
 
     // ==== My Recipes ====
 
     for (let i = 0; i < recipes.length; i++) {
         const test = {
-        image_link: recipes[i].image,
-        recipe_title: recipes[i].title,
-        cook_time: recipes[i].readyInMinutes + " minutes",
-        tags: ["Norway food", "easy"],
-        index: i
+            image_link: recipes[i].image,
+            recipe_title: recipes[i].title,
+            cook_time: recipes[i].readyInMinutes + " minutes",
+            tags: ["Norway food", "easy"],
+            index: i
         };
         fakeCardData.push(test);
         // console.log(recipes[i].analyzedInstructions[0].steps[0].step);
@@ -41,8 +48,23 @@ async function init() {
 
     fakeCardData.forEach((sfData) => {
         const nextCard = document.createElement("recipe-card");
-        nextCard.data = sfData;
+        nextCard.setData(sfData, false);
         main.appendChild(nextCard);
+    });
+
+    // ==== Cookbooks ====
+    const cookbook = document.querySelector("#all-cookbooks");
+
+    cookbooks.forEach((data, i) => {
+        const fakeCard = document.createElement("cookbook-card");
+        fakeCard.setInfo(data, i);
+        cookbook.appendChild(fakeCard);
+    });
+
+    // We have to let the cookbook page know when a new one is selected
+    const newCookbook = document.querySelector("#newCookbook");
+    newCookbook.addEventListener('click', e => {
+        sessionStorage.setItem("newCookbook", true);
     });
 
     // ==== Favorites ====
@@ -53,11 +75,11 @@ async function init() {
         currInd = parseInt(favorites[i]);
         console.log(currInd);
         const eachFav = {
-        image_link: recipes[currInd].image,
-        recipe_title: recipes[currInd].title,
-        cook_time: recipes[currInd].readyInMinutes + " minutes",
-        tags: ["Norway food", "easy"],
-        index: currInd
+            image_link: recipes[currInd].image,
+            recipe_title: recipes[currInd].title,
+            cook_time: recipes[currInd].readyInMinutes + " minutes",
+            tags: ["Norway food", "easy"],
+            index: currInd
         };
         fav.push(eachFav);
         // console.log(recipes[i].analyzedInstructions[0].steps[0].step);
@@ -68,9 +90,11 @@ async function init() {
     console.log(favorites);
     fav.forEach((favData) => {
         const favCard = document.createElement("recipe-card");
-        favCard.data = favData;
+        favCard.setData(favData, false);
         favSection.appendChild(favCard);
     });
+
+    discoverRecipes(key, recipes, reccomended);
 }
 
 const fakeCardData = [
@@ -81,45 +105,49 @@ const fakeCardData = [
 
 //retrieves recipe information from id, make sure to have apikey input
 async function getRecipe(id, apikey, recipeArray) {
-  //JSON placeholder is a simple placeholder REST API that returns JSON
-  await fetch(`https://api.spoonacular.com/recipes/${id}/information?${apikey}`)
-    .then((response) => {
-      //response.json() turns the response objects body into JSON
-      //response.json() returns a JS promise
-      //Use response.text() to turn your response object to text
-      return response.json();
-    })
-    .then(async (data) => {
-      //We have successfully made a GET request!
-      //Log the data to the console:
-      // console.log(data);
-      recipeArray.push(data);
-      // console.log(recipes[0].title);
-      // console.log(JSON.parse(recipes));
-      localStorage.setItem("recipes", JSON.stringify(recipeArray));
-      //   await getRecipeInstructions(id, key, instructions);
-    });
+    //JSON placeholder is a simple placeholder REST API that returns JSON
+    await fetch(`https://api.spoonacular.com/recipes/${id}/information?${apikey}`)
+        .then((response) => {
+            //response.json() turns the response objects body into JSON
+            //response.json() returns a JS promise
+            //Use response.text() to turn your response object to text
+            return response.json();
+        })
+        .then(async (data) => {
+            //We have successfully made a GET request!
+            //Log the data to the console:
+            // console.log(data);
+            recipeArray.push(data);
+            // console.log(recipes[0].title);
+            // console.log(JSON.parse(recipes));
+            localStorage.setItem("recipes", JSON.stringify(recipeArray));
+            //   await getRecipeInstructions(id, key, instructions);
+        });
 }
 
-// //retrieves recipe instructions from id, make sure to have apikey input
-// async function getRecipeInstructions(id, apikey, instructionsArray) {
-//   //JSON placeholder is a simple placeholder REST API that returns JSON
-//   await fetch(
-//     `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?${apikey}`
-//   )
-//     .then((response) => {
-//       //response.json() turns the response objects body into JSON
-//       //response.json() returns a JS promise
-//       //Use response.text() to turn your response object to text
-//       return response.json();
-//     })
-//     .then((data) => {
-//       //We have successfully made a GET request!
-//       //Log the data to the console:
-//       // console.log(JSON.stringify(data));
-//       // data = JSON.stringify(data);
-//       instructionsArray.push(data);
-//       // console.log(JSON.parse(recipeInstructions)[0]);
-//       localStorage.setItem("instructions", JSON.stringify(instructionsArray));
-//     });
-// }
+
+
+async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
+    if (recipeArray.length === 0) {
+        console.log('hello');
+    } else {
+        let index = Math.floor(Math.random() * recipeArray.length);
+        // console.log(recipeArray[index].id);
+        fetch(`https://api.spoonacular.com/recipes/${recipeArray[index].id}/similar?${apikey}`)
+            .then(response => {
+                //response.json() turns the response objects body into JSON
+                //response.json() returns a JS promise
+                //Use response.text() to turn your response object to text
+                return response.json();
+            })
+            .then(data => {
+                //We have successfully made a GET request!
+                //Log the data to the console:
+                // console.log(JSON.stringify(data));
+                // data = JSON.stringify(data);
+                // console.log("awioejf")
+                reccomendedArray.push(JSON.stringify(data));
+                console.log(JSON.parse(reccomendedArray));
+        })
+    }
+}

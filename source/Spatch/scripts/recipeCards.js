@@ -3,7 +3,8 @@ class Card extends HTMLElement {
         super();
         this.attachShadow({mode: 'open'});
     }
-    set data(spoonful) {
+  
+ setData(spoonful, cookbook) {
         // Similar to how styles were managed in Lab 6
         const style = document.createElement('style');
         const styleText = `
@@ -104,6 +105,11 @@ class Card extends HTMLElement {
                 background-size: contain;
                 margin-top:2px;
             }
+
+            .bookmark:hover {
+                background: url('/source/Spatch/public/Assets-images/circle-bookmark-checked.svg') no-repeat;
+
+            }
             // .bookmark:hover {
             //     width: 60px;
             //     height: 60px;
@@ -118,10 +124,6 @@ class Card extends HTMLElement {
         // Append the style and create the container element
         style.innerHTML = styleText;
         this.shadowRoot.appendChild(style);
-        // temp
-        // const wrapperAll = document.createElement('div');
-        // wrapperAll.classList.add('wrapper');
-        // this.shadowRoot.appendChild(wrapperAll);
         const wrapper = document.createElement('div');
         wrapper.classList.add('wrapper');
         this.shadowRoot.appendChild(wrapper);
@@ -165,11 +167,16 @@ class Card extends HTMLElement {
         //     tags_wrapper.appendChild(div_tag);
         // });
         // wrapper.appendChild(tags_wrapper);
+
         wrapper.addEventListener('click', e => {
-            sessionStorage.setItem("clickIndex", spoonful.index);
-            console.log(spoonful.index);
-            document.location.href = 'recipeDisplay.html';
-        })
+            if (cookbook) {
+                cookbook = false;
+            } else {
+                sessionStorage.setItem("clickIndex", spoonful.index);
+                console.log(spoonful.index);
+                document.location.href = 'recipeDisplay.html';
+            }
+        });
     }
 }
 customElements.define('recipe-card', Card);
