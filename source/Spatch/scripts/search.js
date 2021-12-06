@@ -10,7 +10,7 @@ let searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('keypress', function (keyBoardEvent) {
   if (keyBoardEvent.key === "Enter") {
     console.log("search input: " + searchTextInput() );
-    //getSearchResults();
+    getSearchResults();
   }
 });
 
