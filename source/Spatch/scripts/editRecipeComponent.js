@@ -35,16 +35,22 @@ class editRecipe extends HTMLElement {
         servings.setAttribute('value', spoonful.servings ? spoonful.servings : '');
         
         // Ingredients
-        const ingredientsItems = document.querySelector("#ingredientsEntry");
+        // TODO: Edit this to work with the ingredient card format
+        // Would be nice to reference the createIngredientCard function
+        // Create the ingredient cards and fill in the items
+        /*const ingredientsItems = document.querySelector("#ingredientsEntry");
         let ing = spoonful.ingredients[0].name;
         for(let i = 1; i < spoonful.ingredients.length; i ++){
           ing += (", " + spoonful.ingredients[i].name);
         }
-        ingredientsItems.value = ing;
+        ingredientsItems.value = ing;*/
         // console.log(ing);
 
         // Instructions
-        const instructionItems = document.querySelector("#instructionsEntry");
+        // TODO: Edit this to work with the instruction card format
+        // Would be nice to reference the createInstructionCard function
+        // Create the instruction step cards and fill in the items
+        /*const instructionItems = document.querySelector("#instructionsEntry");
         let ins = spoonful.instructions[0].steps[0].step;
         for(let k = 0; k < spoonful.instructions.length; k++){
           if(k != 0){
@@ -55,7 +61,7 @@ class editRecipe extends HTMLElement {
           }
         }
         instructionItems.value = ins;
-        console.log(spoonful.instructions[0]);
+        console.log(spoonful.instructions[0]);*/
     }
 }
 customElements.define('edit-recipe', editRecipe);
