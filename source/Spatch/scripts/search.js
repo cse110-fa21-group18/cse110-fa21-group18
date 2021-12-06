@@ -16,7 +16,7 @@ async function init() {
     if (keyBoardEvent.key === 'Enter') {
       removePreviousSearch();
       if(isFilterEmpty() == false || isSearchInputEmpty() == false){
-        getFilteredResults();
+        getSearchResults();
       }
       else{
         console.log("no results");
