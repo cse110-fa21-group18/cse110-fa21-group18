@@ -39,6 +39,8 @@ async function init() {
     // Set functionality of delete and save changes buttons
     let deleteButton = document.getElementById("delete-button");
     let saveButton = document.getElementById("save-recipe-button");
+    let uploadButton = document.getElementById("recipeImage");
+    uploadButton.addEventListener("change", storeImage);
     deleteButton.addEventListener("click", deleteRecipe);
     saveButton.addEventListener("click", saveChanges);
 
@@ -102,37 +104,55 @@ function deleteRecipe() {
     document.location.href = 'home.html';
 }
 
+function getInstructions() {
+  let analyzedInstructionList = [];
+  let currentInstructionList =
+    document.getElementById("instruction-cards").children;
+
+  for (let i = 0; i < currentInstructionList.length; i++) {
+    let x = currentInstructionList[i].shadowRoot.children[3].children[0].value;
+    let y =
+      currentInstructionList[i].shadowRoot.children[3].children[1].children[0]
+        .value;
+    let currInstructionItem = {
+      number: i,
+      step: x,
+      length: { number: y, unit: "minutes" },
+    };
+    analyzedInstructionList.push(currInstructionItem);
+  }
+  console.log(analyzedInstructionList);
+  return analyzedInstructionList;
+  // console.log(currentInstructionList[0].shadowRoot.children[3].children[1].children[0].value); //instruction time
+
+  // console.log(currentInstructionList[0].shadowRoot.children[3].children[0].value); //instruction text
+}
+
+function getIngredients() {
+  var extendedIngredientsList = [];
+  let ing = document.getElementById("ingredient-cards").children;
+  for (let i = 0; i < ing.length; i++) {
+    var x = ing[i].shadowRoot.children[3].children[0].value;
+    var y = ing[i].shadowRoot.children[3].children[1].value;
+    var z = ing[i].shadowRoot.children[3].children[2].value;
+    currIngredientItem = { name: x, amount: y, unit: z };
+    extendedIngredientsList.push(currIngredientItem);
+  }
+  return extendedIngredientsList;
+}
+
 // updates a recipe and stores new version in local storage
 function saveChanges() {
     var recipes = JSON.parse(localStorage.getItem("recipes"));
     if (recipes === null) {
       recipes = [];
     }
-      var analyzedInstructionList = [];
-      var currInstructionList = document
-        .getElementById("instructionsEntry")
-        .value.split("\n");
 
-      for (let i = 0; i < currInstructionList.length; i++) {
-        currInstructionItem = { number: i, step: currInstructionList[i] };
-        analyzedInstructionList.push(currInstructionItem);
-      }
+      var analyzedInstructionList = getInstructions();
 
-      var extendedIngredientsList = [];
-      var currIngredientsList = document
-        .getElementById("ingredientsEntry")
-        .value.split(",");
+      var extendedIngredientsList = getIngredients();
 
-      for (let j = 0; j < currIngredientsList.length; j++) {
-        currIngredientItem = {
-          name: currIngredientsList[j],
-          amount: 0,
-          unit: 0,
-        };
-        extendedIngredientsList.push(currIngredientItem);
-      }
-
-    // recipes[sessionStorage.getItem("clickIndex")].image = document.querySelector("#currImage").value;
+    recipes[sessionStorage.getItem("clickIndex")].image = sessionStorage.getItem('pic');
     // console.log(document.querySelector("#currImage").value);
     recipes[sessionStorage.getItem("clickIndex")].title = document.getElementById("recipeTitle").value;
     recipes[sessionStorage.getItem("clickIndex")].readyInMinutes = document.querySelector("#totalTimeEntry").value;
