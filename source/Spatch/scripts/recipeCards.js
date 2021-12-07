@@ -139,7 +139,7 @@ class Card extends HTMLElement {
         img_wrapper.classList.add('photo_wrapper');
         // TODO: Backend
         const img = document.createElement('img');
-        img.setAttribute('src', spoonful.image);
+        img.setAttribute('src', spoonful.image_link);
         img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.title));
         img_wrapper.appendChild(img);
         wrapper.appendChild(img_wrapper);
@@ -147,7 +147,7 @@ class Card extends HTMLElement {
         const div_title = document.createElement('div');
         div_title.classList.add('title');
         // TODO: Backend
-        div_title.innerHTML = spoonful.title;
+        div_title.innerHTML = spoonful.recipe_title;
         wrapper.appendChild(div_title);
         // Append the recipie cooktime
         const div_cooktime = document.createElement('div');

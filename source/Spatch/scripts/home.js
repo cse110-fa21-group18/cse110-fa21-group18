@@ -34,8 +34,8 @@ async function init() {
 
     for (let i = 0; i < recipes.length; i++) {
         const test = {
-            image: recipes[i].image,
-            title: recipes[i].title,
+            image_link: recipes[i].image,
+            reciptitle: recipes[i].title,
             cook_time: recipes[i].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: i
@@ -74,10 +74,10 @@ async function init() {
 
     for (let i = 0; i < favorites.length; i++) {
         currInd = parseInt(favorites[i]);
-        // console.log(currInd);
+        // console.log(recipes[currInd].image);
         const eachFav = {
-            image: recipes[currInd].image,
-            title: recipes[currInd].title,
+            image_link: recipes[currInd].image,
+            recipe_title: recipes[currInd].title,
             cook_time: recipes[currInd].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: currInd

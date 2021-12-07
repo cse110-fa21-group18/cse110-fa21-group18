@@ -3,7 +3,7 @@ class resultCard extends HTMLElement {
         super();
         this.attachShadow({mode: 'open'});
     }
-    set data(spoonful) {
+    setData(spoonful, index) {
         // Similar to how styles were managed in Lab 6
         const style = document.createElement('style');
         const styleText = `
@@ -150,9 +150,9 @@ class resultCard extends HTMLElement {
         div_cooktime.innerHTML = "🕑 " + (spoonful.cook_time ? spoonful.cook_time : '(see recipe)');
         wrapper.appendChild(div_cooktime);
         wrapper.addEventListener('click', e => {
-            sessionStorage.setItem("clickIndex", spoonful.index);
-            console.log(spoonful.index);
-            document.location.href = 'recipeDisplay.html';
+            sessionStorage.setItem("searchIndex", index);
+            // console.log(spoonful.index);
+            document.location.href = 'resultDisplay.html';
         })
     }
 }
