@@ -1,3 +1,4 @@
+
 .SearchBar {
     display: flex;
     flex-direction: row;
@@ -12,13 +13,11 @@
 
 #searchInput{
     width: 80%;
-    min-width: 50%;
     height: 60px;
     font-size: 20px;
     left: 5%;
     color: rgb(56, 55, 55);
     padding-left: 3%;
-    min-width: 100px;
 }
 
 
@@ -26,18 +25,10 @@
     height: 60px;
     width: 60px; 
     border-radius: 8%;
-    border-color:#EEEEEE ;
-    background-color: #EEEEEE;
+    border-color:#DADADA ;
+    background-color: #DADADA;
     box-shadow: none;
 
-}
-
-#showpop{
-    display: none;
-}
-
-#showpop.show{
-    display: block;
 }
 
 
@@ -51,8 +42,8 @@
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 5%;
-    background-color: #EEEEEE;
+    border-radius: 8%;
+    background-color: #DEE8F2;
     margin-left: 40%;
     margin-right: 40%;
     padding-top: 2%;
@@ -60,8 +51,7 @@
     position: absolute;
     left: 22%;
     width: 20%;
-    min-width: 200px;
-    z-index: 500;
+    min-width: 40px;
 }
 
 
@@ -87,8 +77,6 @@
 .filter-section > input{ 
     width: 95%;
     height: 10%;
-    padding-left: 4%;
-    padding-right: 2%;
     padding: 3%;
     font-size: 15px;
     
@@ -109,8 +97,8 @@
 .filter-slider > input{
     width: 25%;
     height: 5%;
-    margin-left: 2%;
-    padding: 1%;
+    margin-left: 5%;
+    padding-left: 2%;
 }
 
 .filter-slider > label{
@@ -147,21 +135,26 @@
 
 }
 
-#applyFilters{
+.submit-filter-section > button{
+    width: 100px;
+    height: 25px;
+    padding-bottom: 1%;
+    border-radius: 5%; 
+    border-color: #DADADA;
+    background-color: #DADADA;
+    text-align: center;
     font-size: 13px;
     min-width: 80px;
+    margin: auto;
 
 
 }
 
-
-.recipe-results{
-    display: flexbox;
-    align-content:center;
-    padding: center;
-    padding: 2%;
-    padding-bottom: 10%;
-    margin-bottom: 10%;
-    margin-left: 10%;
-
+#showpop{
+    display: none;
 }
+
+#showpop.show{
+    display: block;
+}
+
