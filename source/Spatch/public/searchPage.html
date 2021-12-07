@@ -4,7 +4,7 @@
 <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
 
-    <title>Title</title>
+    <title>Search | Spatch</title>
 
     <!-- Favicon -->
     <link rel='icon' type='image/png' href='/favicon.png'>
@@ -29,7 +29,7 @@
 
         <div class="SearchBar">
             <input  id="searchInput" placeholder="Search for a Recipe" />
-            <button id="filterToggle"  onclick="toggleFilter()">
+            <button id="filterToggle" >
                 <img id="filterImage" src="frontEnd1-assets/search-page-icons/filter.png"></img>
             </button>
         </div>
@@ -78,25 +78,23 @@
 
             <!-- button to apply all filters -->
             <div class = "submit-filter-section">
-                <button id="applyFilters" onclick="submitFilter()" >Apply Filters</button>
+                <button class="btn btn-primary" id="applyFilters" >Apply Filters</button>
             </div>
         </div> 
+
+        <!-- Recipe Results -->
+        <div class="recipe-results">
+
+        </div>
 
         
     </div>
     
-    <!-- Recipe Results -->
-    <div>
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-          </button>
-
-    </div>
-
     <!-- Injected for nav -->
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
     <!-- Our Personal JS Files -->
     <script src='../scripts/search.js'></script>
+    <script src="../scripts/resultCard.js"></script>
 </body>
 </html>
