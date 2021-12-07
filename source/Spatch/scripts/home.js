@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", init);
 // This is the first function to be called, so when you are tracing your code start here.
 async function init() {
     var reccomended = [];
+    // console.log(reccomendedArray);
     var recipes = JSON.parse(localStorage.getItem("recipes"));
     if (recipes === null) {
         recipes = [];
@@ -33,8 +34,8 @@ async function init() {
 
     for (let i = 0; i < recipes.length; i++) {
         const test = {
-            image_link: recipes[i].image,
-            recipe_title: recipes[i].title,
+            image: recipes[i].image,
+            title: recipes[i].title,
             cook_time: recipes[i].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: i
@@ -73,10 +74,10 @@ async function init() {
 
     for (let i = 0; i < favorites.length; i++) {
         currInd = parseInt(favorites[i]);
-        console.log(currInd);
+        // console.log(currInd);
         const eachFav = {
-            image_link: recipes[currInd].image,
-            recipe_title: recipes[currInd].title,
+            image: recipes[currInd].image,
+            title: recipes[currInd].title,
             cook_time: recipes[currInd].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: currInd
@@ -87,14 +88,26 @@ async function init() {
 
     // fetch the recipes and wait for them to load
     const favSection = document.querySelector("#favorites-cards");
-    console.log(favorites);
+    // console.log(favorites);
     fav.forEach((favData) => {
         const favCard = document.createElement("recipe-card");
         favCard.setData(favData, false);
         favSection.appendChild(favCard);
     });
 
-    discoverRecipes(key, recipes, reccomended);
+    // ==== Discover Recipes =====
+
+    reccomended = await discoverRecipes(key, recipes, reccomended);
+    // console.log(reccomended);
+    // fetch the recipes and wait for them to load
+    const discoverSection = document.querySelector("#discover-recipes-cards");
+    // console.log(favorites);
+    reccomended.forEach((discData) => {
+        console.log(discData);
+        const discCard = document.createElement("recipe-card");
+        discCard.setData(discData, false);
+        discoverSection.appendChild(discCard);
+    });
 }
 
 const fakeCardData = [
@@ -133,7 +146,7 @@ async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
     } else {
         let index = Math.floor(Math.random() * recipeArray.length);
         // console.log(recipeArray[index].id);
-        fetch(`https://api.spoonacular.com/recipes/${recipeArray[index].id}/similar?${apikey}`)
+        return fetch(`https://api.spoonacular.com/recipes/${recipeArray[index].id}/similar?${apikey}`)
             .then(response => {
                 //response.json() turns the response objects body into JSON
                 //response.json() returns a JS promise
@@ -145,9 +158,11 @@ async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
                 //Log the data to the console:
                 // console.log(JSON.stringify(data));
                 // data = JSON.stringify(data);
-                // console.log("awioejf")
-                reccomendedArray.push(JSON.stringify(data));
-                console.log(JSON.parse(reccomendedArray));
+                // console.log(data)
+                // reccomendedArray.push(JSON.stringify(data));
+                reccomendedArray = data;
+                return reccomendedArray;
+                // console.log(JSON.parse(reccomendedArray));
         })
     }
 }
