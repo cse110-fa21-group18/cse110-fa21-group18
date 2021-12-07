@@ -85,9 +85,9 @@ function loadRecipeCards(){
 
   for(let i =0; i<searchResults['results'].length;i++){
     const recipeResultsCard = document.createElement('result-card');
-    recipeResultsCard.data = searchResults['results'][i];
+    recipeResultsCard.setData(searchResults['results'][i],i);
     recipeResults.appendChild(recipeResultsCard);
-    console.log(searchResults['results'][i]);
+    // console.log(searchResults['results'][i]);
   }
   
 }
@@ -190,7 +190,7 @@ async function getSearchResults() {
       //Log the data to the console:
       // console.log(data);
       searchResults = data;
-      sessionStorage.setItem('search', searchResults);
+      sessionStorage.setItem('search', JSON.stringify(searchResults));
       loadRecipeCards();
       console.log(searchResults);
       // console.log(recipes[0].title);

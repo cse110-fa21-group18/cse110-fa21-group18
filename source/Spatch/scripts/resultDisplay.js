@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
   // fetch the recipes and wait for them to load
-  var recipes = JSON.parse(localStorage.getItem("recipes"));
+  var recipes = JSON.parse(sessionStorage.getItem("search")).results;
   if (recipes === null) {
     recipes = [];
   }
@@ -10,20 +10,23 @@ async function init() {
   if (favorites === null) {
     favorites = [];
   }
+//   console.log(recipes.results);
+//   console.log(recipes[sessionStorage.getItem("searchIndex")]);
+//   console.log(sessionStorage.getItem("searchIndex"));
   const fakeCardData = [
     {
-      createdBy: recipes[sessionStorage.getItem("clickIndex")].sourceName,
-      image_link: recipes[sessionStorage.getItem("clickIndex")].image,
+    //   createdBy: recipes[sessionStorage.getItem("searchIndex")].sourceName,
+      image_link: recipes[sessionStorage.getItem("searchIndex")].image,
       image_alt: "alt",
-      recipe_title: recipes[sessionStorage.getItem("clickIndex")].title,
-      cook_time: recipes[sessionStorage.getItem("clickIndex")].readyInMinutes,
+      recipe_title: recipes[sessionStorage.getItem("searchIndex")].title,
+      cook_time: recipes[sessionStorage.getItem("searchIndex")].readyInMinutes,
       tags: ["Tag A", "Tag B", "Tag C"],
-      cuisine: recipes[sessionStorage.getItem("clickIndex")].cuisines,
-      servings: recipes[sessionStorage.getItem("clickIndex")].servings,
+      cuisine: recipes[sessionStorage.getItem("searchIndex")].cuisines,
+      servings: recipes[sessionStorage.getItem("searchIndex")].servings,
       ingredients:
-        recipes[sessionStorage.getItem("clickIndex")].extendedIngredients,
+        recipes[sessionStorage.getItem("searchIndex")].extendedIngredients,
       instructions:
-        recipes[sessionStorage.getItem("clickIndex")].analyzedInstructions,
+        recipes[sessionStorage.getItem("searchIndex")].analyzedInstructions,
     },
   ];
 
