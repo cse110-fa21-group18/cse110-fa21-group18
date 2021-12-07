@@ -128,26 +128,26 @@ class Card extends HTMLElement {
         wrapper.classList.add('wrapper');
         this.shadowRoot.appendChild(wrapper);
         // Append the bookmark button
-        const bookmark_wrapper = document.createElement('div');
-        const bookmark_img = document.createElement('div');
-        bookmark_wrapper.classList.add('bookmark_wrapper');
-        bookmark_img.classList.add('bookmark');
-        bookmark_wrapper.appendChild(bookmark_img);
-        wrapper.appendChild(bookmark_wrapper);
+        // const bookmark_wrapper = document.createElement('div');
+        // const bookmark_img = document.createElement('div');
+        // bookmark_wrapper.classList.add('bookmark_wrapper');
+        // bookmark_img.classList.add('bookmark');
+        // bookmark_wrapper.appendChild(bookmark_img);
+        // wrapper.appendChild(bookmark_wrapper);
         // Append the photo and it's container (contained to have a border radius)
         const img_wrapper = document.createElement('div');
         img_wrapper.classList.add('photo_wrapper');
         // TODO: Backend
         const img = document.createElement('img');
-        img.setAttribute('src', spoonful.image_link);
-        img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.recipe_title));
+        img.setAttribute('src', spoonful.image);
+        img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.title));
         img_wrapper.appendChild(img);
         wrapper.appendChild(img_wrapper);
         // Append the Recipie Title
         const div_title = document.createElement('div');
         div_title.classList.add('title');
         // TODO: Backend
-        div_title.innerHTML = spoonful.recipe_title;
+        div_title.innerHTML = spoonful.title;
         wrapper.appendChild(div_title);
         // Append the recipie cooktime
         const div_cooktime = document.createElement('div');
