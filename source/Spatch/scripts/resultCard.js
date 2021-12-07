@@ -1,11 +1,9 @@
-
-class Card extends HTMLElement {
+class resultCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
     }
-  
- setData(spoonful, cookbook) {
+    setData(spoonful, index) {
         // Similar to how styles were managed in Lab 6
         const style = document.createElement('style');
         const styleText = `
@@ -106,11 +104,6 @@ class Card extends HTMLElement {
                 background-size: contain;
                 margin-top:2px;
             }
-
-            .bookmark:hover {
-                background: url('/source/Spatch/public/Assets-images/circle-bookmark-checked.svg') no-repeat;
-
-            }
             // .bookmark:hover {
             //     width: 60px;
             //     height: 60px;
@@ -140,7 +133,7 @@ class Card extends HTMLElement {
         img_wrapper.classList.add('photo_wrapper');
         // TODO: Backend
         const img = document.createElement('img');
-        img.setAttribute('src', spoonful.image_link);
+        img.setAttribute('src', spoonful.image);
         img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.recipe_title));
         img_wrapper.appendChild(img);
         wrapper.appendChild(img_wrapper);
@@ -148,7 +141,7 @@ class Card extends HTMLElement {
         const div_title = document.createElement('div');
         div_title.classList.add('title');
         // TODO: Backend
-        div_title.innerHTML = spoonful.recipe_title;
+        div_title.innerHTML = spoonful.title;
         wrapper.appendChild(div_title);
         // Append the recipie cooktime
         const div_cooktime = document.createElement('div');
@@ -156,28 +149,11 @@ class Card extends HTMLElement {
         // TODO: Backend
         div_cooktime.innerHTML = "🕑 " + (spoonful.cook_time ? spoonful.cook_time : '(see recipe)');
         wrapper.appendChild(div_cooktime);
-        // Append the recipie tags
-        // const tags_wrapper = document.createElement('div');
-        // tags_wrapper.classList.add('tag_wrapper');
-        // // TODO Backend
-        // const tags = spoonful.tags;
-        // tags.forEach(value => {
-        //     const div_tag = document.createElement('div');
-        //     div_tag.classList.add('tag_element');
-        //     div_tag.innerHTML = value;
-        //     tags_wrapper.appendChild(div_tag);
-        // });
-        // wrapper.appendChild(tags_wrapper);
-
         wrapper.addEventListener('click', e => {
-            if (cookbook) {
-                cookbook = false;
-            } else {
-                sessionStorage.setItem("clickIndex", spoonful.index);
-                console.log(spoonful.index);
-                document.location.href = 'recipeDisplay.html';
-            }
-        });
+            sessionStorage.setItem("searchIndex", index);
+            // console.log(spoonful.index);
+            document.location.href = 'resultDisplay.html';
+        })
     }
 }
-customElements.define('recipe-card', Card);
+customElements.define('result-card', resultCard);
