@@ -87,7 +87,7 @@ function loadRecipeCards(){
     const recipeResultsCard = document.createElement('result-card');
     recipeResultsCard.data = searchResults['results'][i];
     recipeResults.appendChild(recipeResultsCard);
-
+    console.log(searchResults['results'][i]);
   }
   
 }

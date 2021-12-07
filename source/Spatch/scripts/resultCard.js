@@ -152,7 +152,7 @@ class resultCard extends HTMLElement {
         wrapper.addEventListener('click', e => {
             sessionStorage.setItem("clickIndex", spoonful.index);
             console.log(spoonful.index);
-            document.location.href = 'recipeDisplay.html';
+            document.location.href = 'resultDisplay.html';
         })
     }
 }
