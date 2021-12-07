@@ -15,6 +15,10 @@
     border-radius: 12px;
 }
 
+.top-btn {
+    margin: 5px;
+}
+
 .create-new-recipe-top {
     text-align: right;
 }
