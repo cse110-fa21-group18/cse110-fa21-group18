@@ -103,7 +103,7 @@ async function init() {
     const discoverSection = document.querySelector("#discover-recipes-cards");
     // console.log(favorites);
     reccomended.forEach((discData) => {
-        console.log(discData);
+        // console.log(discData);
         const discCard = document.createElement("recipe-card");
         discCard.setData(discData, false);
         discoverSection.appendChild(discCard);
