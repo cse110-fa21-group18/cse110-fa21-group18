@@ -83,28 +83,29 @@ class Ingredient extends HTMLElement {
         ingAmount.placeholder = "Amount";
         mainDiv.appendChild(ingAmount);
 
-        const unitSelect = document.createElement('select');
+        const unitSelect = document.createElement('input');
         unitSelect.classList.add('ingredient-ind-unit');
+        unitSelect.placeholder = "unit";
         unitSelect.name = "ingredient-ind-unit";
-        let nextOption = document.createElement('option');
-        nextOption.text = "lbs";
-        nextOption.value = "lbs";
-        unitSelect.add(nextOption);
+        // let nextOption = document.createElement('option');
+        // nextOption.text = "lbs";
+        // nextOption.value = "lbs";
+        // unitSelect.add(nextOption);
 
-        nextOption = document.createElement('option');
-        nextOption.text = "kgs";
-        nextOption.value = "kgs";
-        unitSelect.add(nextOption);
+        // nextOption = document.createElement('option');
+        // nextOption.text = "kgs";
+        // nextOption.value = "kgs";
+        // unitSelect.add(nextOption);
 
-        nextOption = document.createElement('option');
-        nextOption.text = "pieces";
-        nextOption.value = "pieces";
-        unitSelect.add(nextOption);
+        // nextOption = document.createElement('option');
+        // nextOption.text = "pieces";
+        // nextOption.value = "pieces";
+        // unitSelect.add(nextOption);
 
-        nextOption = document.createElement('option');
-        nextOption.text = "ml";
-        nextOption.value = "ml";
-        unitSelect.add(nextOption);
+        // nextOption = document.createElement('option');
+        // nextOption.text = "ml";
+        // nextOption.value = "ml";
+        // unitSelect.add(nextOption);
 
         mainDiv.appendChild(unitSelect);
 
