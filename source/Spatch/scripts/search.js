@@ -1,6 +1,6 @@
 // This is the first function to be called, so when you are tracing your code start here.
-var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
-//var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
+// var key = "apiKey=2117ab7aafbb4357a88eed39d2aa06ab";
+var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
 searchResults = [];
 toggleOn = false;
 
