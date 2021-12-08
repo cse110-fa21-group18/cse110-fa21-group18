@@ -89,6 +89,16 @@ header ul li {
     text-decoration: none;
 }
 
+@keyframes slide_left_right {
+    0%   { transform: translate(-900px, 0px); }
+    100% { transform: translate(0px,0px); }
+}
+
+@keyframes slide_right_left {
+    0%   { transform: translate(900px, 0px); }
+    100% { transform: translate(0px,0px); }
+}
+
 .navItems {
     text-decoration: none;
     color: white;
@@ -107,7 +117,10 @@ header ul li {
     max-width: 800px;
     color:white;
     line-height: 25px;  
-    margin-right:50px
+    margin-right:50px;
+    animation-name: slide_left_right;
+    animation-duration: 3s; 
+    animation-fill-mode: forwards; 
 }
 
 h3 {
@@ -129,7 +142,11 @@ span {
     position:relative;
     display:flex;
     flex-shrink: 0;
+    animation-name: slide_right_left;
+    animation-duration: 3s; 
+    animation-fill-mode: forwards; 
 }
+
 
 .ingImg {
     border-radius: 30%;
@@ -139,6 +156,9 @@ span {
     max-width: 800px;
     justify-content: space-between;
     flex-shrink: 0;
+    animation-name: slide_right_left;
+    animation-duration: 3s; 
+    animation-fill-mode: forwards; 
 }
 
 .section2Description {
@@ -155,6 +175,9 @@ span {
     border-radius: 20%;
     min-height: 500px;
     margin-left: 100px;
+    animation-name: slide_right_left;
+    animation-duration: 3s; 
+    animation-fill-mode: forwards; 
 }
 
 .detailFeature {
