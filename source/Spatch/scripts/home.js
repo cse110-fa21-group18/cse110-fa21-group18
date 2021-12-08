@@ -4,7 +4,10 @@ window.addEventListener("DOMContentLoaded", init);
 
 // This is the first function to be called, so when you are tracing your code start here.
 async function init() {
-  var reccomended = [];
+  var reccomended = JSON.parse(sessionStorage.getItem('rec'));
+  if(reccomended === null){
+      reccomended = [];
+  }
   // console.log(reccomendedArray);
   var recipes = JSON.parse(localStorage.getItem("recipes"));
   if (recipes === null) {
@@ -155,6 +158,7 @@ async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
         // console.log(data)
         // reccomendedArray.push(JSON.stringify(data));
         reccomendedArray = data;
+        sessionStorage.setItem('rec', JSON.stringify(reccomendedArray));
         return reccomendedArray;
         // console.log(JSON.parse(reccomendedArray));
     });
@@ -178,6 +182,8 @@ async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
         // console.log(data)
         // reccomendedArray.push(JSON.stringify(data));
         reccomendedArray = data;
+        sessionStorage.setItem("rec", JSON.stringify(reccomendedArray));
+
         return reccomendedArray;
         // console.log(JSON.parse(reccomendedArray));
       });
