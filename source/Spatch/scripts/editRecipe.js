@@ -98,6 +98,18 @@ function deleteRecipe() {
     if (recipes === null) {
       recipes = [];
     }
+    var favorites = JSON.parse(localStorage.getItem('favorites'));
+    if(favorites === null){
+      favorites = [];
+    } else {
+      let ind = favorites.indexOf(sessionStorage.getItem("clickIndex"));
+      favorites.splice(ind, 1);
+      if(favorites === null){
+        favorites = [];
+      }
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    }
     recipes.splice(sessionStorage.getItem('clickIndex'), 1);
     localStorage.setItem("recipes", JSON.stringify(recipes));
     // Route back to home
