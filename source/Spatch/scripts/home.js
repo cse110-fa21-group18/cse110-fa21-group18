@@ -76,7 +76,7 @@ async function init() {
 
     for (let i = 0; i < favorites.length; i++) {
         currInd = parseInt(favorites[i]);
-        console.log(currInd);
+        // console.log(currInd);
         const eachFav = {
             image_link: recipes[currInd].image,
             recipe_title: recipes[currInd].title,
@@ -90,7 +90,7 @@ async function init() {
 
     // fetch the recipes and wait for them to load
     const favSection = document.querySelector("#favorites-cards");
-    console.log(favorites);
+    // console.log(favorites);
     fav.forEach((favData) => {
         const favCard = document.createElement("recipe-card");
         favCard.setData(favData, false);
@@ -132,7 +132,23 @@ async function getRecipe(id, apikey, recipeArray) {
 
 async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
     if (recipeArray.length === 0) {
-        console.log('hello');
+        fetch(`https://api.spoonacular.com/recipes/random?${apikey}&number=5`)
+          .then((response) => {
+            //response.json() turns the response objects body into JSON
+            //response.json() returns a JS promise
+            //Use response.text() to turn your response object to text
+            return response.json();
+          })
+          .then((data) => {
+            //We have successfully made a GET request!
+            //Log the data to the console:
+            // console.log(JSON.stringify(data));
+            // data = JSON.stringify(data);
+            // console.log("awioejf")
+            reccomendedArray.push(JSON.stringify(data));
+            console.log(JSON.parse(reccomendedArray));
+          });
+        
     } else {
         let index = Math.floor(Math.random() * recipeArray.length);
         // console.log(recipeArray[index].id);
@@ -151,6 +167,6 @@ async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
                 // console.log("awioejf")
                 reccomendedArray.push(JSON.stringify(data));
                 console.log(JSON.parse(reccomendedArray));
-        })
+        });
     }
 }
