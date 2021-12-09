@@ -43,6 +43,10 @@ class Display extends HTMLElement {
         listItem.appendChild(
           document.createTextNode(spoonful.ingredients[i].name)
         );
+        const unitInfo = document.createElement('span');
+        unitInfo.innerHTML = (' - ' + spoonful.ingredients[i].amount + ' ' + spoonful.ingredients[i].unit);
+        unitInfo.classList.add("ingredients-units");
+        listItem.appendChild(unitInfo);
         ingredientList.appendChild(listItem);
       }
   
