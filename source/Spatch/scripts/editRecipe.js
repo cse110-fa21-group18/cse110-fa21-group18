@@ -178,7 +178,10 @@ function saveChanges() {
 
       var extendedIngredientsList = getIngredients();
 
-    recipes[sessionStorage.getItem("clickIndex")].image = sessionStorage.getItem('pic');
+      let samp = sessionStorage.getItem('pic');
+      if(samp !== null ){
+        recipes[sessionStorage.getItem("clickIndex")].image = sessionStorage.getItem('pic');
+      }
     // console.log(document.querySelector("#currImage").value);
     recipes[sessionStorage.getItem("clickIndex")].title = document.getElementById("recipeTitle").value;
     recipes[sessionStorage.getItem("clickIndex")].readyInMinutes = document.querySelector("#totalTimeEntry").value;
