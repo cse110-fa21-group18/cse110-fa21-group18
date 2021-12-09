@@ -35,6 +35,7 @@ function createIngredientCard()
 {
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
+  ingredientCard.setContent();
   ingredientCards.appendChild(ingredientCard);
 }
 
@@ -61,6 +62,7 @@ function createInstructionCard()
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
+  instructionCard.setContent();
   // More commands that would be useful for dragging
   //
   // instructionCard.draggable = true;

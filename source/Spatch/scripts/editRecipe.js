@@ -44,31 +44,47 @@ async function init() {
     deleteButton.addEventListener("click", deleteRecipe);
     saveButton.addEventListener("click", saveChanges);
 
+    // Ingredients
     let addIngredientButton = document.getElementById('add-ingredient-cards');
-    addIngredientButton.addEventListener('click', createIngredientCard);
-    createIngredientCard();
+    addIngredientButton.addEventListener('click', () => {
+        createIngredientCard();
+    });
+    fakeCardData[0].ingredients.forEach(ing => {
+        createIngredientCard(ing);
+    });
 
+    // Instructions
     let addInstructionButton = document.getElementById('add-instruction-cards');
-    addInstructionButton.addEventListener('click', createInstructionCard);
-    createInstructionCard();
+    addInstructionButton.addEventListener('click', () => {
+        createInstructionCard();
+    });
+    fakeCardData[0].instructions[0].steps.forEach(step => {
+        console.log(step);
+        createInstructionCard(step);
+    });
 };
 
-function createIngredientCard()
+function createIngredientCard(ing)
 {
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
+  ingredientCard.setContent(ing);
+    // console.log(ingredientCard.childNodes[0]);
+//   ingredientCard.querySelector("ingredient-ind-name")
+//   console.log(ingredientCard.querySelector("ingredient-ind-name"));
+//   .setAttribute('value', obj.name);
   ingredientCards.appendChild(ingredientCard);
 }
 
-function createInstructionCard()
+function createInstructionCard(step)
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
-
+  instructionCard.setContent(step);
   instructionCard.discardButton.addEventListener('click', delCard);
   instructionCards.appendChild(instructionCard);
 
-  numberCards();
+//   numberCards();
 }
 
 /*
@@ -98,18 +114,6 @@ function deleteRecipe() {
     if (recipes === null) {
       recipes = [];
     }
-    var favorites = JSON.parse(localStorage.getItem('favorites'));
-    if(favorites === null){
-      favorites = [];
-    } else {
-      let ind = favorites.indexOf(sessionStorage.getItem("clickIndex"));
-      favorites.splice(ind, 1);
-      if(favorites === null){
-        favorites = [];
-      }
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    }
     recipes.splice(sessionStorage.getItem('clickIndex'), 1);
     localStorage.setItem("recipes", JSON.stringify(recipes));
     // Route back to home
@@ -133,7 +137,7 @@ function getInstructions() {
     };
     analyzedInstructionList.push(currInstructionItem);
   }
-  console.log(analyzedInstructionList);
+//   console.log(analyzedInstructionList);
   return analyzedInstructionList;
   // console.log(currentInstructionList[0].shadowRoot.children[3].children[1].children[0].value); //instruction time
 

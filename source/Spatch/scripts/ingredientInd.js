@@ -2,7 +2,8 @@ class Ingredient extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
-
+    }
+    setContent(ing) {
         const style = document.createElement('style');
         const styleText = `
             .ingredient-ind {
@@ -73,18 +74,38 @@ class Ingredient extends HTMLElement {
 
         const ingName = document.createElement('input');
         ingName.classList.add('ingredient-ind-name');
+        if (typeof ing == 'undefined') {
+            ingName.setAttribute("value", "");
+        }
+        else {
+            ingName.setAttribute("value", ing.name);
+        }
+        // ingName.setAttribute("value", ing.name);
         ingName.name = 'ingredient-ind-name';
         ingName.placeholder = 'Ingredient';
         mainDiv.appendChild(ingName);
 
         const ingAmount = document.createElement('input');
         ingAmount.classList.add('ingredient-ind-amount');
+        if (typeof ing == 'undefined') {
+            ingAmount.setAttribute("value", "");
+        }
+        else {
+            ingAmount.setAttribute("value", ing.amount);
+        }
         ingAmount.name = 'ingredient-ind-amount';
         ingAmount.placeholder = "Amount";
         mainDiv.appendChild(ingAmount);
 
         const unitSelect = document.createElement('input');
         unitSelect.classList.add('ingredient-ind-unit');
+        if (typeof ing == 'undefined') {
+            unitSelect.setAttribute("value", "");
+        }
+        else {
+            unitSelect.setAttribute("value", ing.unit);
+        }
+        // unitSelect.setAttribute("value", ing.unit);
         unitSelect.placeholder = "unit";
         unitSelect.name = "ingredient-ind-unit";
         // let nextOption = document.createElement('option');
@@ -117,6 +138,7 @@ class Ingredient extends HTMLElement {
         mainDiv.appendChild(discardButton);
 
         discardButton.addEventListener('click', removeElement);
+        this.shadowRoot.appendChild(mainDiv);
     }
 }
 

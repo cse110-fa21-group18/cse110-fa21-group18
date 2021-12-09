@@ -3,6 +3,8 @@ class InstructionCard extends HTMLElement {
         super();
         this.attachShadow({mode: 'open'});
 
+    }
+    setContent(step) {
         const style = document.createElement('style');
         const styleText = `
             .instruction-ind {
@@ -73,6 +75,12 @@ class InstructionCard extends HTMLElement {
         const insText = document.createElement('textarea');
         insText.cols = 50;
         insText.rows = 3;
+        if (typeof step == 'undefined') {
+            insText.setAttribute("value", "");
+        }
+        else {
+            insText.value = step.step;
+        }
         insText.name = 'instruction-ind-text';
         insText.placeholder = 'Guide the foodies through this step';
         insText.classList.add('instruction-text');
@@ -82,6 +90,12 @@ class InstructionCard extends HTMLElement {
         insTimeContainer.classList.add('instruction-time');
         const insTime = document.createElement('input');
         insTime.classList.add('instruction-time-input');
+        if (typeof step == 'undefined') {
+            insTime.setAttribute("value", "");
+        }
+        else {
+            insTime.value = step.length.number;
+        }
         insTime.name = 'instruction-ind-time';
         insTime.placeholder = 'Time taken';
         insTimeContainer.appendChild(insTime);
