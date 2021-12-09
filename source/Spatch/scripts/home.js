@@ -46,17 +46,18 @@ async function init() {
   // ==== My Recipes ====
 
     for (let i = 0; i < recipes.length; i++) {
-        if(recipes[i].id === -1){
+        // if(recipes[i].id === -1){
 
             const test = {
             image_link: recipes[i].image,
-            reciptitle: recipes[i].title,
+            // reciptitle: recipes[i].title,
+            recipe_title: recipes[i].title,
             cook_time: recipes[i].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: i,
             };
             fakeCardData.push(test);
-        }
+        // }
         // console.log(recipes[i].analyzedInstructions[0].steps[0].step);
     }
 
