@@ -90,7 +90,7 @@ class InstructionCard extends HTMLElement {
         insTimeContainer.classList.add('instruction-time');
         const insTime = document.createElement('input');
         insTime.classList.add('instruction-time-input');
-        if (typeof step == 'undefined') {
+        if (typeof step == 'undefined' ||  step.length == null) {
             insTime.setAttribute("value", "");
         }
         else {
