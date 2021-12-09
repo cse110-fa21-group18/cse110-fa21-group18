@@ -102,7 +102,7 @@ bookmarkButton.addEventListener("click", e => {
         console.log(recs);
         localStorage.setItem('recipes', JSON.stringify(recs));
 
-        favorites.push(recs.length - 1);
+        favorites.push(JSON.stringify(recs.length - 1));
         console.log(favorites);
         localStorage.setItem("favorites", JSON.stringify(favorites));
 
