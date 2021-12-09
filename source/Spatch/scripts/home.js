@@ -50,7 +50,7 @@ async function init() {
 
             const test = {
             image_link: recipes[i].image,
-            reciptitle: recipes[i].title,
+            recipe_title: recipes[i].title,
             cook_time: recipes[i].readyInMinutes + " minutes",
             tags: ["Norway food", "easy"],
             index: i,
