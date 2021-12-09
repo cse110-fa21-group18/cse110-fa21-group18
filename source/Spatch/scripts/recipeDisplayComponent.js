@@ -83,8 +83,15 @@ class Display extends HTMLElement {
             timerDiv.classList.add("timer");
             ttstimerDiv.appendChild(timerDiv);
             // listItem.appendChild(timerDiv);
-            const startingTime = 60 * parseFloat(spoonful.instructions[0].steps[i].length.number);
-            const adjustedTime = isNaN(startingTime) ? 0 : startingTime;
+            try
+            {
+              var startingTime = 60 * parseFloat(spoonful.instructions[0].steps[i].length.number);
+              var adjustedTime = isNaN(startingTime) ? 0 : startingTime;
+            }
+            catch
+            {
+              var adjustedTime = 0;
+            }
 
             new Timer(timerDiv, adjustedTime);
             listItem.appendChild(ttstimerDiv);

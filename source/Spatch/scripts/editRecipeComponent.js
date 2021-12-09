@@ -14,7 +14,7 @@ class editRecipe extends HTMLElement {
 
         // Image
         const currImage = document.querySelector("#currImage");
-        currImage.textContent = "Current image: " + spoonful.image_link.substring(0,50) + "...";
+        currImage.textContent = "Current image: " + spoonful.image_link;
         // image.setAttribute('src', spoonful.description);
 
 
