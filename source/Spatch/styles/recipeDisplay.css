@@ -101,3 +101,7 @@
 .dl-horizontal dt{
     padding-top: 10%;
 }
+
+.ingredients-units {
+    font-weight: bold;
+}
