@@ -84,7 +84,17 @@ function createInstructionCard(step)
   instructionCard.discardButton.addEventListener('click', delCard);
   instructionCards.appendChild(instructionCard);
 
-//   numberCards();
+   numberCards();
+}
+
+function numberCards()
+{
+  let instructionCards = document.getElementById('instruction-cards');
+  instructionCards = instructionCards.children;
+  for(let i=0; i<instructionCards.length; i++)
+  {
+    instructionCards[i].indexNo = i + 1;
+  }
 }
 
 /*
