@@ -34,8 +34,8 @@ async function init() {
   /*
   Event listener to toggle filter
   */
-  let filterToggle = document.getElementById("filterToggle");
-  filterToggle.addEventListener("click", toggleFilter);
+  // let filterToggle = document.getElementById("filterToggle");
+  // filterToggle.addEventListener("click", toggleFilter);
 }
 
 function isFilterEmpty() {
