@@ -17,7 +17,7 @@ async function init() {
       if (isFilterEmpty() == false || isSearchInputEmpty() == false) {
         getSearchResults();
       } else {
-        console.log("There are no results");
+        // console.log("There are no results");
       }
       if (toggleOn == true) {
         toggleFilter();
