@@ -80,8 +80,8 @@
 // });
 
 
-test('successfully search recipe', () => {
-  let addRecipe = true
+test("successfully search recipe", () => {
+  let addRecipe = true;
   expect(addRecipe).toBe(true);
 })
 
