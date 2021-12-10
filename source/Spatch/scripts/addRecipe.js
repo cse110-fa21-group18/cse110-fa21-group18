@@ -15,6 +15,8 @@ async function init() {
   }
   let discardButton = document.getElementById("discard-button");
   let createButton = document.getElementById("create-recipe-button");
+  let uploadButton = document.getElementById("recipeImage");
+  uploadButton.addEventListener("change", storeImage);
   discardButton.addEventListener("click", discardRecipe);
   createButton.addEventListener("click", createRecipe);
 
@@ -33,6 +35,7 @@ function createIngredientCard()
 {
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
+  ingredientCard.setContent();
   ingredientCards.appendChild(ingredientCard);
 }
 
@@ -59,6 +62,7 @@ function createInstructionCard()
 {
   let instructionCards = document.getElementById('instruction-cards');
   let instructionCard = document.createElement('instruction-card');
+  instructionCard.setContent();
   // More commands that would be useful for dragging
   //
   // instructionCard.draggable = true;
@@ -106,8 +110,35 @@ function discardRecipe() {
   document.location.href = 'home.html';
 }
 
-function sendData() {
-  //TODO
+function getInstructions() {
+  let analyzedInstructionList = [];
+  let currentInstructionList = document.getElementById("instruction-cards").children;
+
+  for(let i = 0; i < currentInstructionList.length; i ++){
+    let x = currentInstructionList[i].shadowRoot.children[3].children[0].value;
+    let y = currentInstructionList[i].shadowRoot.children[3].children[1].children[0].value
+    let currInstructionItem = {number: i, step: x, length: {number: y, unit: 'minutes'}};
+    analyzedInstructionList.push(currInstructionItem);
+  }
+  console.log(analyzedInstructionList);
+  return analyzedInstructionList;
+  // console.log(currentInstructionList[0].shadowRoot.children[3].children[1].children[0].value); //instruction time
+
+  // console.log(currentInstructionList[0].shadowRoot.children[3].children[0].value); //instruction text
+}
+
+function getIngredients(){
+  var extendedIngredientsList = [];
+  let ing = document.getElementById("ingredient-cards").children;
+  for (let i = 0; i < ing.length; i++) {
+    var x = ing[i].shadowRoot.children[3].children[0].value;
+    var y = ing[i].shadowRoot.children[3].children[1].value;
+    var z = ing[i].shadowRoot.children[3].children[2].value;
+    currIngredientItem = { name: x, amount: y, unit: z };
+    extendedIngredientsList.push(currIngredientItem);
+  }
+  return extendedIngredientsList;
+
 }
 
 //takes in a recipe object and adds to localstorage
@@ -116,25 +147,19 @@ function createRecipe() {
   if (recipes === null) {
     recipes = [];
   }
-  var analyzedInstructionList = [];
-  var currInstructionList = document
-    .getElementById("instructionsEntry")
-    .value.split("\n");
+  var analyzedInstructionList = getInstructions();
+  // var currInstructionList = document
+  //   .getElementById("instructionsEntry")
+  //   .value.split("\n");
 
-  for (let i = 0; i < currInstructionList.length; i++) {
-    currInstructionItem = { number: i, step: currInstructionList[i] };
-    analyzedInstructionList.push(currInstructionItem);
-  }
+  // for (let i = 0; i < currInstructionList.length; i++) {
+  //   currInstructionItem = { number: i, step: currInstructionList[i] };
+  //   analyzedInstructionList.push(currInstructionItem);
+  // }
 
-  var extendedIngredientsList = [];
-  var currIngredientsList = document
-    .getElementById("ingredientsEntry")
-    .value.split(",");
+  let extendedIngredientsList = getIngredients();
 
-  for (let j = 0; j < currIngredientsList.length; j++) {
-    currIngredientItem = { name: currIngredientsList[j], amount: 0, unit: 0 };
-    extendedIngredientsList.push(currIngredientItem);
-  }
+
 
   const currentRecipe = {
     vegetarian: false,
@@ -160,17 +185,18 @@ function createRecipe() {
     readyInMinutes: document.getElementById("totalTimeEntry").value,
     servings: document.getElementById("servingSizeChoice").value,
     sourceUrl:
-      "http://www.seriouseats.com/recipes/2011/01/dinner-tonight-spanish-style-meatloaf-recipe.html",
-    image: "https://spoonacular.com/recipeImages/199621-556x370.jpg",
+      "",
+    image: sessionStorage.getItem('pic'),
     imageType: "jpg",
     // summary: document.getElementById("recipeDescription").value,
     summary: "",
-    cuisines: document.getElementById("cuisineTypeEntry").value.split(","),
+    cuisines: 
+    document.getElementById("cuisineTypeEntry").value.split(","),
     dishTypes: [],
     diets: [],
     occasions: [],
     winePairing: {},
-    instructions: document.getElementById("instructionsEntry").value,
+    instructions: [],
     analyzedInstructions: [
       {
         name: "",
@@ -179,18 +205,37 @@ function createRecipe() {
     ],
     originalId: null,
   };
-  console.log(currentRecipe.title);
-  console.log(currentRecipe.summary);
-  console.log(currentRecipe.image);
-  console.log(currentRecipe.cuisines);
-  console.log(currentRecipe.readyInMinutes);
-  console.log(currentRecipe.servings);
-  console.log(currentRecipe.extendedIngredients);
-  console.log(currentRecipe.analyzedInstructions[0]);
+  // console.log(currentRecipe.title);
+  // console.log(currentRecipe.summary);
+  // console.log(currentRecipe.image);
+  // console.log(currentRecipe.cuisines);
+  // console.log(currentRecipe.readyInMinutes);
+  // console.log(currentRecipe.servings);
+  // console.log(currentRecipe.extendedIngredients);
+  // console.log(currentRecipe.analyzedInstructions[0]);
 
   recipes.push(currentRecipe);
   localStorage.setItem("recipes", JSON.stringify(recipes));
 
   // console.log(recipes);
   document.location.href = 'home.html';
+}
+
+function getBase64(file) {
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    // console.log(reader.result);
+    sessionStorage.setItem("pic", reader.result);
+  };
+  reader.onerror = function (error) {
+    console.log("Error: ", error);
+  };
+}
+
+function storeImage() {
+  var files = document.getElementById("recipeImage").files;
+  if (files.length > 0) {
+    getBase64(files[0]);
+  }
 }

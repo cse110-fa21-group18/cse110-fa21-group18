@@ -38,12 +38,14 @@ class editRecipe extends HTMLElement {
         // TODO: Edit this to work with the ingredient card format
         // Would be nice to reference the createIngredientCard function
         // Create the ingredient cards and fill in the items
-        /*const ingredientsItems = document.querySelector("#ingredientsEntry");
-        let ing = spoonful.ingredients[0].name;
-        for(let i = 1; i < spoonful.ingredients.length; i ++){
-          ing += (", " + spoonful.ingredients[i].name);
+        const ingredientsItems = document.querySelectorAll(".ingredient-ind-name");
+        // ingredientsItems.forEach(console.log("here"));
+        // let ing = spoonful.ingredients[0].name;
+        for(let i = 0; i < spoonful.ingredients.length; i ++){
+        //   ing += (", " + spoonful.ingredients[i].name);
+            // console.log(i);
         }
-        ingredientsItems.value = ing;*/
+        // ingredientsItems.value = ing;
         // console.log(ing);
 
         // Instructions

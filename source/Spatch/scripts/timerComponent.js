@@ -1,5 +1,5 @@
 class Timer {
-    constructor(root) {
+    constructor(root, startingSeconds = 0) {
       root.innerHTML = Timer.getHTML();
   
       this.el = {
@@ -10,7 +10,7 @@ class Timer {
       };
   
       this.interval = null;
-      this.remainingSeconds = 0;
+      this.remainingSeconds = startingSeconds;
   
       this.el.control.addEventListener("click", () => {
         if (this.interval === null) {
@@ -29,6 +29,8 @@ class Timer {
           this.updateInterfaceTime();
         }
       });
+
+      this.updateInterfaceTime();
     }
   
     updateInterfaceTime() {
@@ -89,6 +91,10 @@ class Timer {
     }
   }
   
-  new Timer(
-      document.querySelector(".timer")
-  );
+  timers_on_page = document.querySelector(".timer");
+  if(timers_on_page)
+  {
+    new Timer(
+        document.querySelector(".timer")
+    );
+  }

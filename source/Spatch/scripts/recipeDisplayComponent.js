@@ -5,6 +5,8 @@ class Display extends HTMLElement {
   }
 
   set data(spoonful) {
+
+    console.log(spoonful.instructions[0].steps);
     // Title
     const recipeName = document.querySelector(".recipeName");
     recipeName.textContent = spoonful.recipe_title;
@@ -43,6 +45,10 @@ class Display extends HTMLElement {
       listItem.appendChild(
         document.createTextNode(spoonful.ingredients[i].name)
       );
+      const unitInfo = document.createElement('span');
+      unitInfo.innerHTML = (' - ' + spoonful.ingredients[i].amount + ' ' + spoonful.ingredients[i].unit);
+      unitInfo.classList.add("ingredients-units");
+      listItem.appendChild(unitInfo);
       ingredientList.appendChild(listItem);
     }
 
@@ -77,7 +83,17 @@ class Display extends HTMLElement {
             timerDiv.classList.add("timer");
             ttstimerDiv.appendChild(timerDiv);
             // listItem.appendChild(timerDiv);
-            new Timer(timerDiv);
+            try
+            {
+              var startingTime = 60 * parseFloat(spoonful.instructions[0].steps[i].length.number);
+              var adjustedTime = isNaN(startingTime) ? 0 : startingTime;
+            }
+            catch
+            {
+              var adjustedTime = 0;
+            }
+
+            new Timer(timerDiv, adjustedTime);
             listItem.appendChild(ttstimerDiv);
 
             instructionList.appendChild(listItem);

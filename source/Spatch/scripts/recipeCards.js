@@ -1,3 +1,4 @@
+
 class Card extends HTMLElement {
     constructor() {
         super();
@@ -140,7 +141,7 @@ class Card extends HTMLElement {
         // TODO: Backend
         const img = document.createElement('img');
         img.setAttribute('src', spoonful.image_link);
-        img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.title));
+        img.setAttribute('alt', spoonful.image_alt ? spoonful.image_alt : ('Picture of ' + spoonful.recipe_title));
         img_wrapper.appendChild(img);
         wrapper.appendChild(img_wrapper);
         // Append the Recipie Title

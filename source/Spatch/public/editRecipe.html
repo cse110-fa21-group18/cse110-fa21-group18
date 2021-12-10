@@ -38,7 +38,10 @@
             <div class="subTitle">Image</div>
             <p id="currImage">No Current image</p>
             <!-- <div id="placeholder">upload an image</div> -->
-            <button type="button" class="btn btn-secondary">Upload new image</button>
+            <div class="form-group">
+                  <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+                  <input type="file" class="form-control-file btn btn-secondary" id="recipeImage">
+            </div>
         </div>
         <!--Try to have suggestions by javascript while entering-->
         <!--Consider a drop down bar instead-->
@@ -102,8 +105,8 @@
     <!-- Injected for nav -->
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script id="replace_with_navbar" src="../scripts/nav.js"></script>
-    <script src="../scripts/editRecipeComponent.js"></script>
-    <script src="../scripts/editRecipe.js"></script>
     <script src="../scripts/IngredientInd.js"></script>
     <script src="../scripts/InstructionInd.js"></script>
+    <script src="../scripts/editRecipe.js"></script>
+    <script src="../scripts/editRecipeComponent.js"></script>
 </body>
