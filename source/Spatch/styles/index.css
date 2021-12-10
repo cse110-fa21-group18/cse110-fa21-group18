@@ -62,6 +62,7 @@ header {
 
 .overallDescriptions {
     background-color: white;
+    margin-bottom: 50px;
 }
 
 .recipeBtn {
@@ -115,6 +116,7 @@ header ul li {
 .description {
     position: relative;
     max-width: 800px;
+    min-width: 500px;
     color:white;
     line-height: 25px;  
     margin-right:50px;
@@ -203,7 +205,7 @@ span {
     min-width: 600px;
     background-color:#FFFF8F;
     border-radius: 50%;
-    margin-left: 530px;
+    margin-left: 28%;
 
 }
 
@@ -222,7 +224,7 @@ h2 {
     display: flex;
     position: absolute;
     text-align: center;
-    padding-left: 235px;
+    padding-left: 10%;
     line-height: 25px;
     max-height: 600px;
 }
@@ -240,7 +242,6 @@ h2 {
     text-align: center;
     padding-top: 40px;
     min-width: 1500px;
-    padding-left: 150px;
     position: absolute;
     color: white;
     margin-bottom: 0;
@@ -253,7 +254,7 @@ h2 {
 .actionTitle2 {
     color: white;
     width: 1300px;
-    padding-left: 190px;
+    padding-left: 5%;
     height: 300px;
     font-size: 70px;
     margin: 300px 80px;
@@ -264,7 +265,7 @@ h2 {
 
 
 .actionBtn {
-    padding: 8px 20px;
+    padding: 6px 23px;
     border-radius: 60px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -276,6 +277,10 @@ h2 {
     max-height: 80px;
     min-width: 250px;
     margin-top: 500px;
-    margin-left: 700px;
     z-index: 1;
+}
+
+.alignActionBtn {
+    position:absolute;
+    margin-left: 37%;
 }
