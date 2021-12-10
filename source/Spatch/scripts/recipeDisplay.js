@@ -39,9 +39,7 @@ async function init() {
   const bookmarkImage = document.getElementById("bookmark");
 //   console.log(JSON.parse(localStorage.getItem("favorites")).indexOf(sessionStorage.getItem('clickIndex')) > -1);
   if (
-    JSON.parse(localStorage.getItem("favorites")).indexOf(
-      sessionStorage.getItem("clickIndex")
-    ) > -1
+    localStorage.getItem("favorites").indexOf(sessionStorage.getItem("clickIndex")) > -1
   ) {
     bookmarkImage.src = "./Assets-images/bookmark_filled.svg";
   } else {
