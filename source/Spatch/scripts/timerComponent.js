@@ -91,6 +91,10 @@ class Timer {
     }
   }
   
-  new Timer(
-      document.querySelector(".timer")
-  );
+  timers_on_page = document.querySelector(".timer");
+  if(timers_on_page)
+  {
+    new Timer(
+        document.querySelector(".timer")
+    );
+  }

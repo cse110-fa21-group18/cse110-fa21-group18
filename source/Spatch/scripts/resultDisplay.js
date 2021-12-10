@@ -130,10 +130,5 @@ bookmarkButton.addEventListener("click", e => {
       }
 }); 
 
-const editRecipeButton = document.querySelector("#edit-recipe-button");
-editRecipeButton.addEventListener("click", function(){
-    document.location.href = 'editRecipe.html';
-});
-
 const backButton = document.querySelector("#back-button");
 backButton.href = 'searchPage.html';
