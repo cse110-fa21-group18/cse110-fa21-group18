@@ -46,7 +46,6 @@ async function init() {
   // ==== My Recipes ====
 
     for (let i = 0; i < recipes.length; i++) {
-        console.log(i);
         if(recipes[i].id === -1){
 
             const test = {
