@@ -4,6 +4,8 @@ var key = "apiKey=ca7c4c9526e04c1e866556ba28d08808";
 searchResults = [];
 toggleOn = false;
 
+console.log('hello');
+
 window.addEventListener("DOMContentLoaded", init);
 
 async function init() {
