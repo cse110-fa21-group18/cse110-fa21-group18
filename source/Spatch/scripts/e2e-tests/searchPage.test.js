@@ -21,7 +21,10 @@ describe('Basic user flow for Website', () => {
     // expect(expectedResultCards).toBe(tru);
   });
   */
-
+test('search for recipes', () => {
+    let search = true
+    expect(search).toBe(true);
+})
 
 
    
