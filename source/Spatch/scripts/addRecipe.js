@@ -131,6 +131,7 @@ function getIngredients(){
   var extendedIngredientsList = [];
   let ing = document.getElementById("ingredient-cards").children;
   for (let i = 0; i < ing.length; i++) {
+      console.log(ing[i].shadowRoot.children[3]);
     var x = ing[i].shadowRoot.children[3].children[0].value;
     var y = ing[i].shadowRoot.children[3].children[1].value;
     var z = ing[i].shadowRoot.children[3].children[2].value;

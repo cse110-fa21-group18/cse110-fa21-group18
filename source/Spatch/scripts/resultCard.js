@@ -17,7 +17,7 @@ class resultCard extends HTMLElement {
                 // float: left;
                 // box-shadow: 2px 2px darkgray;
                 box-shadow: 1px 1px 10px #999;
-                margin-right: 15px;
+                margin: 15px;
                 cursor: pointer;
                 display:inline-block;
                 vertical-align:top;
