@@ -77,5 +77,4 @@ it('Results should be correct based on search input', async () => {
 
 });
 
-
    
