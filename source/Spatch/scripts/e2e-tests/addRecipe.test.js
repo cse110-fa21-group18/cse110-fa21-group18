@@ -5,7 +5,8 @@ test('successfully adds recipe', () => {
 
 describe('Test add recipe page', () => {
     beforeAll(async () => {
-        await page.goto('https://fervent-goldberg-7618a0.netlify.app/public/addrecipe');
+        // await page.goto('https://fervent-goldberg-7618a0.netlify.app/public/addrecipe');
+        await page.goto('http://127.0.0.1:5501/source/Spatch/public/addRecipe.html');
     })
 
     it('Successfully adds recipe', async () => {
@@ -31,10 +32,11 @@ describe('Test add recipe page', () => {
         let instructionTime = await shadow.$('.instruction-time-input');
         let textTime = await instructionTime.getProperty('value');
         textTime = "Potato";
-        // await (await page.$('#create-recipe-button')).click;
         let createButton = await page.$('#create-recipe-button');
         console.log(createButton);
         await createButton.click;
+        let recipes = await page.evaluate('JSON.parse(localStorage.getItem("recipes"))');
+        console.log(recipes);
         expect(true).toBe(true);
     })
 })
