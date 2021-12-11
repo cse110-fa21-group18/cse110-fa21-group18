@@ -45,9 +45,9 @@ describe('Basic user flow for Website', () => {
 
     // //check that results were not fetched
     const resultCard = await page.$$('result-cards');
-    console.log(resultCards);
+    console.log(resultCards.length);
 
-    expect(resultCards).toBe(true);
+    expect(resultCards.length).toBe(0);
   },2500);
 
 //Testing to see search enrty fetched correct items
