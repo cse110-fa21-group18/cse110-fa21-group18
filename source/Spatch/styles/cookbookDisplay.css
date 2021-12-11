@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.goBack {
+    margin-bottom: 40px;
+}
+
 .main-content {
     padding: 50px;
 }
@@ -35,10 +39,10 @@
 
 #changeToCircle {
     background-color: #a3c1ad;
-    padding: 4px;
+    padding: 7px;
     border-radius: 10px;
     left: 0.5em;
-    font-size: 1.5em;
+    font-size: 20px;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -51,19 +55,24 @@
 
 #cookbookTitle {
     font-size: 3em;
+    margin: 20px;
+    margin-right: 20px;
+    padding: 5px;
+    padding-left: 20px;
 }
 
 #add-new {
     position: relative;
     width: 50%;
-    height: 5em;
-    background-color:cornflowerblue;
+    text-align: center;
+    left: 25%;
+    height: 3em;
+    font-size: 20px;
+    /* background-color:cornflowerblue;
     color:cornsilk;
     left: 25%;
-    text-align: center;
     line-height: 3.5em;
-    font-size: 2em;
-    border-radius: 35px;
+    border-radius: 35px; */
 }
 
 #add-new:hover{
@@ -77,9 +86,9 @@
 
 #goDelete {
     margin-left: 30px;
-    padding: 4px;
+    padding: 7px;
     position: relative;
-    font-size: 1.5em;
+    font-size: 20px;
     background-color: crimson;
     color:cornsilk;
     border-radius: 10px;
