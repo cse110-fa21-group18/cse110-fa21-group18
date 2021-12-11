@@ -9,7 +9,6 @@ describe('Basic user flow for Website', () => {
   it('Checking toggle works', async () => {
     let toggleWorks = true;
     const filter = await page.$('button[id="filterToggle"]');
-    console.log(filter);
     await filter.click();
 
     const popUp = await page.$('button[id="applyFilters"]');
@@ -44,7 +43,6 @@ describe('Basic user flow for Website', () => {
 
     // //check that results were fetched
     const resultCard = await page.$$('result-card');
-    console.log(resultCard.length);
     expect(resultCards).toBe(true);
   },2500);
 
