@@ -5,8 +5,7 @@ test('successfully adds recipe', () => {
 
 describe('Test add recipe page', () => {
     beforeAll(async () => {
-        // await page.goto('https://fervent-goldberg-7618a0.netlify.app/public/addrecipe');
-        await page.goto('http://127.0.0.1:5501/source/Spatch/public/addRecipe.html');
+        await page.goto('https://fervent-goldberg-7618a0.netlify.app/public/addrecipe');
     })
 
     it('Successfully adds recipe', async () => {
