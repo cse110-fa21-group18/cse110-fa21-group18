@@ -12,6 +12,7 @@
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 html, body {
@@ -23,7 +24,7 @@ html, body {
 }
 
 .nav1 {
-    height: 100vh;
+    height: auto;
     box-sizing: border-box;
 }
 
@@ -32,7 +33,8 @@ html, body {
 }
 
 section {
-    min-height: 100vh;
+    height: auto;
+    min-height:100%;
     top:0;
     transition: 0.5s;
     display: flex;
@@ -205,7 +207,7 @@ span {
     min-width: 600px;
     background-color:#FFFF8F;
     border-radius: 50%;
-    margin-left: 28%;
+    margin-left: 27%;
 
 }
 
@@ -227,6 +229,7 @@ h2 {
     padding-left: 10%;
     line-height: 25px;
     max-height: 600px;
+    margin:auto;
 }
 
 .featureText {
@@ -236,51 +239,4 @@ h2 {
 .overview {
     margin-top: 10%;
     width: 100%;
-}
-
-.actionTitle {
-    text-align: center;
-    padding-top: 40px;
-    min-width: 1500px;
-    position: absolute;
-    color: white;
-    margin-bottom: 0;
-    margin-left: 20px;
-    margin-top: 50px;
-    font-size: 100px;
-    font-family: 'Lobster';
-}
-
-.actionTitle2 {
-    color: white;
-    width: 1300px;
-    padding-left: 5%;
-    height: 300px;
-    font-size: 70px;
-    margin: 300px 80px;
-    text-align: center;
-    position: absolute;
-    font-family: 'Dancing Script';
-}
-
-
-.actionBtn {
-    padding: 6px 23px;
-    border-radius: 60px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-weight: 600;
-    color: black;
-    background: white;
-    font-size: 3em;
-    position: absolute;
-    max-height: 80px;
-    min-width: 250px;
-    margin-top: 500px;
-    z-index: 1;
-}
-
-.alignActionBtn {
-    position:absolute;
-    margin-left: 37%;
 }
