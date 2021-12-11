@@ -15,7 +15,7 @@ class Display extends HTMLElement {
 
     // Author
     const author = document.querySelector("#author");
-    if( spoonful.createdBy == "") {
+    if( spoonful.createdBy === "") {
         author.textContent = "You";
     }
     else {
