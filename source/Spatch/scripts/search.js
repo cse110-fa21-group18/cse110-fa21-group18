@@ -34,8 +34,8 @@ async function init() {
   /*
   Event listener to toggle filter
   */
-  // let filterToggle = document.getElementById("filterToggle");
-  // filterToggle.addEventListener("click", toggleFilter);
+  let filterToggle = document.getElementById("filterToggle");
+  filterToggle.addEventListener("click", toggleFilter);
 }
 
 function isFilterEmpty() {
@@ -216,7 +216,7 @@ async function getFilteredResults() {
       //Log the data to the console:
       // console.log(data);
       searchResults = data;
-      sessionStorage.setItem("search", searchResults);
+      sessionStorage.setItem("search", JSON.stringify(searchResults));
       loadRecipeCards();
       // console.log(searchResults);
       // console.log(recipes[0].title);
