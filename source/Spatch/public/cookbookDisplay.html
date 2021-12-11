@@ -30,8 +30,9 @@
             <div>
                 <div><a href="home.html"><img src="./Assets-images/arrowLeft.svg" name="goBack" class="goBack" id="goBack"></a></div>
                 <input type="text" id="cookbookTitle" placeholder="Cookbook Title"></input>
-                <span id="changeToCircle"> Change color </span>
-                <span id="goDelete"> delete </span>
+                <!-- <span id="changeToCircle"> Change color </span> -->
+                <button type="button" id="changeToCircle" class="btn btn-warning">Change color</button>
+                <button  type="button" id="goDelete" class="btn btn-danger">Delete Cookbook</button>
             </div>
             <div class="recipe-row">
                 <h2>Recipes</h2>
@@ -41,13 +42,15 @@
             </div>
             <div class="recipe-row hidden" id="recipe-list">
                 <h2>All Recipes</h2>
+                <p>Click a card to add it to the cookbook</p>
                 <div class="row recipe-list">
                     <div id="all-recipes" class="col recipe-display"></div>
                 </div>
             </div>
-            <div id="add-new">
+            <!-- <div id="add-new">
                 + Add Recipes
-            </div>
+            </div> -->
+            <button id="add-new" type="button" class="btn btn-primary">+ Add Recipes</button>
         </div>
     </div>
     <!-- Injected for nav -->

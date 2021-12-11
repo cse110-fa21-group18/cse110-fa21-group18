@@ -15,7 +15,12 @@ class Display extends HTMLElement {
 
     // Author
     const author = document.querySelector("#author");
-    author.textContent = spoonful.createdBy;
+    if( spoonful.createdBy == "") {
+        author.textContent = "You";
+    }
+    else {
+        author.textContent = spoonful.createdBy;
+    }
 
     // Cuisine
     const cuisine = document.querySelector("#cuisine");
