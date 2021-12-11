@@ -10,11 +10,6 @@
     overflow-wrap: hidden;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 html, body {
     width: 100%;
     height: 100%;
@@ -113,6 +108,8 @@ header ul li {
     justify-content: space-between;
     width: 100%;
     position: relative;
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 
 .description {
@@ -121,7 +118,7 @@ header ul li {
     min-width: 500px;
     color:white;
     line-height: 25px;  
-    margin-right:50px;
+    /* margin-right:50px; */
     animation-name: slide_left_right;
     animation-duration: 3s; 
     animation-fill-mode: forwards; 
@@ -199,15 +196,17 @@ span {
 }
 
 .featureTitle {
-    margin-top: -150px;
+    margin-top: -100px;
     margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
     text-align:center;
     font-size: 60px;
-    position: absolute;
-    min-width: 600px;
+    /* position: absolute; */
+    /* min-width: 600px; */
     background-color:#FFFF8F;
     border-radius: 50%;
-    margin-left: 27%;
+    /* margin-left: 27%; */
 
 }
 
@@ -215,16 +214,16 @@ h2 {
     padding-bottom: 10px;
     padding-top: 50px;
 }
-
+/* 
 .overviewImg {
     position:absolute;
     top: -10px;
     transform: translateX(80%);
-}
+} */
 
 .fewFeatures {
-    display: flex;
-    position: absolute;
+    /* display: flex; */
+    /* position: absolute; */
     text-align: center;
     padding-left: 10%;
     line-height: 25px;
@@ -238,5 +237,6 @@ h2 {
 
 .overview {
     margin-top: 10%;
+    margin-bottom: 50px;
     width: 100%;
 }
