@@ -1,6 +1,6 @@
 describe('Basic user flow for Website', () => {
   beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5501/source/Spatch/public/searchPage.html');
+    await page.goto('https://fervent-goldberg-7618a0.netlify.app/public/searchpage');
   });
 
   //Testing to see if all recipe card results showed up for a valid entry
