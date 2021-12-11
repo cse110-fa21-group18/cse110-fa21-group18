@@ -59,7 +59,6 @@ async function init() {
         createInstructionCard();
     });
     fakeCardData[0].instructions[0].steps.forEach(step => {
-        console.log(step);
         createInstructionCard(step);
     });
 };
@@ -69,10 +68,6 @@ function createIngredientCard(ing)
   let ingredientCards = document.getElementById('ingredient-cards');
   let ingredientCard = document.createElement('ingredient-card');
   ingredientCard.setContent(ing);
-    // console.log(ingredientCard.childNodes[0]);
-//   ingredientCard.querySelector("ingredient-ind-name")
-//   console.log(ingredientCard.querySelector("ingredient-ind-name"));
-//   .setAttribute('value', obj.name);
   ingredientCards.appendChild(ingredientCard);
 }
 
@@ -147,11 +142,7 @@ function getInstructions() {
     };
     analyzedInstructionList.push(currInstructionItem);
   }
-//   console.log(analyzedInstructionList);
   return analyzedInstructionList;
-  // console.log(currentInstructionList[0].shadowRoot.children[3].children[1].children[0].value); //instruction time
-
-  // console.log(currentInstructionList[0].shadowRoot.children[3].children[0].value); //instruction text
 }
 
 function getIngredients() {

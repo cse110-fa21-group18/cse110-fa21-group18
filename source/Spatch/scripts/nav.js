@@ -1,8 +1,6 @@
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
-console.log(page);
-
 fetch('nav.html')
 .then(res => res.text())
 .then(text => {
