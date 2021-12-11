@@ -36,8 +36,6 @@ async function init() {
         cookbooks.push(cookbook);
         localStorage.setItem("cookbooks", JSON.stringify(cookbooks));
 
-        console.log('New cookbook');
-
         thisIndex = cookbooks.length - 1;
     }
 

@@ -5,8 +5,6 @@ class Display extends HTMLElement {
   }
 
   set data(spoonful) {
-
-    console.log(spoonful.instructions[0].steps);
     // Title
     const recipeName = document.querySelector(".recipeName");
     recipeName.textContent = spoonful.recipe_title;

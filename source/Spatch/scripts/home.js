@@ -112,17 +112,17 @@ async function init() {
 
   // ==== Discover Recipes =====
 
-  reccomended = await discoverRecipes(getKey(), recipes, reccomended);
-  // console.log(reccomended);
-  // fetch the recipes and wait for them to load
-  const discoverSection = document.querySelector("#discover-recipes-cards");
-  // console.log(favorites);
-  reccomended.forEach((discData) => {
-    // console.log(discData);
-    const discCard = document.createElement("recipe-card");
-    discCard.setData(discData, false);
-    discoverSection.appendChild(discCard);
-  });
+//   reccomended = await discoverRecipes(getKey(), recipes, reccomended);
+//   // console.log(reccomended);
+//   // fetch the recipes and wait for them to load
+//   const discoverSection = document.querySelector("#discover-recipes-cards");
+//   // console.log(favorites);
+//   reccomended.forEach((discData) => {
+//     // console.log(discData);
+//     const discCard = document.createElement("recipe-card");
+//     discCard.setData(discData, false);
+//     discoverSection.appendChild(discCard);
+//   });
 }
 
 const fakeCardData = [];
@@ -151,74 +151,74 @@ async function getRecipe(id, apikey, recipeArray) {
     });
 }
 
-async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
-  let index = Math.floor(Math.random() * recipeArray.length);
-  // console.log(index);
-  if(recipeArray.length === 0 || recipeArray[index].id < 0) {
-    return await fetch(
-      `https://api.spoonacular.com/recipes/random?${apikey}&number=3`
-    )
-      .then((response) => {
-        //response.json() turns the response objects body into JSON
-        //response.json() returns a JS promise
-        //Use response.text() to turn your response object to text
-        return response.json();
-      })
-      .then(async (data) => {
-        //We have successfully made a GET request!
-        //Log the data to the console:
-        // console.log(JSON.stringify(data));
-        // data = JSON.stringify(data);
-        // console.log(data)
-        // reccomendedArray.push(JSON.stringify(data));
+// async function discoverRecipes(apikey, recipeArray, reccomendedArray) {
+//   let index = Math.floor(Math.random() * recipeArray.length);
+//   // console.log(index);
+//   if(recipeArray.length === 0 || recipeArray[index].id < 0) {
+//     return await fetch(
+//       `https://api.spoonacular.com/recipes/random?${apikey}&number=3`
+//     )
+//       .then((response) => {
+//         //response.json() turns the response objects body into JSON
+//         //response.json() returns a JS promise
+//         //Use response.text() to turn your response object to text
+//         return response.json();
+//       })
+//       .then(async (data) => {
+//         //We have successfully made a GET request!
+//         //Log the data to the console:
+//         // console.log(JSON.stringify(data));
+//         // data = JSON.stringify(data);
+//         // console.log(data)
+//         // reccomendedArray.push(JSON.stringify(data));
         
-        reccomendedArray = data.recipes;
-        recArray = [];
-        console.log(reccomendedArray.length);
-        for (let j = 0; j < reccomendedArray.length; j++) {
-          await getRecRecipe(reccomendedArray[j].id, getKey(), recArray);
-          // console.log(reccomendedArray[j].id);
-        }
-        // sessionStorage.setItem("rec", JSON.stringify(reccomendedArray));
-        // console.log(recArray[]);
-        sessionStorage.setItem("rec", JSON.stringify(recArray));
-        console.log(recArray);
-        return recArray;
-        // console.log(JSON.parse(reccomendedArray));
-      });
-  } else {
-    // console.log(recipeArray[index].id);
-    return await fetch(
-      `https://api.spoonacular.com/recipes/${recipeArray[index].id}/similar?${apikey}&number=2`
-    )
-      .then((response) => {
-        //response.json() turns the response objects body into JSON
-        //response.json() returns a JS promise
-        //Use response.text() to turn your response object to text
-        return response.json();
-      })
-      .then(async (data) => {
-        //We have successfully made a GET request!
-        //Log the data to the console:
-        // console.log(JSON.stringify(data));
-        // data = JSON.stringify(data);
-        // console.log(data)
-        // reccomendedArray.push(JSON.stringify(data));
-        reccomendedArray = data;
-        recArray = [];
-        // console.log(reccomendedArray.length);
-        for (let j = 0; j < reccomendedArray.length; j++) {
-          await getRecRecipe(reccomendedArray[j].id, getKey(), recArray);
-          // console.log(reccomendedArray[j].id);
-        }
-        // sessionStorage.setItem("rec", JSON.stringify(reccomendedArray));
-        // console.log(recArray[]);
-        sessionStorage.setItem("rec", JSON.stringify(recArray));
-        return recArray;
-        // console.log(JSON.parse(reccomendedArray));
-      });
-  }
-}
+//         reccomendedArray = data.recipes;
+//         recArray = [];
+//         console.log(reccomendedArray.length);
+//         for (let j = 0; j < reccomendedArray.length; j++) {
+//           await getRecRecipe(reccomendedArray[j].id, getKey(), recArray);
+//           // console.log(reccomendedArray[j].id);
+//         }
+//         // sessionStorage.setItem("rec", JSON.stringify(reccomendedArray));
+//         // console.log(recArray[]);
+//         sessionStorage.setItem("rec", JSON.stringify(recArray));
+//         console.log(recArray);
+//         return recArray;
+//         // console.log(JSON.parse(reccomendedArray));
+//       });
+//   } else {
+//     // console.log(recipeArray[index].id);
+//     return await fetch(
+//       `https://api.spoonacular.com/recipes/${recipeArray[index].id}/similar?${apikey}&number=2`
+//     )
+//       .then((response) => {
+//         //response.json() turns the response objects body into JSON
+//         //response.json() returns a JS promise
+//         //Use response.text() to turn your response object to text
+//         return response.json();
+//       })
+//       .then(async (data) => {
+//         //We have successfully made a GET request!
+//         //Log the data to the console:
+//         // console.log(JSON.stringify(data));
+//         // data = JSON.stringify(data);
+//         // console.log(data)
+//         // reccomendedArray.push(JSON.stringify(data));
+//         reccomendedArray = data;
+//         recArray = [];
+//         // console.log(reccomendedArray.length);
+//         for (let j = 0; j < reccomendedArray.length; j++) {
+//           await getRecRecipe(reccomendedArray[j].id, getKey(), recArray);
+//           // console.log(reccomendedArray[j].id);
+//         }
+//         // sessionStorage.setItem("rec", JSON.stringify(reccomendedArray));
+//         // console.log(recArray[]);
+//         sessionStorage.setItem("rec", JSON.stringify(recArray));
+//         return recArray;
+//         // console.log(JSON.parse(reccomendedArray));
+//       });
+//   }
+// }
 
 //retrieves recipe information from id, make sure to have apikey input
 async function getRecRecipe(id, apikey, recipeArray) {
