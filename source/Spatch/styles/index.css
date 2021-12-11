@@ -12,6 +12,7 @@
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 html, body {
@@ -275,7 +276,8 @@ h2 {
     font-size: 3em;
     position: absolute;
     max-height: 80px;
-    min-width: 250px;
+    min-width: 20px;
+    /* width: 150px; */
     margin-top: 500px;
     z-index: 1;
 }
@@ -283,4 +285,10 @@ h2 {
 .alignActionBtn {
     position:absolute;
     margin-left: 37%;
+}
+
+.bottom-section {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
