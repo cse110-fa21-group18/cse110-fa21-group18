@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", init);
 // but I kept getting an error
 // saying "import and export can only
 // appear at the top level
-// of a module"
+// of a module "
 
 async function init() {
   var recipes = JSON.parse(localStorage.getItem("recipes"));
